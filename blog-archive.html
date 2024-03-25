@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Archive</title>
+    <!-- Link to the main CSS file to inherit styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <!-- Blog Archive content -->
+        <main id="blog-posts">
+            <!-- Add a link to the first blog post -->
+            <section>
+                <h2><a href="blog-post-1.html">My First Blog Post</a></h2>
+                <p id="publication-date-1">Published on: </p>
+                <!-- Add additional information about the blog post if needed -->
+            </section>
+        </main>
+        <!-- Footer (same as main page) -->
+        <footer id="footer" class="wrapper style1-alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <!-- Include any necessary JavaScript files -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- Script to display current date and time -->
+    <script>
+        // Get current date and time
+        var currentDate = new Date();
+        // Format the date
+        var formattedDate = currentDate.toLocaleString();
+        // Update the publication date paragraph with the formatted date
+        document.getElementById("publication-date-1").textContent += formattedDate;
+    </script>
+</body>
+</html>
