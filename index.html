@@ -43,6 +43,7 @@
 			</div>
 		</section>
 
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -60,11 +61,19 @@
 				<!-- One (About)-->
 				<section id="one" class="wrapper style2 spotlights">
 					<section>
-						<a href="#" class="image"><img src="images/ZOP_4888.jpg" alt="Me" data-position="center center" /></a>
+						<div class="image">
+							<img src="images/ZOP_4888.jpg" alt="Me" data-position="center center" />
+							<div class="overlay">
+								<div class="credit">
+									Photo by <a href="https://osimzan.si/" target="_blank">Žan Osim</a>
+								</div>
+							</div>
+						</div>
 						<div class="content">
 							<div class="inner">
 								<h2>About</h2>
-								<p>This is me. Hi.</p>
+								<p>This is me. Hi. <br>
+								(There's currently nothing useful or interesting on my LinkedIn page, so no need to click on 'Learn more'.)</p>
 								<ul class="actions">
 									<li><a href="https://www.linkedin.com/in/hulln/" class="button">Learn more</a></li>
 								</ul>
@@ -77,13 +86,10 @@
 				<!-- Two (Random)-->
 				<section id="two" class="wrapper style3 fade-up">
 					<div class="inner">
-						<h2>Blog</h2>
-						<p>Welcome to my blog. Here, you'll find my latest thoughts and updates. Maybe.</p>
-						<div id="blog-posts">
-							<!-- Blog posts will be dynamically added here -->
-						</div>
+						<h2>Random</h2>
+						<p>Here, you'll find some random things that I find interesting. Maybe.</p>
 						<ul class="actions">
-							<li><a href="blog-archive.html" class="button">View Archive</a></li>
+							<li><a href="random.html" class="button">Show more</a></li>
 						</ul>
 					</div>
 				</section>
@@ -93,7 +99,7 @@
 				<section id="three" class="wrapper style1 fade-up">
 					<div class="inner">
 						<h2>Contact</h2>
-						<p>Please don't hesitate to reach out to me with any inquiries or feedback. I look forward to hearing from you!</p>
+						<p>Don't hesitate to reach out to me with any inquiries or feedback. You can also simply send me a nice or funny message. I look forward to hearing from you!</p>
 						<div class="split style1">
 							<section>
 								<form method="post" action="https://formspree.io/f/xgegnwaa">
@@ -119,11 +125,10 @@
 							<!-- Social media links -->
 							<section>
 								<ul class="icons">
-									<li><a href="https://twitter.com/your_twitter_handle" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="https://facebook.com/your_facebook_username" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="https://github.com/your_github_username" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://instagram.com/your_instagram_username" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="https://linkedin.com/in/your_linkedin_username" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/hulln" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/hulln/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://www.facebook.com/huelln/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/neisv/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 								</ul>
 							</section>
 						</div>
@@ -135,7 +140,7 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; N. Hüll 2024. All rights reserved.</li><li>Original Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; N. Hüll 2024. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</footer>
@@ -176,6 +181,14 @@
                     document.addEventListener('contextmenu', event => event.preventDefault());
                     document.addEventListener('copy', event => event.preventDefault());
                 </script>
+
+			<script>
+				// JavaScript to open photographer's website in a new tab
+				document.querySelector('.credit a').addEventListener('click', function(event) {
+					event.stopPropagation(); // Prevents click event from bubbling up
+				});
+			</script>
+			
 			
 
 	</body>
