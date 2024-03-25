@@ -1,0 +1,88 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    font-family: 'Helvetica', Arial, sans-serif; /* Apply font family */
+    font-weight: bold; /* Apply font weight */
+}
+
+.switch > span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 50%;
+    text-align: center;
+}
+
+.switch > span.on {
+    left: 0;
+    color: #F36F25; /* Apply color for 'ON' state */
+}
+
+.switch > span.off {
+    right: 0;
+    color: #fff; /* Apply color for 'OFF' state */
+}
+
+.check-toggle {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+}
+
+.check-toggle + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input.check-toggle-round-flat + label {
+    padding: 2px;
+    width: 80px; /* Adjust width as needed */
+    height: 35px;
+    background-color: #F36F25;
+    border-radius: 35px; /* Ensure same value for border-radius */
+    transition: background-color 0.3s; /* Add transition effect */
+}
+
+input.check-toggle-round-flat + label:before,
+input.check-toggle-round-flat + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+
+input.check-toggle-round-flat + label:before {
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    right: 2px;
+    background-color: #F36F25;
+    border-radius: 35px; /* Ensure same value for border-radius */
+}
+
+input.check-toggle-round-flat + label:after {
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    width: 35px; /* Adjust width as needed */
+    background-color: #fff;
+    border-radius: 35px; /* Ensure same value for border-radius */
+    transition: margin 0.2s;
+}
+
+input.check-toggle-round-flat:checked + label {
+    background-color: #2ecc71; /* Change background color for checked state */
+}
+
+input.check-toggle-round-flat:checked + label:after {
+    margin-left: calc(100% - 39px); /* Adjust margin-left for checked state */
+}
