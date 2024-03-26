@@ -1,4 +1,4 @@
-# huelln.github.io
+# hulln.github.io
 
 ## Overview
 This is my personal/portfolio website, which is still in its early stages of development. It's currently quite basic and lacks substantial content. The main goal of this project is to familiarize myself with CSS, JS, and website structuring. As I continue to learn, I'll be updating and improving the website's functionality and design.
