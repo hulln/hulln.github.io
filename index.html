@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="css/lang.css" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+        /* CSS for initial state of sections */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade-in.show {
+            opacity: 1;
+        }
+    </style>
 </head>
 	
 	<body class="is-preload">
@@ -47,10 +57,10 @@
 			</section>
 
 			<!-- One (About)-->
-			<section id="one" class="wrapper style2 spotlights">
+			<section id="about" class="wrapper style2 spotlights">
 				<section>
 					<div class="image">
-						<img src="images/photo.jpg" alt="Me (Photograph by Žan Osim)" data-position="center center" />
+						<img src="images/photo.jpg" alt="Me (Photo by Žan Osim)" data-position="center center" />
 						<div class="overlay">
 							<div class="credit">
 								Photo by <a href="https://osimzan.si/" target="_blank">Žan Osim</a>
@@ -64,6 +74,7 @@
 								(There's currently nothing useful or interesting on my LinkedIn page, so no need to click on 'Learn more'.)</p>
 							<ul class="actions">
 								<li><a href="https://www.linkedin.com/in/hulln/" class="button">Learn more</a></li>
+								<li><a href="cv_en.pdf" class="button">Download CV</a></li>
 							</ul>
 						</div>
 					</div>
@@ -71,7 +82,7 @@
 			</section>
 
 			<!-- Two (Random)-->
-			<section id="two" class="wrapper style3 fade-up">
+			<section id="random" class="wrapper style3 fade-up">
 				<div class="inner">
 					<h2>Random</h2>
 					<p>Here, you'll find some random things that I find interesting. Maybe.</p>
@@ -82,7 +93,7 @@
 			</section>
 
 			<!-- Three (Contact)-->
-			<section id="three" class="wrapper style1 fade-up">
+			<section id="contact" class="wrapper style1 fade-up">
 				<div class="inner">
 					<h2>Contact</h2>
 					<p>Don't hesitate to reach out to me with any inquiries or feedback. You can also simply send me a nice or funny message. I look forward to hearing from you!</p>
@@ -126,7 +137,7 @@
 		<footer id="footer" class="wrapper style1-alt">
 			<div class="inner">
 				<ul class="menu">
-					<li>&copy; N. Hüll 2024. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>&copy; N. Hüll <script>document.write(new Date().getFullYear())</script>. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
 			</div>
 		</footer>
