@@ -30,3 +30,20 @@ document.addEventListener('copy', event => event.preventDefault());
 document.querySelector('.credit a').addEventListener('click', function(event) {
     event.stopPropagation(); // Prevents click event from bubbling up
 });
+
+// Get current year
+document.write(new Date().getFullYear());
+
+// Scroll fade effect
+$(document).ready(function() {
+    $(window).on("scroll", function() {
+        var windowHeight = $(window).height();
+        var windowScrollTop = $(window).scrollTop();
+        $(".fade-in").each(function() {
+            var elementPosition = $(this).offset().top;
+            if (elementPosition < windowScrollTop + windowHeight - 50) {
+                $(this).addClass("show");
+            }
+        });
+    });
+});
