@@ -16,7 +16,7 @@ In the `src` folder you will find the following:
 - `images`: images,
 - `other`: other source files.
 
-The `orig` folder contains the original code for the website, including an example for a general page. Also included are the original [README.txt](orig/README.txt) and [LICENSE.txt](orig/LICENSE.txt) files.
+The `orig` folder contains the original code for the website, including an example for a general page. Also included is the original [README.txt](orig/README.txt) file.
 
 ## License
 
