@@ -188,3 +188,15 @@
 			});
 
 })(jQuery);
+
+// JavaScript to toggle the visibility of additional content
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('toggleSection').addEventListener('click', function() {
+        var additionalContent = document.getElementById('additionalContent');
+        if (additionalContent.style.display === 'none') {
+            additionalContent.style.display = 'block';
+        } else {
+            additionalContent.style.display = 'none';
+        }
+    });
+});
