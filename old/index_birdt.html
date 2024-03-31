@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N. Hüll</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        /* Additional CSS styles can be placed here if needed */
+        #vanta-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure the animation stays behind other content */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/favicon.png" alt="Logo" class="logo-sm">
+            </a>
+            <div class="navbar-nav">
+                <button class="nav-button" onclick="scrollToSection('welcome')">Welcome</button>
+                <button class="nav-button" onclick="scrollToSection('about')">About</button>
+                <button class="nav-button" onclick="scrollToSection('random')">Random</button>
+                <button class="nav-button" onclick="scrollToSection('contact')">Contact</button>
+            </div>
+            <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+                <i class="fas fa-moon" id="moon-icon"></i>
+                <i class="fas fa-sun" id="sun-icon" style="display: none;"></i>
+            </div>
+        </div>
+    </nav>
+    
+
+<!-- Vanta.js container -->
+<div id="vanta-container"></div>
+
+<div id="welcome" class="section container" style="padding-top: 300px;">
+    <h2 id="welcome-text"></h2>
+    <div class="welcome-content" style="display: flex; justify-content: space-between;">
+        <div style="flex: 1;">
+            <p>This is my attempt to make a personal website. Hi!</p>
+        </div>
+        <div style="flex: 1; text-align: right;">
+            <img src="images/undraw_welcoming.svg" alt="Welcome Image" class="welcome-image" style="max-width: 60%; height: auto; margin-top: -150px;">
+        </div>
+    </div>
+</div>
+
+<div id="about" class="section container">
+    <h2>About</h2>
+    <div class="about-content">
+        <p>Welcome to my personal website! I'm passionate about [insert your interests or profession here]. Feel free to explore and learn more about me.</p>
+        <img src="images/photo.jpg" alt="Your Name" class="about-photo">
+    </div>
+    <div class="buttons-container">
+        <a href="https://www.linkedin.com/in/your-profile-url" target="_blank" rel="noopener noreferrer"><button class="btn btn-primary">Learn more</button></a>
+        <a href="path/to/your/CV.pdf" download><button class="btn btn-secondary">Download CV</button></a>
+    </div>
+</div>
+
+
+<div id="random" class="section container">
+    <h2>Random</h2>
+    <!-- Content for the Random section goes here -->
+</div>
+
+<div id="contact" class="section container">
+    <h2>Contact</h2>
+    <!-- Content for the Contact section goes here -->
+</div>
+
+<section class="contact py-5 fade-in container" id="contact-form">
+    <div class="container">
+        <div class="col-lg-6 col-12">
+            <div class="contact-form">
+                <h2 class="mb-4">Contact</h2>
+                <p>Don't hesitate to reach out to me with any inquiries or feedback. You can also simply send me a nice or funny message. I look forward to hearing from you!</p>
+                <form method="post" action="https://formspree.io/f/xgegnwaa">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <input type="email" class="form-control" name="email" placeholder="Email" id="email">
+                        </div>
+                        <div class="col-12">
+                            <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
+                        </div>
+                        <div class="ml-lg-auto col-lg-5 col-12 mt-2">
+                            <input type="submit" class="form-control submit-btn" value="Send Message">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p class="copyright-text text-center">
+            &copy; N. Hüll <script>document.write(new Date().getFullYear())</script>. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+<script>
+    var vantaBirdsEffect;
+
+    function setVanta() {
+        if (window.VANTA && !vantaBirdsEffect) {
+            vantaBirdsEffect = window.VANTA.BIRDS({
+                el: "#vanta-container",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                backgroundColor: 0xd4d4d4, // Initial background color
+                color1: 0x401d72,
+                color2: 0x5cafca,
+                colorMode: "lerp",
+                backgroundAlpha: 1.00
+            });
+        }
+    }
+
+    window.addEventListener("load", function() {
+        setVanta();
+        type(); // Start the welcome text animation after the page is fully loaded
+    });
+
+    function type() {
+        var welcomeText = document.getElementById("welcome-text");
+        var text = "Welcome.";
+        var index = 0;
+        var timer = setInterval(function() {
+            if (index < text.length) {
+                welcomeText.innerHTML += text.charAt(index);
+                index++;
+            } else {
+                clearInterval(timer);
+            }
+        }, 120);
+    }
+
+    function toggleDarkMode() {
+        var body = document.body;
+        body.classList.toggle("dark-mode");
+        var moonIcon = document.getElementById('moon-icon');
+        var sunIcon = document.getElementById('sun-icon');
+        if (body.classList.contains("dark-mode")) {
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline';
+            if (vantaBirdsEffect) {
+                vantaBirdsEffect.setOptions({
+                    backgroundColor: 0x2d2d2d // Change background color to black for dark mode
+                });
+            }
+        } else {
+            moonIcon.style.display = 'inline';
+            sunIcon.style.display = 'none';
+            if (vantaBirdsEffect) {
+                vantaBirdsEffect.setOptions({
+                    backgroundColor: 0xd4d4d4 // Change background color to light mode default
+                });
+            }
+        }
+    }
+
+    // Initial check and update of Vanta background based on dark mode
+    window.addEventListener("DOMContentLoaded", function() {
+        var body = document.body;
+        var moonIcon = document.getElementById('moon-icon');
+        var sunIcon = document.getElementById('sun-icon');
+        if (body.classList.contains("dark-mode")) {
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline';
+            if (vantaBirdsEffect) {
+                vantaBirdsEffect.setOptions({
+                    backgroundColor: 0x000000 // Change background color to black for dark mode
+                });
+            }
+        } else {
+            moonIcon.style.display = 'inline';
+            sunIcon.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

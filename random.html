@@ -1,56 +1,160 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Random | N. Hüll</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="src/assets/css/main.css" />
-        <link rel="icon" type="image/png" href="src/images/favicon.png" />
-		<noscript><link rel="stylesheet" href="src/assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random | N. Hüll</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" href="src/images/favicon.png">
+</head>
+<body>
 
-		<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="title">Home</a>
-			</header>
+<!-- Navbar/Menu -->
+<nav class="navbar navbar-expand-sm navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="src/images/favicon.png" alt="Logo" class="logo-sm">
+        </a>
+        <div class="navbar-nav">
+            <button class="nav-button" onclick="navigateToHomepage()">Home</button>
+        </div>
+        <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+            <i class="fas fa-moon" id="moon-icon" style="display: none;"></i>
+            <i class="fas fa-sun" id="sun-icon" style="display: none;"></i>
+        </div>
+    </div>
+</nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!-- Vanta.js container -->
+<div id="vanta-container"></div>
 
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">Random</h1>
-                            <p>Here's some content. Well, not yet.</p>
-							<li><a href="dj.html">Študijski program Digitalno jezikoslovje (SLO)</a></li>
-						</div>
-					</section>
+<div id="welcome" class="container fade-in" style="padding-top: 300px;">
+    <h2 id="welcome-text" style="font-size: 46px;">R</h2>
+    <div class="welcome-content fade-in" style="display: flex; justify-content: space-between;">
+        <div style="flex: 1;">
+            <p>Here you will find content that I find interesting, useful or worth mentioning for one reason or another. At the moment, it's still pretty empty. Most of the content is expected to be in Slovene.</p>
+        </div>
+        <div style="flex: 1; text-align: right;">
+            <img src="src/images/undraw_random_thoughts_re_cob6.svg" alt="Random Image" class="welcome-image" style="max-width: 60%; height: auto; margin-top: -150px;">
+        </div>
+    </div>
+</div>
 
-			</div>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; N. Hüll 2024. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+<div id="about" class="section container fade-in">
+    <h2>Študijski program Digitalno jezikoslovje (SLO)</h2>
+        <p>Below are my quite comprehensive observations regarding the interdisciplinary Master's program in Digital Linguistics, complemented by practical recommendations aimed at enhancing the program. The text is exclusively in Slovene.</p>
+    <div class="buttons-container">
+        <a href="dj.html" target="_blank" rel="noopener noreferrer"><button class="btn btn-primary">Show more</button></a>
+    </div>
+</div>
 
-		<!-- Scripts -->
-			<script src="src/assets/js/jquery.min.js"></script>
-			<script src="src/assets/js/jquery.scrollex.min.js"></script>
-			<script src="src/assets/js/jquery.scrolly.min.js"></script>
-			<script src="src/assets/js/browser.min.js"></script>
-			<script src="src/assets/js/breakpoints.min.js"></script>
-			<script src="src/assets/js/util.js"></script>
-			<script src="src/assets/js/main.js"></script>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p class="copyright-text text-center">
+            &copy; N. Hüll <script>document.write(new Date().getFullYear())</script>. All rights reserved.
+        </p>
+    </div>
+</footer>
 
-	</body>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script>
+    VANTA.NET({
+        el: "#vanta-container", // Target the Vanta.js container
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xffffff,
+        backgroundColor: 0x8e8e8e,
+        
+    });
+
+    // JavaScript for fading in sections
+    document.addEventListener('DOMContentLoaded', function() {
+        var sections = document.querySelectorAll('.fade-in');
+        var windowHeight = window.innerHeight;
+
+        function fadeInSections() {
+            sections.forEach(function(section) {
+                var bounding = section.getBoundingClientRect();
+                if (bounding.top >= 0 && bounding.top <= windowHeight) {
+                    section.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('scroll', fadeInSections);
+        window.addEventListener('resize', function() {
+            windowHeight = window.innerHeight;
+            fadeInSections();
+        });
+
+        fadeInSections();
+    });
+</script>
+
+<script src="src/assets/script.js"></script>
+<script>
+    var lastScrollTop = 0;
+    window.addEventListener("scroll", function() {
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScrollTop) {
+            document.querySelector('.navbar').style.top = "-70px";
+        } else {
+            document.querySelector('.navbar').style.top = "0";
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    }, false);
+
+    function toggleDarkMode() {
+        var body = document.body;
+        body.classList.toggle("dark-mode");
+        var moonIcon = document.getElementById('moon-icon');
+        var sunIcon = document.getElementById('sun-icon');
+        if (body.classList.contains("dark-mode")) {
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline';
+        } else {
+            moonIcon.style.display = 'inline';
+            sunIcon.style.display = 'none';
+        }
+    }
+
+    var moonIcon = document.getElementById('moon-icon');
+    var sunIcon = document.getElementById('sun-icon');
+    var body = document.body;
+    if (body.classList.contains("dark-mode")) {
+        moonIcon.style.display = 'none';
+        sunIcon.style.display = 'inline';
+    } else {
+        moonIcon.style.display = 'inline';
+        sunIcon.style.display = 'none';
+    }
+
+    var welcomeText = document.getElementById("welcome-text");
+    var text = "andom";
+    var index = 0;
+
+    function type() {
+        if (index < text.length) {
+            welcomeText.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 120);
+        }
+    }
+
+    type();
+
+</script>
+
+</body>
 </html>
