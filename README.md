@@ -1,7 +1,7 @@
 # hulln.github.io
 
 ## Overview
-This is my personal/portfolio website, which is still in its early stages of development. It's currently quite basic and lacks substantial content. The main goal of this project is to familiarize myself with CSS, JS, and website structuring. As I continue to learn, I'll be updating and improving the website's functionality and design.
+This is my personal/portfolio website, currently in its early development stages. While it's still basic and lacks substantial content, this project serves as a platform for me to delve into CSS, JS, and website structuring. As I continue to learn, I'll be updating and improving the website's functionality and design.
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -11,17 +11,17 @@ This is my personal/portfolio website, which is still in its early stages of dev
 
 ## Repository Structure
 
-In the `src` folder you will find the following:
+Within the `src` folder, you'll find the following:
 - `assets`: CSS, JS, SASS, and other assets,
 - `images`: images,
 - `other`: other source files.
 
-The `orig` folder contains the original code for the website, including an example for a general page. Also included is the original [README.txt](orig/README.txt) file.
+The folder `old` folder preserves the previous website design, inspired by the Hyperspace theme by HTML5 UP ([html5up.net](https://html5up.net)). Additionally, the `orig` folder contains the original code for this previous website, including a sample for a general page. The original [README.txt](orig/README.txt) file is also included.
 
 ## License
 
-This website is licensed under the Creative Commons Attribution 3.0 Unported License. More information can be found in the [LICENSE.md](LICENSE.md) file.
+At present, this website is not covered by any specific license. When applicable, further details will be provided in the [LICENSE.md](LICENSE.md) file upon upload.
 
 ## Credits
 
-Hyperspace by HTML5 UP ([html5up.net](https://html5up.net) | [@ajlkn](https://twitter.com/ajlkn)).
+The current version of the website was created by me, with invaluable assistance from ChatGPT [ChatGPT](https://chat.openai.com/).
