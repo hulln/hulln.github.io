@@ -16,7 +16,7 @@ Within the `src` folder, you'll find the following:
 - `images`: images,
 - `other`: other source files.
 
-The folder `old` folder preserves the previous website design, inspired by the Hyperspace theme by HTML5 UP ([html5up.net](https://html5up.net)). Additionally, the `orig` folder contains the original code for this previous website, including a sample for a general page. The original [README.txt](orig/README.txt) file is also included.
+The folder `old` preserves the previous website design, inspired by the Hyperspace theme by HTML5 UP ([html5up.net](https://html5up.net)). Additionally, the `orig` folder contains the original code for this previous website, including a sample for a general page. The original [README.txt](orig/README.txt) file is also included.
 
 ## License
 
@@ -24,4 +24,4 @@ At present, this website is not covered by any specific license. When applicable
 
 ## Credits
 
-The current version of the website was created by me, with invaluable assistance from ChatGPT [ChatGPT](https://chat.openai.com/).
+The current version of the website was created by me, with invaluable assistance from [ChatGPT](https://chat.openai.com/).
