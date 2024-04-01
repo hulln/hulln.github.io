@@ -10,18 +10,16 @@ This is my personal/portfolio website, currently in its early development stages
 4. [Credits](#credits)
 
 ## Repository Structure
-
-Within the `src` folder, you'll find the following:
-- `assets`: CSS, JS, SASS, and other assets,
-- `images`: images,
-- `other`: other source files.
-
-The folder `old` preserves the previous website design, inspired by the Hyperspace theme by [HTML5 UP](https://html5up.net). Additionally, the `orig` folder contains the original code for this previous website, including a sample for a general page. The original [README.txt](orig/README.txt) file is also included.
+- `assets`: Contains CSS, JavaScript, image, and other important files.
+- `old`: Archive of previous versions of the website.
+  - `v1`: Initial version made after applying the HTML5 template.
+  - `v2`: Attempt to make a website from scratch with the help of ChatGPT.
+- Other HTML files: Main HTML files for the website.
 
 ## License
 
-At present, this website is not covered by any specific license. When applicable, further details will be provided in the [LICENSE.md](LICENSE.md) file upon upload.
+This project is licensed under the [BootstrapMade Free Template License](https://bootstrapmade.com/license/). See the [LICENSE.md](LICENSE.md) file for details, included in this repository.
 
 ## Credits
 
-The current version of the website was created by me, with invaluable assistance from [ChatGPT](https://chat.openai.com/).
+The template used was created by [Bootstrapmade](https://bootstrapmade.com/).
