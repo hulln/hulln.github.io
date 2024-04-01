@@ -1,0 +1,59 @@
+/* Custom responsive CSS */
+
+/* Adjustments for screens up to 992px wide */
+@media (max-width: 992px) {
+    /* Example: Adjustments for navbar collapse */
+    .navbar-collapse {
+        padding-bottom: 20px;
+    }
+
+    /* Add or modify other CSS rules as needed */
+}
+
+/* Adjustments for screens up to 768px wide */
+@media (max-width: 768px) {
+    /* Example: Adjustments for info section columns */
+    .info_section .col-md-4 {
+        padding: 20px 30px;
+        text-align: center;
+    }
+
+    /* Add or modify other CSS rules as needed */
+}
+
+/* Adjustments for screens up to 576px wide */
+@media (max-width: 576px) {
+    /* Example: Adjustments for hero section container */
+    .hero_section-container {
+        flex-direction: column;
+    }
+
+    /* Add or modify other CSS rules as needed */
+}
+
+/* Additional media queries can be added below */
+
+/* Adjustments for screens up to 480px wide */
+@media (max-width: 480px) {
+    /* Add CSS rules as needed */
+}
+
+/* Adjustments for screens up to 400px wide */
+@media (max-width: 400px) {
+    /* Add CSS rules as needed */
+}
+
+/* Adjustments for screens up to 360px wide */
+@media (max-width: 360px) {
+    /* Add CSS rules as needed */
+}
+
+/* Adjustments for screens wider than 1200px */
+@media (min-width: 1200px) {
+    /* Example: Adjustments for container max-width */
+    .container {
+        max-width: 1170px;
+    }
+
+    /* Add or modify other CSS rules as needed */
+}
