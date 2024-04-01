@@ -1,211 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N. Hüll</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/assets/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" type="image/png" href="src/images/favicon.png">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>N. Hüll</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Bootslander
+  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
+
 <body>
 
-<!-- Navbar/Menu -->
-<nav class="navbar navbar-expand-sm navbar-light">
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.html"><span>N. Hüll</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/favicon.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto active" href="index.html#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+            <li class="dropdown">
+                <a href="index.html#other"><span>Other</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li class="dropdown">
+                        <a href="random.html"><span>Random</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="dj.html">Digitalno jezikoslovje</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="projects.html"><span>Projects</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="not-available.html">Oblachek</a></li>
+                            <li><a href="not-available.html">Travator</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="not-available.html">Playlists</a></li>
+                </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="src/images/favicon.png" alt="Logo" class="logo-sm">
-        </a>
-        <div class="navbar-nav">
-            <button class="nav-button" onclick="scrollToSection('welcome')">Welcome</button>
-            <button class="nav-button" onclick="scrollToSection('about')">About</button>
-            <button class="nav-button" onclick="scrollToSection('random')">Random</button>
-            <button class="nav-button" onclick="scrollToSection('contact')">Contact</button>
-        </div>
-        <div class="dark-mode-toggle" onclick="toggleDarkMode()">
-            <i class="fas fa-moon" id="moon-icon" style="display: none;"></i>
-            <i class="fas fa-sun" id="sun-icon" style="display: none;"></i>
-        </div>
-    </div>
-</nav>
-
-<!-- Vanta.js container -->
-<div id="vanta-container"></div>
-
-<div id="welcome" class="container fade-in" style="padding-top: 300px;">
-    <h2 id="welcome-text" style="font-size: 46px;">W</h2>
-    <div class="welcome-content fade-in" style="display: flex; justify-content: space-between;">
-        <div style="flex: 1;">
-            <p>This is my attempt to make a personal website. Hi!</p>
-        </div>
-        <div style="flex: 1; text-align: right;">
-            <img src="src/images/undraw_welcoming.svg" alt="Welcome Image" class="welcome-image" style="max-width: 60%; height: auto; margin-top: -150px;">
-        </div>
-    </div>
-</div>
-
-<!-- About Me-->
-<div id="about" class="section container fade-in">
-    <h2>About</h2>
-        <p>Hi, this is my personal website. I have absolutely no experience in designing and making websites, which is probably quite evident (apologies for the poor mobile experience!). However, I find it rather amusing, so why not? Better late than never. Otherwise, I'm a student at the University of Ljubljana, studying digital linguistics.</p>
-        <p>I'll be using this peculiar creation in the form of a website mainly for educational purposes and perhaps for sharing content that I find worthy of sharing with others.</p>
-        <p>(There's currently nothing useful or interesting on my LinkedIn page, so no need to click on 'Learn more'.)</p>
-    <div class="buttons-container">
-        <a href="https://www.linkedin.com/in/hulln/" target="_blank" rel="noopener noreferrer"><button class="btn btn-primary">Learn more</button></a>
-        <a href="src/other/nh_cv_en.pdf" download><button class="btn btn-secondary">Download CV</button></a>
-    </div>
-</div>
-
-<!-- Random -->
-<div id="random" class="section container fade-in">
-    <h2>Random</h2>
-    <p>This section is meant to serve as a kind of archive for random information and thoughts, possibly including blog posts or links to potential projects I might be involved in in the future.</p>
-    <p>It's rather empty for now, though.</p>
-    <div class="buttons-container">
-        <a href="random.html" target="_blank" rel="noopener noreferrer"><button class="btn btn-primary">Show more</button></a>
-    </div>
-</div>
-
-<!-- Contact -->
-<section id="contact" class="contact py-5 fade-in container" id="contact-form">
-    <div class="container">
-        <div class="col-lg-6 col-12">
-            <div class="contact-form">
-                <h2 class="mb-4">Contact</h2>
-                <p>Don't hesitate to reach out to me with any inquiries or feedback. You can also simply send me a nice or funny message. I look forward to hearing from you!</p>
-                <form method="post" action="https://formspree.io/f/xgegnwaa">
-                    <div class="row">
-                        <div class="col-lg-6 col-12">
-                            <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
-                        </div>
-                        <div class="col-lg-6 col-12">
-                            <input type="email" class="form-control" name="email" placeholder="Email" id="email">
-                        </div>
-                        <div class="col-12">
-                            <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
-                        </div>
-                        <div class="ml-lg-auto col-lg-5 col-12 mt-2">
-                            <input type="submit" class="form-control submit-btn" value="Send Message">
-                        </div>
-                    </div>
-                </form>
+      <div class="row justify-content-between">
+        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+          <div data-aos="zoom-out">
+            <h1>Welcome to my <span>website</span>.</h1>
+            <h2>This is my attempt to create a simple personal website. Hi.</h2>
+            <div class="text-center text-lg-start">
+              <a href="#about" class="btn-get-started scrollto">Learn More</a>
             </div>
+          </div>
         </div>
+        <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+          <img src="assets/img/undraw_lost_re_xqjt.svg" class="img-fluid" alt="">
+        </div>
+      </div>
     </div>
-</section>
 
-<!-- Footer -->
-<footer class="footer">
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <section id="about" class="about">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3>About Me</h3>
+            <p>Hi, this is my personal website. I have no experience in designing and making websites, which
+              is probably quite evident since I'm using a predefined template. However, I find it rather amusing,
+              so why not? Better late than never. Otherwise, I'm a student at the University of Ljubljana, studying
+              digital linguistics.</p>
+            <p>I'll be using this peculiar creation in the form of a website mainly for educational purposes and perhaps
+              for sharing content that I find worthy of sharing with others.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="far fa-file"></i></i></div>
+              <h4 class="title"><a href="assets/other/nh_cv_en.pdf">Download CV</a></h4>
+              <p class="description">More about education, experiences etc.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="far fa-user"></i></i></div>
+              <h4 class="title"><a href="https://www.linkedin.com/in/hulln/">LinkedIn</a></h4>
+              <p class="description">There's currently nothing useful or interesting on my LinkedIn page, so no need to click there.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-atom"></i></div>
+              <h4 class="title"><a href="projects.html">Projects</a></h4>
+              <p class="description">Nothing here yet; to be updated.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Other Section ======= -->
+    <section id="other" class="other">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Other</h2>
+          <p>Random</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-left" data-aos-delay="200">
+            <p>This section is meant to serve as a kind of archive for random information and thoughts, possibly
+              including blog posts or links to potential projects I might be involved in in the future.</p>
+            <p>It's rather empty for now, though.</p>
+          </div>
+
+          <!-- Button -->
+          <div class="text-left mt-4 ml-4" data-aos="fade-left" data-aos-delay="200">
+            <a href="random.html" class="btn btn-primary">Show More</a>
+          </div>
+
+    </section><!-- End Other Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contact</h2>
+          <p>Contact Me</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-left" data-aos-delay="200">
+            <p>Don't hesitate to reach out to me with any inquiries or feedback. You can also simply send me a nice or
+              funny message. I look forward to hearing from you!</p>
+            <form id="contact-form" method="post" class="php-email-form" action="">
+              <!-- Your form fields go here -->
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <!-- End of form fields -->
+              <div class="my-3">
+                <div class="loading">Nalaganje</div>
+                <div class="sent-message">Message sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var form = document.getElementById("contact-form");
+        var formData = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://formspree.io/f/xgegnwaa");
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return;
+          if (xhr.status == 200) {
+            form.reset();
+            var sentMessage = form.querySelector(".sent-message");
+            if (sentMessage) {
+              sentMessage.style.display = "block";
+            }
+          } else {
+            var errorMessage = form.querySelector(".error-message");
+            if (errorMessage) {
+              errorMessage.style.display = "block";
+              errorMessage.textContent =
+                "Napaka pri pošiljanju sporočila. Prosimo, poskusite znova.";
+            }
+          }
+        };
+        xhr.send(formData);
+      });
+    </script>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+    </div>
+    <div class="social-icons">
+      <a href="https://github.com/hulln" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/hulln/" target="_blank" rel="noopener noreferrer"><i
+          class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/huelln/" target="_blank" rel="noopener noreferrer"><i
+          class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/neisv/" target="_blank" rel="noopener noreferrer"><i
+          class="fab fa-instagram"></i></a>
+      <a href="https://discord.com/channels/@kocelj" target="_blank" rel="noopener noreferrer"><i
+          class="fab fa-discord"></i></a>
+    </div>
     <div class="container">
-		<div class="social-icons">
-            <a href="https://github.com/hulln" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-			<a href="https://www.linkedin.com/in/hulln/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-			<a href="https://www.facebook.com/huelln/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-			<a href="https://www.instagram.com/neisv/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-			<a href="https://discord.com/channels/@kocelj" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
-        </div>
-        <p class="copyright-text text-center">
-            &copy; N. Hüll <script>document.write(new Date().getFullYear())</script>. All rights reserved.
-        </p>
+      <div class="copyright">
+        &copy; N. Hüll <script>
+          document.write(new Date().getFullYear())
+        </script>. All rights reserved.
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>.
+      </div>
     </div>
-</footer>
+  </footer><!-- End Footer -->
 
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-<script>
-    VANTA.NET({
-        el: "#vanta-container", // Target the Vanta.js container
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: 0xffffff,
-        backgroundColor: 0x8e8e8e,
-        
-    });
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
 
-    // JavaScript for fading in sections
-    document.addEventListener('DOMContentLoaded', function() {
-        var sections = document.querySelectorAll('.fade-in');
-        var windowHeight = window.innerHeight;
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-        function fadeInSections() {
-            sections.forEach(function(section) {
-                var bounding = section.getBoundingClientRect();
-                if (bounding.top >= 0 && bounding.top <= windowHeight) {
-                    section.classList.add('active');
-                }
-            });
-        }
-
-        document.addEventListener('scroll', fadeInSections);
-        window.addEventListener('resize', function() {
-            windowHeight = window.innerHeight;
-            fadeInSections();
-        });
-
-        fadeInSections();
-    });
-</script>
-
-<script src="src/assets/script.js"></script>
-<script>
-    var lastScrollTop = 0;
-    window.addEventListener("scroll", function() {
-        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        if (currentScroll > lastScrollTop) {
-            document.querySelector('.navbar').style.top = "-70px";
-        } else {
-            document.querySelector('.navbar').style.top = "0";
-        }
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    }, false);
-
-    function toggleDarkMode() {
-        var body = document.body;
-        body.classList.toggle("dark-mode");
-        var moonIcon = document.getElementById('moon-icon');
-        var sunIcon = document.getElementById('sun-icon');
-        if (body.classList.contains("dark-mode")) {
-            moonIcon.style.display = 'none';
-            sunIcon.style.display = 'inline';
-        } else {
-            moonIcon.style.display = 'inline';
-            sunIcon.style.display = 'none';
-        }
-    }
-
-    var moonIcon = document.getElementById('moon-icon');
-    var sunIcon = document.getElementById('sun-icon');
-    var body = document.body;
-    if (body.classList.contains("dark-mode")) {
-        moonIcon.style.display = 'none';
-        sunIcon.style.display = 'inline';
-    } else {
-        moonIcon.style.display = 'inline';
-        sunIcon.style.display = 'none';
-    }
-
-    var welcomeText = document.getElementById("welcome-text");
-    var text = "elcome.";
-    var index = 0;
-
-    function type() {
-        if (index < text.length) {
-            welcomeText.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(type, 120);
-        }
-    }
-
-    type();
-
-</script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>

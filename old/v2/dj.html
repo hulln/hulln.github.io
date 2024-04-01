@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitalno jezikoslovje | N. Hüll</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" href="scr/images/favicon.png">
+    <script>
+        function toggleAdditionalText() {
+            var additionalText = document.getElementById("additional-text");
+            var button = document.getElementById("show-more-btn");
+
+            if (additionalText.style.display === "none") {
+                additionalText.style.display = "block";
+                button.textContent = "Skrij";
+            } else {
+                additionalText.style.display = "none";
+                button.textContent = "Prikaži več";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<!-- Navbar/Menu -->
+<nav class="navbar navbar-expand-sm navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+             <img src="src/images/favicon.png" alt="Logo" class="logo-sm">
+        </a>
+        <div class="navbar-nav">
+            <button class="nav-button" onclick="navigateToHomepage()">Home</button>
+        </div>
+        <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+            <i class="fas fa-moon" id="moon-icon" style="display: none;"></i>
+            <i class="fas fa-sun" id="sun-icon" style="display: none;"></i>
+        </div>
+    </div>
+</nav>
+
+<!-- Vanta.js container -->
+<div id="vanta-container"></div>
+
+<!-- About DJ -->
+<div id="current-state" class="section container" style="padding-top: 100px;">
+    <h1 style="margin-bottom: 10px;">Študijski program Digitalno jezikoslovje</h1>
+        <p>Besedilo temelji na vtisih, pridobljenih po prvem letu izvajanja programa Digitalno jezikoslovje, ki je dostopen na <a href="https://digiling.university/digitalno-jezikoslovje/">spletni strani programa</a>. Vtisi so bili zbrani v anketi dne 13. 11. 2023 in dopolnjeni s splošnimi relevantnimi informacijami. To besedilo je javno dostopno z namenom zagotavljanja transparentnosti in celostnega prikaza informacij.</p>
+        <p>Za več informacij in morebitne direktne kontakte se lahko pridružite tudi <a href="https://discord.gg/qg53HW2FmP">neformalnemu Discord strežniku</a>, kjer je tudi povezava do formalnega strežnika.</p>
+
+        <h2>Kakovost in usklajenost predmetnika</h2>
+        <p>Sami predmeti znotraj predmetnika so zanimivi in načeloma primerni (čeprav je premalo izbirnosti), kar močno zmoti, je neustrezno povezovanje predmetov med seboj. Izvedba v praksi daje vtis, da predmetnik in organizacija nista bila dobro premišljena oz. funkcionirata predvsem na papirju, manj v realnosti, zlasti glede na dejstvo, da je program javnosti predstavljen kot »primeren za študente s kakršnokoli predhodno izobrazbo«. Večkrat nam je bilo eksplicitno zatrjeno, tako na informativnem dnevu kot na uvodnih sestankih, da naj bi se vsa manjkajoča znanja dalo nadoknaditi tekom prvega letnika študija in da so npr. nekomu s predhodno računalniško izobrazbo namenjeni bolj jezikoslovni, nekomu z jezikoslovno pa računalniški izbirni predmeti. A to v praksi ne drži, saj se kot izbirne predmete v prvem semestru ponuja veliko takih, ki vendarle zahtevajo kar nekaj predznanja (kar potrjujejo tudi izvajalci predmetov sami), v drugem pa se, čeprav bi se morda kdo želel odločiti zanje, ne izvajajo (oz. niso na izbiro med izbirnimi za 2. letnik).</p>
+		<p>Konkretno se to navezuje na predmete <a href="https://fri.uni-lj.si/sl/predmet/63214">Osnove umetne inteligence</a>, <a href="https://fri.uni-lj.si/sl/predmet/63741">Odločitveni sistemi</a>, <a href="https://fri.uni-lj.si/sl/predmet/63255">Spletno programiranje</a>, opisi katerih so, skupaj z zahtevami po predznanju, javno dostopni na spletni strani FRI. Tako predmeti v osnovi niso primerni za nekoga, ki bi se s področjem računalništva šele začel spoznavati, kar ni v skladu z našo predstavljeno idejo. Enako velja za obvezni predmet <a href="https://www.fri.uni-lj.si/sl/predmet/63555">Obdelava naravnega jezika</a>, ki je umeščen na <a href="https://fri.uni-lj.si/sl/studijski-program/racunalnistvo-informatika-1">drugostopenjski študij računalništva in informatike</a>. Statistika (<a href="http://psy.ff.uni-lj.si/Katedre/psimet/?m=10&s=3">Uvod v statistiko</a>), ki jo obiskujemo v prvem semestru (skupaj s programom Kognitivna znanost), še zdaleč ne zadostuje za resnično razumevanje vsebin pri omenjenem predmetu, saj se tam, po navedbah izvajalca, predpostavlja napredno znanje verjetnostne statistike (ki ga študenti RI VŠ dobijo v 2. semestru 1. letnika pri predmetu <a href="https://fri.uni-lj.si/sl/predmet/63710">Osnove verjetnosti in statistike</a>, študenti RI UNI pa v 1. semestru 2. letnika pri predmetu <a href="https://fri.uni-lj.si/sl/predmet/63213">Verjetnost in statistika</a>), linearne algebre, strojnega učenja ter programiranja (edino slednje do približno ustrezne mere pokrijemo pri predmetu <a href="https://www.fri.uni-lj.si/sl/predmet/63702">Programiranje 1</a>).</p>
+		<p>Opomba: Od vključno 2. generacije dalje (začenši z oktobrom 2023) se predmet Programiranje izvaja ločeno za FRI VŠ in DJ. Slednji obiskujejo predmet <a href="https://ucilnica.fri.uni-lj.si/course/view.php?id=802">Programiranje za neračunalnikarje</a>, na uradni spletni strani sicer naveden kot <a href="https://www.fri.uni-lj.si/sl/predmet/63702dj">Programiranje (DJ)</a>.</p>
+		<p>Količina izbirnih prevajalskih predmetov je v primerjavi z drugimi predmeti prevelika (<a href="https://digiling.university/wp-content/uploads/2023/05/predmetnik_DigiLing_2023-2024.pdf">predmetnik DJ</a>). Študent neprevajalec, ki v prvem letniku zaradi manjkajočega predznanja ni mogel izbrati predmetov na FRI, v drugem letniku nima veliko izbire. Poleg tega se, vsaj letos, precej predmetov s predmetnika niti ne izvaja (<a href="https://www.fdv.uni-lj.si/obvestila-in-informacije/predmeti/10718">Vizualizacija in eksplorativna analiza podatkov</a> (za obiskovanje je priporočeno predznanje iz predmetov 2. stopnje DI <a href="https://www.fdv.uni-lj.si/obvestila-in-informacije/predmeti/10608">Osnove podatkovne analitike</a> in <a href="https://www.fdv.uni-lj.si/obvestila-in-informacije/predmeti/10170">Statistično programiranje</a> ter iz predmeta <a href="https://www.fdv.uni-lj.si/obvestila-in-informacije/predmeti/6913">Multivariatna analiza</a> iz 1. stopnje DI), <a href="https://www.ff.uni-lj.si/izbirni-predmet/specialna-podrocja-prevajanja-terminologija">Luščenje in upravljanje terminologije</a>, <a href="https://www.ff.uni-lj.si/izbrana-poglavja-iz-psiholingvistike-nevrolingvistike">Izbrana poglavja iz nevrolingvistike in psiholingvistike</a> (priporočeno predhodno obiskovanje predmeta <a href="https://psj.ff.uni-lj.si/en/node/225166">Introduction to Psycholinguistics and Neurolinguistics</a>)), kar še dodatno zoži že tako ozek izbor za nekoga s povsem drugačno predhodno izobrazbo.</p>
+		<p>Tudi na FDV na študiju družboslovne informatike (<a href="https://www.fdv.uni-lj.si/docs/default-source/dodiplomski-studij-1-stopnje/predmeti/di-predmeti.pdf?sfvrsn=4">opis predmetov DI 1. stopnja</a>, <a href="https://www.fdv.uni-lj.si/docs/default-source/magistrski-studij-2-stopnje/predmeti/di---opis-predmetov.pdf?sfvrsn=6">opis predmetov DI 2. stopnja</a>) obstaja precej predmetov, ki bi bili za nekoga s humanistične, družboslovne ali jezikoslovne smeri bolj primerni kot predmeti na FRI. Velja premisliti o razširitvi košarice izbirnih predmetov, saj zdaj, žal, nabor predmetov v praksi ni tako širok, kot je bilo obljubljeno in ugotovljeno v <a href="https://www.nakvis.si/wp-content/uploads/Porocila/Univerza%20v%20Ljubljani/Filozofska%20fakulteta/Porocilo-1A-Digitalno-jezikoslovje-UL-FF-2021.pdf">Poročilu skupine strokovnjakov o akreditaciji študijskega programa Digitalno jezikoslovje</a> z dne 18. 10. 2021. Obenem je zelo težko kombinirati predmete, ki so vredni od 3 pa vse do 9 ECTS. Opozoriti velja tudi na nekonsistentnost oz. nedoslednost kreditnega vrednotenja pri prilagajanju vrednosti predmetov na matičnih programih in na Digitalnem jezikoslovju (predmet <a href="https://www.fdv.uni-lj.si/obvestila-in-informacije/predmeti/10650">IKT in družba</a>, FDV).</p>
+		<p>Omembe vredna je tudi odsotnost raziskovalne dejavnosti za študente oz. neseznanjenost z njo. Tovrsten študij bi moral zaradi svoje naravnanosti že v času študija študente vključiti v raziskovalne projekte (praksa je sicer dober korak k temu), pri tem pa bi se lahko zgledovali po programu <a href="https://www.pef.uni-lj.si/studij/kognitivna-znanost/">Kognitivna znanost</a>, kjer se študenti v prvem letniku seznanijo z raziskovalno dejavnostjo tako na domači kot tudi na partnerskih univerzah (obiski iz tujine), obenem pa imajo možnost svoje raziskovalne dosežke objaviti na mednarodni konferenci. Resda se pri predmetu <a href="https://filo.ff.uni-lj.si/uvod-v-raziskovanje">Uvod v raziskovanje</a> spoznamo s principi raziskovanja, gostimo tudi priznane raziskovalce; morda bi se predmet lahko razširilo z opcijskim sodelovanjem študentov pri dejanskem projektu (za kar bi dobili dodatne kreditne točke namesto kakšnega drugega izbirnega predmeta).</p>
+		<p>Nasploh je težava dejstvo, da nimamo svojih matičnih predmetov, temveč smo povsod priključeni zraven že obstoječim programom (RI, DI, prevajalstvo, KZ). (<a href="https://discord.com/channels/1154315633354354700/1154362741927182376/1196610677872275516">Navezave predmetov DJ na te na prevajalstvu</a>.) Problematičen pa je tudi pouk na štirih (matična fakulteta predmeta <a href="http://psy.ff.uni-lj.si/Katedre/psimet/?m=10&s=3">Uvod v statistiko</a> je Pedagoška fakulteta) različnih lokacijah; kljub navedbam iz poročila, da bodo »po simulaciji urnika študentje in študentke ob ponedeljkih poslušali predavanja in opravljali vaje na FDV, ob torkih in sredah na FRI, ob četrtkih pa na FF« (<a href="https://www.nakvis.si/wp-content/uploads/Porocila/Univerza%20v%20Ljubljani/Filozofska%20fakulteta/Porocilo-1A-Digitalno-jezikoslovje-UL-FF-2021.pdf">str. 15</a>), to ne drži. Prav tako ne uporabljamo prostorov Centra za jezikovne vire in tehnologije (prav tam).</p>
+    <h2>Kakovost in odnos profesorjev</h2>
+        <p>Odnos profesorjev je v splošnem korekten in profesionalen. Asistenti so prilagodljivi in skušajo pomagati v primeru težav. Močno opazna je razlika med pristopom do odprte znanosti in podatkov na različnih fakultetah (na FRI so gradiva v <a href="https://ucilnica.fri.uni-lj.si/">spletnih učilnicah</a> večinoma prosto dostopna, na FF je to izjema). Posebna pohvala gre tudi nekaterim izvajalcem (predvsem na FDV ter FRI), ki dovoljujejo obiskovanje predmetov (tudi vaj/seminarjev) izven predmetnika.</p>
+    <h2>Dostopnost do informacij o študiju in organizaciji študija</h2>
+        <p>Večina informacij sicer je dostopnih po direktnem kontaktu (koordinatorji programa, profesorji, tajništvo, referat), a tu gre za zaprte kanale, nedostopne javnosti. Dobro bi bilo razširiti in posodobiti rubriko <a href="https://digiling.university/#FAQ">FAQ</a> na spletni strani, v katero bi bila vključena vsa študentska vprašanja (organizacijska) iz preteklega leta; to bi zagotovo olajšalo iskanje informacij in razbremenilo fakultetno osebje v prihodnosti.</p>
+		<p>Predmeti na programu DJ imajo sicer drugačna imena kot na matičnih programih, zato jih je pogosto težko najti, to je težava zlasti na FF, kjer je tudi sicer težko najti specifične informacije na spletni strani.</p>
+		<p>Informacije o obvezni izmenjavi so skope. Spletna stran Digitalno jezikoslovje ne ponuja dovolj informativne vsebine (predmeti, pravilniki, urnik), temveč je le stičišče povezav na druge fakultete. To velja poenotiti za vse tri partnerske univerze, saj je izmenjava obvezna in zelo pomaga, če so relevantni podatki zbrani na enem mestu.</p>
+		<p>Manjkajo formalne informacije o zaključku študija (v <a href="https://www.ff.uni-lj.si/sites/default/files/documents/Pravilnik-o-zakljucku-studija-na-studijskih-programih-druge-stopnje_22.4.2020.pdf">12. členu Pravilnika o zaključku študija na študijskih programih druge stopnje FF</a> piše, da skupne programe ureja konzorcijski sporazum (str. 4); podatkov in informacij iz konzorcijskega sporazuma še po več kot letu in pol izvajanja programa ni moč najti nikjer oz. niso dostopni vsem vpisanim).</p>
+    <h2>Organizacija in izvedba študijske prakse</h2>
+        <p>Študijska praksa je zelo dobra ideja, koordinatorja prakse na fakulteti sta zelo prilagodljiva, kar se tiče sklepanja sporazumov, odprta za predloge študentov glede potencialnih novih delodajalcev. Moti edino to, da marsikje delo od doma še vedno ni enakovredno delu v pisarni, kar je lahko administrativna težava. Dobro bi bilo podatke o delodajalcih za opravljanje prakse vključiti na spletno stran programa, skupaj z nekaterimi filtri (možnost dela na daljavo, projektno delo ...), da se študenti lahko že sami vnaprej informirajo o različnih možnostih. Sicer pa je spletna učilnica o praksi pregledna, zbrane so vse pomembne informacije (edino preveč je prilagojena prevajalski praksi; morda je letos drugače).</p>
+    <h2>Splošno zadovoljstvo s študijem v študijskem letu 2022/23</h2>
+        <p>Zaradi vseh prej navedenih aspektov skupno zadovoljstvo s programom v preteklem letu ocenjujem na 2/5. Vsekakor velja pohvaliti prilagodljivost in razumevanje nekaterih profesorjev oz. zaposlenih, ki se resnično trudijo, da bi nam karseda olajšali študij. Pozitivna je tudi vzpostavitev formalnega Discord strežnika za komunikacijo, saj tako znanje in informacije lažje krožijo, tako na relaciji zaposleni – študentje (in obratno) kot tudi med samimi študenti. A ravno dostopnost in transparentnost (po možnosti javno dostopnih) informacij je to, kar bi zagotovo pripomoglo k višji splošni oceni programa. Poleg tega študijski program ne daje vtisa neke zaokrožene celote, kjer bi se znanja smiselno dopolnjevala in nadgrajevala (kar ne pomeni, da pri posameznih predmetih pridobljena znanja niso koristna ali uporabna). Glede na že vzpostavljene dobre prakse obstoječih (skupnih) interdisciplinarnih programov se mi zdi škoda, da se tega ne bi karseda izkoristilo in uporabilo tudi v tem primeru povsem novega programa.</p>
+</div>
+
+<div id="recommendations" class="section container">
+        <h2>Dodatni predlogi, vtisi in sugestije</h2>
+        <p>V navezavi na vse predhodno podane odgovore spodaj na kratko dodajam še konkretne predloge za izboljšavo programa.</p>
+        <div class="buttons-container">
+            <button id="show-more-btn" class="btn btn-primary" onclick="toggleAdditionalText()">Prikaži več</button>
+        </div>
+            <ul id="additional-text" style="display: none; padding-top: 10px;">
+                <li>Reorganizacija predmetnika, obvezni predmeti. Združenje tehničnih predmetov s prve stopnje RI in DI v nekaj predmetov, prilagojenih za DJ. Ti predmeti bi se izvajali v 1. semestru 1. letnika. V ta semester bi bilo smiselno umestiti tudi predmeta Uvod v raziskovanje ter IKT in družba (kombinacija obeh predmetov, saj se pri slednjem primarno učimo znanstvenega pisanja, kar je sicer zelo uporabno znanje). Prav tako bi moral biti obvezen predmet Uvod v jezikoslovje, saj po mojih izkušnjah na vseh jezikoslovnih programih ne pridobimo teh znanj, vsaj ne dovolj specifičnih.</li>
+                <li>Reorganizacija predmetnika, notranji izbirni oz. predmetnospecifični predmeti. Redukcija količine prevajalskih predmetov oz. povečanje nabora predmetov s FDV ter FRI (z obeh stopenj).</li>
+                <li>Vključitev predmetov s področja informacijske varnosti. Na FRI imajo zanimive <a href="https://fri.uni-lj.si/sl/informacijska-varnost">interdisciplinarne predmete</a> s področja informacijske varnosti, pravnih vidikov obdelave podatkov itd., kar je pomembno pri kakršnemkoli delu s podatki, tudi jezikovnimi.</li>
+                <li>Uskladitev oz. reorganizacija kreditnega vrednotenja predmetov.</li>
+                <li>Uvedba minimalnih pogojev za vpis, najbolje s sprejemnim/izbirnim izpitom iz vnaprej definirane dejanske snovi, kot ga prakticirajo nekateri drugi (interdisciplinarni) študijski programi (<a href="https://fri.uni-lj.si/sl/studijski-program/kognitivna-znanost">Kognitivna znanost (MAG)</a>, <a href="https://www.fri.uni-lj.si/sl/studijski-program/multimedija-0">Multimedija (MAG)</a>, <a href="https://fri.uni-lj.si/sl/studijski-program/racunalnistvo-informatika-1">Računalništvo in informatika (MAG)</a>, <a href="https://fri.uni-lj.si/sl/studijski-program/podatkovne-vede">Podatkovne vede (MAG)</a>), ki bi bil v primeru, ko število prijav ne bi preseglo števila razpisanih mest, vsaj dobra povratna informacija za kandidate. Vsebine oz. minimalne standarde pa bi se definiralo hkrati z objavljenim razpisom za vpis, kot je to praksa pri prej omenjenih programih, da se kandidati že samo na podlagi tega lahko ustrezno odločijo oz. pripravijo.</li>
+                <li>Prenova spletne strani z vsemi relevantnimi podatki o predmetih (povezave na predmete na matičnih oddelkih; zdaj imajo nekateri predmeti drugačna imena, čeprav gre za iste predmete, zato jih je težko najti), izmenjavi itd. Sem spada tudi ažuriranje spletne strani, še vedno namreč ni objavljen <a href="https://digiling.university/urnik-2022-2023/">lanskoletni urnik</a>.</li>
+                <li>Ureditev sistema študentskih anket tudi za predmete, ki se ne izvajajo na FF. Zdaj namreč ne moremo ocenjevati predmetov s FDV in FRI. Pogrešam tudi personaliziran urnik po vzoru FDV ali FRI (personaliziran urnik je še toliko bolj pomemben v primeru interdisciplinarnih programov).</li>
+                <li>Smiselno bi bilo program najprej akreditirati na prvi stopnji, šele nato ga razširiti na drugo, saj dve leti za dejansko usvojitev znanj s tako kompleksnega področja nista dovolj.</li>
+            </ul>
+
+</div>
+
+<!-- FAQ -->
+<div id="faq" class="section container">
+    <h2>Ostalo/Vprašanja in odgovori</h2>
+    <p>Ostalo, kar ni več del anketnih odgovorov in/ali je relevantno šele po oktobru 2023. Bo sproti dopolnjeno. Spodaj je zaenkrat zbranih nekaj odgovorov na vprašanja, ki se lahko porajajo študentom pred morebitnim vpisom.</p>
+    
+    <div class="question">
+        <h4>Ali se izbirni izpit izvede v vsakem primeru, tudi če ni omejitve vpisa?<button class="btn-plus" onclick="toggleAnswer(1)">+</button></h4>
+        <p id="answer1" style="display: none;">Ne. Izvede se izključno ob omejitvi vpisa; v prvih dveh letih izvajanja programa se še ni. Omejitev vpisa: 10 mest. Minimalno število vpisanih, da se program izvaja: 5.</p>
+    </div>
+    <div class="question">
+        <h4>Ali moram imeti točno 30 ECTS na semester?<button class="btn-plus" onclick="toggleAnswer(2)">+</button></h4>
+        <p id="answer2" style="display: none;">Ne. Vsota kreditnih točk znotraj letnika mora znašati (najmanj) 60; kako jih razporediš med semestroma, ni pomembno. Seveda se to nanaša zgolj na izbirne predmete, pri čemer je treba upoštevati zahtevo po vsoti ECTS za posamezno kategorijo (predmetnospecifični, zunanji izbirni).</p>
+    </div>
+    <div class="question">
+        <h4>Kaj lahko izberem kot zunanji izbirni predmet?<button class="btn-plus" onclick="toggleAnswer(3)">+</button></h4>
+        <p id="answer3" style="display: none;">Karkoli, kar je navedeno na <a href="https://www.uni-lj.si/studij/zip/">spletni strani UL</a>. Pred izbiro je treba kontaktirati izvajalca predmeta ali referat fakultete, kjer se predmet izvaja, pa tudi referat oz. tajništvo matične fakultete, v tem primeru FF. Tudi na FRI si lahko po kontaktu z referatom izbereš zunanje izbirne predmete. Za izbiro zunanjih izbirnih predmetov na FF in FDV ne potrebuješ posebnih soglasij. FF navadno objavi seznam možnih zunanjih izbirnih predmetov pred začetkom študijskega leta.</p>
+    </div>
+    <div class="question">
+        <h4>Do kdaj lahko izberem in zamenjam izbirne predmete?<button class="btn-plus" onclick="toggleAnswer(4)">+</button></h4>
+        <p id="answer4" style="display: none;">Izbirne predmete lahko v skladu s <a href="https://www.ff.uni-lj.si/sites/default/files/documents/Merila-za-resevanje-studentskih-prosenj-na-studiju-prve-in-druge-stopnje_21.4.2021.pdf">33. členom Meril za reševanje študentskih prošenj na študiju prve in druge stopnje FF</a> menjaš v roku 15 dni od začetka semestra.</p>
+    </div>
+    <div class="question">
+        <h4>Kakšni so pogoji za ponavljanje letnika?<button class="btn-plus" onclick="toggleAnswer(5)">+</button></h4>
+        <p id="answer5" style="display: none;">Na drugi stopnji lahko ponavljaš le prvi letnik (zaključnega letnika se ne da ponavljati). Pogoji za ponavljanje letnika za posamezne programe FF so navedeni <a href="https://www.ff.uni-lj.si/studij/magistrski-studij-2-stopnja/vpis-napredovanje-2-stopnja">tukaj</a> pod kategorijo Ponovni vpis v isti letnik. Za študijsko leto 2023/24 za ponavljanje prvega letnika ni bilo treba izpolnjevati nobenih pogojev.</p>
+    </div>
+    <div class="question">
+        <h4>Če ponavljam prvi letnik, ali lahko predhodno opravljam predmete za drugega? Katere lahko izberem?<button class="btn-plus" onclick="toggleAnswer(6)">+</button></h4>
+        <p id="answer6" style="display: none;">Da. V primeru ponovnega vpisa v 1. letnik je v skladu z <a href="https://www.ff.uni-lj.si/sites/default/files/documents/Pravilnik-o-izpitnem-redu-1-in-2-stopnja_23.11.2022.pdf">8. členom Pravilnika o izpitnem redu FF</a> priporočljivo vložiti prošnjo za predhodno opravljanje predmeta. Izbiraš lahko predmete iz 2. letnika, torej načeloma tudi te iz 3. semestra.</p>
+    </div>
+    <div class="question">
+        <h4>Ali se mi delno opravljene študijske obveznosti prenesejo v naslednje leto?<button class="btn-plus" onclick="toggleAnswer(7)">+</button></h4>
+        <p id="answer7" style="display: none;">To je odvisno od posamezne fakultete in predmeta. Na FRI se delno opravljene obveznosti *načeloma* ne prenesejo v naslednje študijsko leto in moraš, če si npr. lansko leto opravil samo vaje, letos znova delati celoten predmet. Na FDV se delno opravljene obveznosti <em>načeloma</em> priznavajo tudi naslednje leto. V vsakem primeru je glede tega najbolje kontaktirati izvajalce predmeta in prositi za možnost prenosa. Letos se tako lani opravljene delne obveznosti (projektno delo pri predmetu ONJ na FRI) letos priznajo, kljub zgoraj navedenemu podatku.</p>
+    </div>
+    <div class="question">
+        <h4>Izmenjava je za ta program obvezna. Ali moram kljub temu oddati motivacijsko pismo?<button class="btn-plus" onclick="toggleAnswer(8)">+</button></h4>
+        <p id="answer8" style="display: none;">Ne, motivacijskega pisma ni treba oddati v taki obliki, kot je zahtevano pri običajni prijavi na študijsko mobilnost. Zadostuje pdf dokument s pojasnilom, da se na izmenjavo prijavljaš v okviru tega programa in da je izmenjava obvezna.</p>
+    </div>
+    <div class="question">
+        <h4>Kako je z dokazilom o znanju tujega (predvidoma angleškega) jezika za potrebe izmenjave?<button class="btn-plus" onclick="toggleAnswer(9)">+</button></h4>
+        <p id="answer9" style="display: none;">Partnerski univerzi ne zahtevata uradnega potrdila o znanju angleščine, zato ni treba prilagati nobenih certifikatov. Zadostuje, da profesor, pri katerem obiskuješ predmet v angleščini, napiše neuradno potrdilo (seveda v angleščini), da si obiskoval predmet in opravljal študijske obveznosti v angleščini.</p>
+    </div>
+    <div class="question">
+        <h4>Obstajajo kakšna gradiva in zapiski za predmete?<button class="btn-plus" onclick="toggleAnswer(10)">+</button></h4>
+        <p id="answer10" style="display: none;">Za zapiske, gradiva in ostale morebitne uporabne reference se pridruži <a href="https://discord.gg/qg53HW2FmP">Discord strežniku</a>; zapiski so v <a href="https://discord.com/channels/1154315633354354700/1154358102796292157">tem kanalu</a>. Nekateri predmeti imajo tudi prosto dostopne spletne učilnice. Za nadaljnje usmeritve (npr. vabila v ostale Discord strežnike, kjer so kanali z več gradivi) me lahko kadarkoli kontaktiraš (Discord: <a href="discordapp.com/users/540862159018786841">@kocelj</a>).</p>
+    </div>
+    <div class="question">
+        <h4>Kdaj je objavljen urnik?<button class="btn-plus" onclick="toggleAnswer(11)">+</button></h4>
+        <p id="answer11" style="display: none;">Javno objavljenega urnika za program ni, prav tako na fakultetnih straneh ni celotnega urnika za ta program.
+            Povezave do urnikov:
+            <a href="https://digiling.university/urnik-2022-2023/">Urnik 2022/2023 na uradni spletni strani DigiLing</a>,
+            <a href="https://discord.com/channels/1154315633354354700/1154315634281304158/1158372966405525584">Urnik 2023/2024 v Discord kanalu</a>,
+            <a href="https://wise-tt.com/wtt_ul_fdv/index.jsp">Urnik za predmete na FDV</a>,
+            <a href="https://urnik.fri.uni-lj.si/timetable">Urnik za FRI – izberi ustrezni semester</a>,
+            <a href="https://urnik.ff.uni-lj.si/">Urnik za FF</a>.
+        </p>
+    </div>
+    <div class="question">
+        <h4>Moja matična fakulteta je FF UL. Ali lahko volim in sem izvoljen na drugih dveh fakultetah?<button class="btn-plus" onclick="toggleAnswer(12)">+</button></h4>
+        <p id="answer12" style="display: none;">Mišljene so seveda študentske funkcije, npr. članstvo v študentskem svetu, akademskem zboru itd. Zaenkrat še nimam uradnega odgovora na to vprašanje; bo objavljeno, ko bo znano.</p>
+    </div>
+    <div class="question">
+        <h4>Kdo so koordinatorji drugostopenjskega študija po fakultetah?<button class="btn-plus" onclick="toggleAnswer(13)">+</button></h4>
+        <p id="answer13" style="display: none;">Koordinatorji po fakultetah: <a href="https://www.ff.uni-lj.si/zaposleni/spela-vintar">prof. dr. Špela Vintar</a> (FF), <a href="https://www.fri.uni-lj.si/sl/o-fakulteti/osebje/marko-robnik-sikonja">prof. dr. Marko Robnik Šikonja</a> (FRI), <a href="https://www.fdv.uni-lj.si/obvestila-in-informacije/imenik-sodelavcev/pedagogi/kartica/gregor-petric/">prof. dr. Gregor Petrič</a> (FDV).</p>
+    </div>
+    
+    <div class="question">
+        <h4>Ali obstaja doktorski študij digitalnega jezikoslovja?<button class="btn-plus" onclick="toggleAnswer(14)">+</button></h4>
+        <p id="answer14" style="display: none;">Da. Gre pa za študijski program v okviru humanistike in družboslovja, ki ga skupaj koordinirata FDV in FF (<a href="https://www.ff.uni-lj.si/sites/default/files/documents/Predstavitveni_zbornik_slo_2023-24_1.pdf">vir</a>); FRI ni zraven. Na FDV je študij sicer umeščen na Katedro za novinarstvo. Več o študiju <a href="https://www.fdv.uni-lj.si/studij/studij-na-fdv/doktorski-studij-3-stopnje/studijski-programi/digitalno-jezikoslovje-3-stopnja">tu</a>.</p>
+    </div>
+    <div class="question">
+        <h4>V katerem jeziku se izvajajo predmeti na UL?<button class="btn-plus" onclick="toggleAnswer(15)">+</button></h4>
+        <p id="answer15" style="display: none;">Jezik izvedbe predmetov na fakultetah UL je slovenščina ali angleščina. V angleščini se izvajajo vsi predmeti na magistrskem programu Družboslovna informatika (<a href="https://www.fdv.uni-lj.si/studij/studij-na-fdv/magistrski-studij-2-stopnje/studijski-programi/druzboslovna-informatika-2-stopnja-novo/predmetniki/druzboslovna-informatika-23-2-dvoletni">vir</a>) in nekateri predmeti na magistrskem študiju Računalništvo in informatika, npr. <a href="https://www.fri.uni-lj.si/sl/predmet/63555">Obdelava naravnega jezika</a>. Tudi obvezni predmet <a href="https://www.ff.uni-lj.si/upravljanje-jezikovnih-virov">Upravljanje jezikovnih virov</a> je v angleščini, prav tako se izbirni predmet <a href="https://www.ff.uni-lj.si/izbirni-predmet/kvalitativno-psiholosko-raziskovanje-1">Kvalitativno psihološko raziskovanje</a> v letu 2023/24 ne izvaja v slovenščini, temveč samo v angleščini (v zimskem semestru).</p>
+    </div>
+</div>
+
+<!-- Contact Form -->
+<section class="contact py-5 fade-in container" id="contact-form">
+    <div class="container">
+        <div class="col-lg-6 col-12">
+            <div class="contact-form">
+                <h2 class="mb-4">Vprašanje?</h2>
+                <p>Premišljuješ o vpisu in ne najdeš vseh odgovorov na svoja vprašanja? Z veseljem poskusim odgovoriti, če le poznam odgovor. Dobrodošla seveda tudi kakršnakoli druga vprašanja, predlogi, pripombe. </p>
+                <form method="post" action="https://formspree.io/f/xgegnwaa">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <input type="text" class="form-control" name="name" placeholder="Ime" id="name">
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <input type="email" class="form-control" name="email" placeholder="Email" id="email">
+                        </div>
+                        <div class="col-12">
+                            <textarea name="message" rows="6" class="form-control" id="message" placeholder="Sporočilo"></textarea>
+                        </div>
+                        <div class="ml-lg-auto col-lg-5 col-12 mt-2">
+                            <input type="submit" class="form-control submit-btn" value="Pošlji">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+		<div class="social-icons">
+            <a href="https://github.com/hulln" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+			<a href="https://www.linkedin.com/in/hulln/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+			<a href="https://www.facebook.com/huelln/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+			<a href="https://www.instagram.com/neisv/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+			<a href="https://discord.com/channels/@kocelj" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
+        </div>
+        <p class="copyright-text text-center">
+            &copy; N. Hüll <script>document.write(new Date().getFullYear())</script>. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script>
+    VANTA.NET({
+        el: "#vanta-container", // Target the Vanta.js container
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xffffff,
+        backgroundColor: 0x8e8e8e,
+        
+    });
+
+    // JavaScript for fading in sections
+    document.addEventListener('DOMContentLoaded', function() {
+        var sections = document.querySelectorAll('.fade-in');
+        var windowHeight = window.innerHeight;
+
+        function fadeInSections() {
+            sections.forEach(function(section) {
+                var bounding = section.getBoundingClientRect();
+                if (bounding.top >= 0 && bounding.top <= windowHeight) {
+                    section.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('scroll', fadeInSections);
+        window.addEventListener('resize', function() {
+            windowHeight = window.innerHeight;
+            fadeInSections();
+        });
+
+        fadeInSections();
+    });
+</script>
+
+<script src="src/assets/script.js"></script>
+<script>
+    var lastScrollTop = 0;
+    window.addEventListener("scroll", function() {
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScrollTop) {
+            document.querySelector('.navbar').style.top = "-70px";
+        } else {
+            document.querySelector('.navbar').style.top = "0";
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    }, false);
+
+    function toggleDarkMode() {
+        var body = document.body;
+        body.classList.toggle("dark-mode");
+        var moonIcon = document.getElementById('moon-icon');
+        var sunIcon = document.getElementById('sun-icon');
+        if (body.classList.contains("dark-mode")) {
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline';
+        } else {
+            moonIcon.style.display = 'inline';
+            sunIcon.style.display = 'none';
+        }
+    }
+
+    var moonIcon = document.getElementById('moon-icon');
+    var sunIcon = document.getElementById('sun-icon');
+    var body = document.body;
+    if (body.classList.contains("dark-mode")) {
+        moonIcon.style.display = 'none';
+        sunIcon.style.display = 'inline';
+    } else {
+        moonIcon.style.display = 'inline';
+        sunIcon.style.display = 'none';
+    }
+
+    var welcomeText = document.getElementById("welcome-text");
+    var text = "andom";
+    var index = 0;
+
+    function type() {
+        if (index < text.length) {
+            welcomeText.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 120);
+        }
+    }
+
+    type();
+</script>
+
+<script>
+    document.getElementById('show-more-btn').addEventListener('click', function() {
+        var additionalText = document.getElementById('additional-text');
+        if (additionalText.style.display === 'none') {
+            additionalText.style.display = 'block';
+            document.getElementById('show-more-btn').textContent = 'Skrij';
+        } else {
+            additionalText.style.display = 'none';
+            document.getElementById('show-more-btn').textContent = 'Prikaži več';
+        }
+    });
+</script>
+
+<script>
+    function toggleAnswer(questionNumber) {
+        var answer = document.getElementById('answer' + questionNumber);
+        if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+        } else {
+            answer.style.display = 'none';
+        }
+    }
+</script>
+
+<script>
+    const button = document.getElementById('show-more-btn');
+    const content = document.querySelector('.buttons-container + ul');
+
+    button.addEventListener('click', function() {
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+            button.textContent = 'Skrij';
+        } else {
+            content.style.display = 'none';
+            button.textContent = 'Prikaži več';
+        }
+    });
+</script>
+
+</body>
+</html>
