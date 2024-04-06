@@ -1,27 +1,53 @@
 # hulln.github.io
 
 ## Overview
-This is my personal/portfolio website, currently in its early development stages. While it's still basic and lacks substantial content, this project serves as a platform for me to delve into CSS, JS, and website structuring. As I continue to learn, I'll be updating and improving the website's functionality and design.
+Welcome to my personal/portfolio website! This site is currently in its early development stages, serving as a platform for me to explore CSS, JS, and website structuring. Although it's basic and lacks substantial content for now, I'll continuously update and enhance its functionality and design as I learn more.
 
 ## Table of Contents
 1. [Overview](#overview)
-2. [Repository Structure](#repository-structure)
-3. [License](#license)
-4. [Credits](#credits)
+2. [Getting Started](#getting-started)
+   - [Cloning the Repository](#cloning-the-repository)
+   - [Viewing the Site Locally](#viewing-the-site-locally)
+   - [Deploying the Site](#deploying-the-site)
+     - [Using GitHub Pages](#using-github-pages)
+3. [Repository Structure](#repository-structure)
+4. [License](#license)
+5. [Credits](#credits)
+
+## Getting Started
+### Cloning the Repository
+To clone this repository, run the following command:
+
+```bash
+git clone https://github.com/hulln/hulln.github.io.git
+```
+
+Before making any changes, make sure to remove my personal details and replace them with your own.
+
+### Viewing the Site Locally
+You can view the site locally by opening the `index.html` file in your web browser. To make changes to the website, you can use any text editor or Integrated Development Environment (IDE) such as Visual Studio Code.
+
+### Deploying the Site
+#### Using GitHub Pages
+GitHub Pages is a convenient way to host your website directly from your GitHub repository. To deploy your site using GitHub Pages, follow these steps:
+1. Ensure your repository has a branch named `gh-pages`.
+2. Commit your changes to the `gh-pages` branch.
+3. Navigate to your repository's settings on GitHub.
+4. Scroll down to the "GitHub Pages" section.
+5. Choose the `gh-pages` branch as the source.
+6. Click "Save" or "Publish" to deploy your site.
+
+If not done earlier, remember to replace my personal details with yours before deploying.
 
 ## Repository Structure
-
-Within the `src` folder, you'll find the following:
-- `assets`: CSS, JS, SASS, and other assets,
-- `images`: images,
-- `other`: other source files.
-
-The folder `old` preserves the previous website design, inspired by the Hyperspace theme by [HTML5 UP](https://html5up.net). Additionally, the `orig` folder contains the original code for this previous website, including a sample for a general page. The original [README.txt](orig/README.txt) file is also included.
+- `assets`: Contains CSS, JavaScript, image, and other important files.
+- `old`: Archive of previous versions of the website.
+  - `v1`: Initial version made after applying the HTML5 template.
+  - `v2`: Attempt to make a website from scratch with the help of ChatGPT.
+- Other HTML files: Main HTML files for the website.
 
 ## License
-
-At present, this website is not covered by any specific license. When applicable, further details will be provided in the [LICENSE.md](LICENSE.md) file upon upload.
+This project is licensed under the [BootstrapMade Free Template License](https://bootstrapmade.com/license/). See the [LICENSE.md](LICENSE.md) file for details, included in this repository.
 
 ## Credits
-
-The current version of the website was created by me, with invaluable assistance from [ChatGPT](https://chat.openai.com/).
+The template used was created by [Bootstrapmade](https://bootstrapmade.com/).
