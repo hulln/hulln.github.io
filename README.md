@@ -41,9 +41,6 @@ If not done earlier, remember to replace my personal details with yours before d
 
 ## Repository Structure
 - `assets`: Contains CSS, JavaScript, image, and other important files.
-- `old`: Archive of previous versions of the website.
-  - `v1`: Initial version made after applying the HTML5 template.
-  - `v2`: Attempt to make a website from scratch with the help of ChatGPT.
 - Other HTML files: Main HTML files for the website.
 
 ## License
