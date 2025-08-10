@@ -2,10 +2,8 @@
 
 
 ## Overview
-This is my personal/portfolio website, vibecoded with the help of ChatGPT.  
-It’s a minimalist playground for experimenting with HTML, CSS, and JavaScript while showcasing my work, studies, and random thoughts.
-
-The site has no restrictions — everything here is public domain (see [License](#license)).
+This is my personal/portfolio website, 3rd version (or higher; I've stopped counting).
+It's a minimalist, content-focused site with no fancy visual effects or elaborate design.
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -47,10 +45,7 @@ If not done earlier, remember to replace my personal details with yours before d
 - Other HTML files: Main HTML files for the website.
 
 ## License
-All content and code in this repository are dedicated to the public domain under the [CC0 1.0 Universal License](LICENSE.md).
-
-You can copy, modify, distribute, and use this work, even for commercial purposes, without asking permission.  
-For details, see the [full legal text](https://creativecommons.org/publicdomain/zero/1.0/).
+All content and code in this repository are dedicated to the public domain under the [CC0 1.0 Universal License](LICENSE.md). You can copy, modify, distribute, and use this work, even for commercial purposes, without asking permission. For details, see the [full legal text](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ## Credits
 The website was created using HTML, CSS, Javascript and vibecoded with the help of ChatGPT.
