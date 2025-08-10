@@ -174,36 +174,3 @@ details summary::after {
   font-size: 0.8em;
   color: var(--muted);
 }
-
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--bg);
-  color: var(--fg);
-  border-top: 1px solid var(--border);
-  padding: 0.75em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 0.9em;
-  z-index: 9999;
-}
-.cookie-banner p {
-  margin: 0 0 0.5em 0;
-}
-.cookie-banner button {
-  background: var(--link);
-  color: #fff;
-  border: none;
-  padding: 0.3em 0.8em;
-  font-family: inherit;
-  cursor: pointer;
-  border-radius: 2px;
-}
-.cookie-banner button:hover {
-  opacity: 0.9;
-}
