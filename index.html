@@ -174,6 +174,24 @@
       --border: #333;
       --accent: #1a1a1a;
     }
+    details summary {
+      cursor: pointer;
+      padding: 0.3em 0;
+      list-style: none;
+    }
+    details summary h2 {
+      display: inline;
+    }
+    details[open] summary::after {
+      content: " \25B2";
+      font-size: 0.8em;
+      color: var(--muted);
+    }
+    details summary::after {
+      content: " \25BC";
+      font-size: 0.8em;
+      color: var(--muted);
+    }
   </style>
 </head>
 <body>
@@ -181,63 +199,74 @@
   <h1>N. Hüll <span class="cursor">_</span></h1>
   <p class="intro" id="animated-intro"></p>
 
-  <h2>About</h2>
-  <p>Some time ago, I enrolled at university without really knowing what I wanted to study — just that I definitely didn’t want anything that even remotely smelled like math or physics. I finished my undergraduate degree with honors and still had no clear idea, apart from knowing what I didn’t want.</p>
-  <p>Somehow, I ended up in this weird mix of a Master’s program that combines linguistics, programming, data and who-knows-what-else. It’s kind of everything and kind of nothing at the same time. I’m trying to find my bearings in this strange world and just going with the flow.</p>
-  <p><em>This isn’t meant to be a formal website — if you're looking for that, check out my CV or visit me on <a href="https://www.linkedin.com/in/hulln/" target="_blank" rel="noopener">LinkedIn</a>.</em></p>
-  <p><a href="assets/other/nh_cv_en.pdf" download>→ View my CV (PDF)</a></p>
+  <!-- Collapsible content inserted here -->
 
-  <h2>Experience</h2>
+  <div id="main-content">
 
-  <h3><strong>Research Assistant</strong> – <strong>University of Ljubljana</strong> (2023–2025)</h3>
-  <p>I wouldn’t necessarily call this a “research assistant” position, but it’s the most serious (and definitely my favorite) student job I’ve had. It combined enough different tasks to keep things interesting — from annotation to analysis to writing — so I never got bored. It was also flexible, dynamic and remote, which I really appreciated. I like working from home.</p>
-  <p>I kind of ended up in it by accident — after spending quite a bit of time getting to know Universal Dependencies and all their delightful relations (some of which started showing up in my dreams), I moved on to analyzing word order across languages and modalities.</p>
-  <p>Together with my co-supervisor (and honestly one of the best collaborators I’ve worked with), we wrote a paper on the topic that’s being presented at this year’s <em>SyntaxFest</em>. My first real academic milestone — hopefully not the last.</p>
+  <details open>
+    <summary><h2>About</h2></summary>
+    <p>Some time ago, I enrolled at university without really knowing what I wanted to study — just that I definitely didn't want anything that even remotely smelled like math or physics. I finished my undergraduate degree with honors and still had no clear idea, apart from knowing what I didn't want.</p>
+    <p>Somehow, I ended up in this weird mix of a Master's programme that combines linguistics, programming, data and who-knows-what-else. It's kind of everything and kind of nothing at the same time. I'm trying to find my bearings in this strange world and just going with the flow.</p>
+    <p><em>This isn't meant to be a formal website — if you're looking for that, check out my CV or visit me on <a href="https://www.linkedin.com/in/hulln/" target="_blank" rel="noopener">LinkedIn</a>.</em></p>
+    <p><a href="assets/other/nh_cv_en.pdf" download>→ View my CV (PDF)</a></p>
+  </details>
 
-  <h3><strong>Data Annotation</strong> – <strong>Various Projects</strong> (2022–2025)</h3>
-  <p>Data annotation is something I kind of got stuck in – it sounds fancy, but often just means a lot of clicking. Still, when the task is interesting, it can actually be quite enjoyable. I wouldn’t say my experience was boring – probably because I usually knew when to leave before it became too much.</p>
-  <p>Mainly, I worked for the <strong>Faculty of Arts</strong>, the <strong>Centre for Language Resources and Technologies</strong>, the <strong>Jožef Stefan Institute</strong> and the <strong>Institute for Contemporary History</strong>. It all started with the rephrasing task for the SI-NLI dataset, which was my first real annotation experience. Since then, I’ve worked on all kinds of projects: annotating Universal Dependencies, identifying multiword expressions in Slovenian texts, tagging persuasion techniques in parliamentary speeches and analyzing conceptual metaphors in social media posts. I probably forgot something too.</p>
-  <p>One of the tasks was for the <strong>Online Notes</strong> project (<strong>Faculty for Computer and Information Science</strong>), where I annotated and corrected voice recordings using a web-based tool. I really liked the idea of the project – it's a shame it didn’t continue.</p>
-  <p>My last annotation-related job was at <strong>PredictLeads</strong>. It was nearly full-time, the team was nice and the atmosphere was great – but the task itself (manual data quality assurance) got a bit too repetitive in the long run. I think I’ve had my share of annotation for now.</p>
-  <p>I mostly worked with <strong>Q-CAT</strong> and <strong>WebAnno/Inception</strong>. I also tested <strong>SketchEngine</strong>, but wasn’t really a fan. Along the way, I also got to know <strong>Google Workspace</strong> surprisingly well — especially <strong>Google Sheets</strong>, which turned out to be far more powerful than I expected, from custom formulas to automated emails.</p>
-  
-  <h2>Other Student Jobs</h2>
-  <p>Although I never thought I’d like statistics — in fact, I was trying to avoid it — I ended up working as a programming assistant at the <strong>Faculty of Social Sciences</strong> for a few months. I developed basic statistics assignments in R for an open-access textbook and helped build educational resources for students and researchers. A short, but nice job.</p>
-  <p>Before my transition to the digital linguistics field, I worked in the postproduction team at <strong>Pro Plus</strong>, where I transcribed reality shows and eventually managed a team of transcriptionists. Yes, it’s all done manually — and yes, sometimes it was a bit overwhelming. But you hear some wild things. Also, there’s a certain superiority in knowing who wins <em>MasterChef</em> before it even airs.</p>
-  <p>I collaborated with <strong>Nik Škrlec</strong> on various administrative and creative tasks. Among other things, I even sat with him learning Pi decimals for the 2025 recitation competition. He really did recite all 10,000 — I was there, I swear. While working with him, I learned a lot about (and from) him! One thing I’m especially proud of is creating the Slovene-themed online quiz <a href="https://www.nikskrlec.com/kviznik/" target="_blank" rel="noopener"><strong>Kviznik</strong></a> (January edition: Slovnica). A few questions even went viral — not bad for language-themed content.</p>
-  <p>I also delivered for <strong>Wolt</strong> by bike around Ljubljana. Surprisingly, it was one of the best student jobs I’ve had — great exercise, full flexibility and I now have a weirdly specific mental map of the city. Every now and then I’ll roam past a place that looks familiar and realize it’s from a sushi drop-off years ago.</p>
+  <details>
+    <summary><h2>Work Experience</h2></summary>
+    <h3><strong>Research Assistant</strong> – <strong>University of Ljubljana</strong> (2023–2025)</h3>
+    <p>I wouldn't necessarily call this a "research assistant" position, but it's the most serious (and definitely my favourite) student job I've had. It combined enough different tasks to keep things interesting — from annotation to analysis to writing — so I never got bored. It was also flexible, dynamic and remote, which I really appreciated. I like working from home.</p>
+    <p>I kind of ended up in it by accident — after spending quite a bit of time getting to know Universal Dependencies and all their delightful relations (some of which started showing up in my dreams), I moved on to analysing word order across languages and modalities.</p>
+    <p>Together with my co-supervisor (and honestly one of the best collaborators I've worked with), we wrote a paper on the topic that's being presented at this year's <em>SyntaxFest</em>. My first real academic milestone — hopefully not the last.</p>
 
-  <h2>Student Advocacy</h2>
-  <p>I’ve been part of the <strong>student organization</strong> at my faculty department for several years, where I got to explore the joys (and occasional chaos) of student politics and university committees. I was also a member of the <strong>Commission for Quality Control</strong> and the <strong>Administrative Board</strong> at the <strong>Faculty of Arts</strong>.</p>
-  <p>Now that I’m officially a student at three different faculties, I somehow managed to get into the <strong>Student Council</strong> at the <strong>Faculty of Computer and Information Science</strong> too. I try to actively contribute to improving the study process – I’m part of the <strong>Commission for Quality Control and Self-Evaluation</strong> there as well.</p>
-  <p>Besides that, I’m always happy to share information with fellow students, especially those who are just figuring things out. Some of that info wasn’t easy to get, so I believe in passing it on. These experiences taught me that you never know when you’ll need help yourself – and that everything should be double-checked. So I always try to track down the most reliable sources.</p>
-  <p>If you’re a student in my program (or even if you’re not) and have any questions, feel free to write me. I’m not an official tutor and no one pays me for it, but I really believe in transparency and student solidarity. That’s reason enough.</p>
-  <p>This year I also joined the <strong>Youth Council</strong> of the <strong>EU Strategy for the Alpine Region</strong> (<strong>EUSALP</strong>), where I’m planning to focus on accessibility, inclusivity and mobility – especially in relation to digitalization. Yes, it’s a bunch of buzzwords, but I do hope we’ll get something meaningful done. If you have ideas, feedback, or questions, you’re welcome to reach out for that too.</p>
+    <h3><strong>Data Annotation</strong> – <strong>Various Projects</strong> (2022–2025)</h3>
+    <p>Data annotation is something I kind of got stuck in – it sounds fancy, but often just means a lot of clicking. Still, when the task is interesting, it can actually be quite enjoyable. I wouldn't say my experience was boring – probably because I usually knew when to leave before it became too much.</p>
+    <p>Mainly, I worked for the <strong>Faculty of Arts</strong>, the <strong>Centre for Language Resources and Technologies</strong>, the <strong>Jožef Stefan Institute</strong> and the <strong>Institute for Contemporary History</strong>. It all started with the rephrasing task for the SI-NLI dataset, which was my first real annotation experience. Since then, I've worked on all kinds of projects: annotating Universal Dependencies, identifying multiword expressions in Slovenian texts, tagging persuasion techniques in parliamentary speeches and analysing conceptual metaphors in social media posts. I probably forgot something too.</p>
+    <p>One of the tasks was for the <strong>Online Notes</strong> project (<strong>Faculty for Computer and Information Science</strong>), where I annotated and corrected voice recordings using a web-based tool. I really liked the idea of the project – it's a shame it didn't continue.</p>
+    <p>My last annotation-related job was at <strong>PredictLeads</strong>. It was nearly full-time, the team was nice and the atmosphere was great – but the task itself (manual data quality assurance) got a bit too repetitive in the long run. I think I've had my share of annotation for now.</p>
+    <p>I mostly worked with <strong>Q-CAT</strong> and <strong>WebAnno/Inception</strong>. I also tested <strong>SketchEngine</strong>, but wasn't really a fan. Along the way, I also got to know <strong>Google Workspace</strong> surprisingly well — especially <strong>Google Sheets</strong>, which turned out to be far more powerful than I expected, from custom formulas to automated emails.</p>
 
-  <h2>Now</h2>
-  <p><strong>What is this thing?</strong><br>
-  The “now” page is a type of subpage, similar to “about” or “contact,” that you’ll often find on personal websites. It’s meant to provide up-to-date info about what the person behind the site is currently doing — work, interests, projects, lifestyle changes, and whatever else feels relevant. Unlike quick social media updates, it offers a broader overview of what’s going on (<a href="https://nownownow.com/about" target="_blank" rel="noopener">source and idea</a>).</p>
-  <p><strong>So what’s on my “now” page?</strong><br>
-  I really like the idea of this kind of page, but honestly, there’s not much exciting or noteworthy happening right now. I’m mostly just trying to find the motivation and willpower to finish my Master’s thesis. Instead of writing it, I’m updating this website. So you can see how well that’s going. ☹</p>
+    <h3><strong></strong>Other Student Jobs</strong></h3>
+    <p>Although I never thought I'd like statistics — in fact, I was trying to avoid it — I ended up working as a programming assistant at the <strong>Faculty of Social Sciences</strong> for a few months. I developed basic statistics assignments in R for an open-access textbook and helped build educational resources for students and researchers. A short, but nice job.</p>
+    <p>Before my transition to the digital linguistics field, I worked in the postproduction team at <strong>Pro Plus</strong>, where I transcribed reality shows and eventually managed a team of transcriptionists. Yes, it's all done manually — and yes, sometimes it was a bit overwhelming. But you hear some wild things. Also, there's a certain superiority in knowing who wins <em>MasterChef</em> before it even airs.</p>
+    <p>I collaborated with <strong>Nik Škrlec</strong> on various administrative and creative tasks. Among other things, I even sat with him learning Pi decimals for the 2025 recitation competition. He really did recite all 10,000 — I was there, I swear. While working with him, I learned a lot about (and from) him! One thing I'm especially proud of is creating the Slovene-themed online quiz <a href="https://www.nikskrlec.com/kviznik/" target="_blank" rel="noopener"><strong>Kviznik</strong></a> (January edition: Slovnica). A few questions even went viral — not bad for language-themed content.</p>
+    <p>I also delivered for <strong>Wolt</strong> by bike around Ljubljana. Surprisingly, it was one of the best student jobs I've had — great exercise, full flexibility and I now have a weirdly specific mental map of the city. Every now and then I'll roam past a place that looks familiar and realize it's from a sushi drop-off years ago.</p>
+  </details>
 
-<h2>Skills</h2>
+  <details>
+    <summary><h2>Student Advocacy</h2></summary>
+    <p>I've been part of the <strong>student organisation</strong> at my faculty department for several years, where I got to explore the joys (and occasional chaos) of student politics and university committees. I was also a member of the <strong>Commission for Quality Control</strong> and the <strong>Administrative Board</strong> at the <strong>Faculty of Arts</strong>.</p>
+    <p>Now that I'm officially a student at three different faculties, I somehow managed to get into the <strong>Student Council</strong> at the <strong>Faculty of Computer and Information Science</strong> too. I try to actively contribute to improving the study process – I'm part of the <strong>Commission for Quality Control and Self-Evaluation</strong> there as well.</p>
+    <p>Besides that, I'm always happy to share information with fellow students, especially those who are just figuring things out. Some of that info wasn't easy to get, so I believe in passing it on. These experiences taught me that you never know when you'll need help yourself – and that everything should be double-checked. So I always try to track down the most reliable sources.</p>
+    <p>If you're a student in my programme (or even if you're not) and have any questions, feel free to write me. I'm not an official tutor and no one pays me for it, but I really believe in transparency and student solidarity. That's reason enough.</p>
+    <p>This year I also joined the <strong>Youth Council</strong> of the <strong>EU Strategy for the Alpine Region</strong> (<strong>EUSALP</strong>), where I'm planning to focus on accessibility, inclusivity and mobility – especially in relation to digitalization. Yes, it's a bunch of buzzwords, but I do hope we'll get something meaningful done. If you have ideas, feedback or questions, you're welcome to reach out for that too.</p>
+  </details>
 
-<p>I don’t really like listing skills out of context — “knowing Python” can mean a lot of things and I’d rather not pretend to be an expert in something I’ve only used twice. That said, here are some tools and areas I’ve worked with enough to feel comfortable mentioning:</p>
+  <details>
+    <summary><h2>Now</h2></summary>
+    <p><strong>What is this thing?</strong><br>
+    The "now" page is a type of subpage, similar to "about" or "contact," that you'll often find on personal websites. It's meant to provide up-to-date info about what the person behind the site is currently doing — work, interests, projects, lifestyle changes and whatever else feels relevant. Unlike quick social media updates, it offers a broader overview of what's going on (<a href="https://nownownow.com/about" target="_blank" rel="noopener">source and idea</a>).</p>
+    <p><strong>So what's on my "now" page?</strong><br>
+    I really like the idea of this kind of page, but honestly, there's not much exciting or noteworthy happening right now. I'm mostly just trying to find the motivation and willpower to finish my Master's thesis. Instead of writing it, I'm updating this website. So you can see how well that's going. ☹</p>
+  </details>
 
-<p><strong>Languages</strong><br>
-Slovenian • English • German • Croatian</p>
-<strong>Programming & Data Analysis</strong><br>
-Python • R • SQL <span style="color: var(--muted)">(basic)</span> • Jupyter Notebook<br><br>
-<strong>Corpus & Annotation Tools</strong><br>
-Universal Dependencies • WebAnno / INCEpTION • Q-CAT • Sketch Engine<br><br>
-<strong>Markup & Web</strong><br>
-LaTeX • Markdown • HTML/CSS <span style="color: var(--muted)">(basic)</span><br><br>
-<strong>Productivity & Workflow</strong><br>
-Google Workspace • Microsoft Office • Git</p>
+  <details>
+    <summary><h2>Skills</h2></summary>
+    <p>I don't really like listing skills out of context — "knowing Python" can mean a lot of things and I'd rather not pretend to be an expert in something I've only used twice. That said, here are some tools and areas I've worked with enough to feel comfortable mentioning:</p>
+    <p><strong>Languages</strong><br>
+    Slovenian • English • German • Croatian</p>
+    <p><strong>Programming & Data Analysis</strong><br>
+    Python • R • SQL <span style="color: var(--muted)">(basic)</span> • Jupyter Notebook</p>
+    <p><strong>Corpus & Annotation Tools</strong><br>
+    Universal Dependencies • WebAnno / INCEpTION • Q-CAT • Sketch Engine</p>
+    <p><strong>Markup & Web</strong><br>
+    LaTeX • Markdown • HTML/CSS <span style="color: var(--muted)">(basic)</span></p>
+    <p><strong>Productivity & Workflow</strong><br>
+    Google Workspace • Microsoft Office • Git</p>
+  </details>
 
-
-  <h2>Random Links</h2>
-  <p>Here are some links to tools, resources and other things I’ve found useful, interesting, or just fun. Some relate to my work or studies, others don’t — I just like sharing things that might be helpful or worth exploring.</p>
+  <details>
+  <summary><h2>Random Links</h2></summary>
+  <p>Here are some links to tools, resources and other things I've found useful, interesting or just fun. Some relate to my work or studies, others don't — I just like sharing things that might be helpful or worth exploring.</p>
   <ul>
     <li>
       <a href="https://spot.ff.uni-lj.si/" target="_blank" rel="noopener">SPOT</a><br>
@@ -252,11 +281,13 @@ Google Workspace • Microsoft Office • Git</p>
       <small>A short, always-open survey by the FRI Student Council for collecting feedback on Digital Linguistics courses. Responses welcome anytime.</small>
     </li>
   </ul>
+  </details>
+
+</div>
 
   <h2>Contact</h2>
-  <p>If you have any questions, suggestions, or just want to say hi, feel free to use the contact form below. I’m always happy to hear from fellow students, researchers, or anyone really.</p>
-  <p>I hope the contact form works – last time I checked, it did. You can also reach me via one of the listed email addresses. They’re technically meant for different purposes, but it doesn’t really matter – they all get redirected to the same inbox anyway.</p>
-
+  <p>If you have any questions, suggestions or just want to say hi, feel free to use the contact form below. I'm always happy to hear from fellow students, researchers or anyone really.</p>
+  <p>I hope the contact form works – last time I checked, it did. You can also reach me via one of the listed email addresses. They're technically meant for different purposes, but it doesn't really matter – they all get redirected to the same inbox anyway.</p>
   <form id="contact-form" method="post" action="https://formspree.io/f/xgegnwaa" aria-label="Contact form">
     <label for="name">Name:</label>
     <input id="name" name="name" required autocomplete="name" aria-required="true">
@@ -274,14 +305,21 @@ Google Workspace • Microsoft Office • Git</p>
   </form>
 
   <ul>
-    <li><a href="mailto:nh23084@student.uni-lj.si?subject=Hello N. Hüll&body=Hi, I saw your website...">nh23084@student.uni-lj.si</a><button class="copy-btn" data-copy="nh23084@student.uni-lj.si">[copy]</button></li>
-    <li><a href="mailto:nives.hull@svet.fri.uni-lj.si?subject=Hello N. Hüll&body=Hi, I saw your website...">nives.hull@svet.fri.uni-lj.si</a><button class="copy-btn" data-copy="nives.hull@svet.fri.uni-lj.si">[copy]</button></li>
-    <li><a href="mailto:nhull@eusalp-youth.eu?subject=Hello N. Hüll&body=Hi, I saw your website...">nhull@eusalp-youth.eu</a><button class="copy-btn" data-copy="nhull@eusalp-youth.eu">[copy]</button></li>
+    <li><a href="mailto:nh23084@student.uni-lj.si">nh23084@student.uni-lj.si</a><button class="copy-btn" data-copy="nh23084@student.uni-lj.si">[copy]</button></li>
+    <li><a href="mailto:nives.hull@svet.fri.uni-lj.si">nives.hull@svet.fri.uni-lj.si</a><button class="copy-btn" data-copy="nives.hull@svet.fri.uni-lj.si">[copy]</button></li>
+    <li><a href="mailto:nhull@eusalp-youth.eu">nhull@eusalp-youth.eu</a><button class="copy-btn" data-copy="nhull@eusalp-youth.eu">[copy]</button></li>
   </ul>
 
   <hr>
   <footer>
-    <small>© <span id="year"></span> N. Hüll • <a href="https://www.linkedin.com/in/hulln/" target="_blank" rel="noopener">LinkedIn</a> • <a href="https://github.com/hulln" target="_blank" rel="noopener">GitHub</a> • <a href="https://huggingface.co/nhull" target="_blank" rel="noopener">Hugging Face</a> • Last updated: <span id="last-updated"></span></small>
+    <div style="text-align: center; margin-bottom: 0.5em;">
+      <a href="https://www.linkedin.com/in/hulln/" target="_blank" rel="noopener">LinkedIn</a> • 
+      <a href="https://github.com/hulln" target="_blank" rel="noopener">GitHub</a> • 
+      <a href="https://huggingface.co/nhull" target="_blank" rel="noopener">Hugging Face</a>
+    </div>
+    <div style="text-align: center;">
+      <small>© <span id="year"></span> N. Hüll • Made with coffee and ChatGPT • Last updated: <span id="last-updated"></span></small>
+    </div>
   </footer>
 
   <script>
