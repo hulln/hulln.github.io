@@ -84,3 +84,35 @@ form.addEventListener('submit', async (e) => {
     }, 5000);
   }
 });
+
+// Cookie banner logic with GA consent
+const banner = document.getElementById('cookie-banner');
+const acceptBtn = document.getElementById('accept-cookies');
+const GA_ID = 'G-8N2VQFREJ0';
+
+function loadGA() {
+  // Load the Google Analytics script dynamically
+  const gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(gaScript);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+}
+
+// Check stored consent
+if (localStorage.getItem('cookiesAccepted') === 'true') {
+  loadGA();
+} else {
+  banner.style.display = 'flex';
+}
+
+acceptBtn.addEventListener('click', () => {
+  localStorage.setItem('cookiesAccepted', 'true');
+  banner.style.display = 'none';
+  loadGA();
+});
