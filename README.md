@@ -1,7 +1,11 @@
 # hulln.github.io
 
+
 ## Overview
-Welcome to my personal/portfolio website! This site is currently in its early development stages, serving as a platform for me to explore CSS, JS, and website structuring. Although it's basic and lacks substantial content for now, I'll continuously update and enhance its functionality and design as I learn more.
+This is my personal/portfolio website, vibecoded with the help of ChatGPT.  
+It’s a minimalist playground for experimenting with HTML, CSS, and JavaScript while showcasing my work, studies, and random thoughts.
+
+The site has no restrictions — everything here is public domain (see [License](#license)).
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -9,7 +13,6 @@ Welcome to my personal/portfolio website! This site is currently in its early de
    - [Cloning the Repository](#cloning-the-repository)
    - [Viewing the Site Locally](#viewing-the-site-locally)
    - [Deploying the Site](#deploying-the-site)
-     - [Using GitHub Pages](#using-github-pages)
 3. [Repository Structure](#repository-structure)
 4. [License](#license)
 5. [Credits](#credits)
@@ -40,11 +43,14 @@ GitHub Pages is a convenient way to host your website directly from your GitHub 
 If not done earlier, remember to replace my personal details with yours before deploying.
 
 ## Repository Structure
-- `assets`: Contains CSS, JavaScript, image, and other important files.
+- `assets`: Contains CSS, JavaScript, image and other important files.
 - Other HTML files: Main HTML files for the website.
 
 ## License
-This project is licensed under the [BootstrapMade Free Template License](https://bootstrapmade.com/license/). See the [LICENSE.md](LICENSE.md) file for details, included in this repository.
+All content and code in this repository are dedicated to the public domain under the [CC0 1.0 Universal License](LICENSE.md).
+
+You can copy, modify, distribute, and use this work, even for commercial purposes, without asking permission.  
+For details, see the [full legal text](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ## Credits
-The template used was created by [Bootstrapmade](https://bootstrapmade.com/).
+The website was created using HTML, CSS, Javascript and vibecoded with the help of ChatGPT.

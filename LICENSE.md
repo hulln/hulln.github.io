@@ -1,9 +1,11 @@
 # License
 
-## BootstrapMade Free Template License
+## CC0 1.0 Universal (Public Domain Dedication)
 
-All templates listed at [BootstrapMade.com](https://bootstrapmade.com/) are available for free download. You can use the free versions in your personal or commercial projects as long as you comply with our license. We also offer paid/pro versions with more options and features. It is also a good option to test, check the code, and find out which template will work best for you. You can upgrade to the pro version later without losing your customization. 
+To the extent possible under law, N. Hüll has waived all copyright and related or neighboring rights to this work.
 
-**Please, find out the detailed comparison of licenses in the below table.**
+This work is published from: Slovenia.
 
-For more information, visit [BootstrapMade License Comparison](https://bootstrapmade.com/license/).
+You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
+
+For more information, see <https://creativecommons.org/publicdomain/zero/1.0/>.
