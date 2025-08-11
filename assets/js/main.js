@@ -42,9 +42,10 @@ function typeIntro() {
 typeIntro();
 
 document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('last-updated').textContent = new Date().toLocaleDateString('en-GB', {
-  day: 'numeric', month: 'short', year: 'numeric'
-});
+document.getElementById('last-updated').textContent =
+  new Date(document.lastModified).toLocaleDateString('en-GB', {
+    day: 'numeric', month: 'short', year: 'numeric'
+  });
 
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('status');
