@@ -1,16 +1,18 @@
 const root = document.documentElement;
+
 const btn = document.getElementById('theme-toggle');
 const savedTheme = localStorage.getItem('theme');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 let isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
 
 function updateTheme() {
+  const isSl = document.documentElement.lang === 'sl';
   if (isDark) {
     root.classList.add('dark');
-    btn.textContent = '[ LIGHT ]';
+    btn.textContent = isSl ? '[ SVETLO ]' : '[ LIGHT ]';
   } else {
     root.classList.remove('dark');
-    btn.textContent = '[ DARK ]';
+    btn.textContent = isSl ? '[ TEMNO ]' : '[ DARK ]';
   }
 }
 updateTheme();
@@ -39,6 +41,22 @@ function typeIntro() {
     setTimeout(typeIntro, 35);
   }
 }
+
+// Expandable link descriptions in Random Links section
+document.querySelectorAll('.desc-toggle').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const descId = btn.getAttribute('aria-controls');
+    const desc = document.getElementById(descId);
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+    if (expanded) {
+      desc.setAttribute('hidden', '');
+    } else {
+      desc.removeAttribute('hidden');
+    }
+    btn.textContent = expanded ? '[+]' : '[-]';
+  });
+});
 typeIntro();
 
 document.getElementById('year').textContent = new Date().getFullYear();
