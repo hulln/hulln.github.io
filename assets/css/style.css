@@ -1,6 +1,6 @@
 /* Language toggle styled like theme toggle */
 .lang-toggle {
-  text-decoration: none;
+  text-decoration: none !important;
   display: inline-block;
 }
 /* Expandable link descriptions */
