@@ -65,6 +65,14 @@ document.getElementById('last-updated').textContent =
     day: 'numeric', month: 'short', year: 'numeric'
   });
 
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('last-updated').textContent =
+    new Date(document.lastModified).toLocaleDateString('en-GB', {
+      day: 'numeric', month: 'short', year: 'numeric'
+    });
+});
+
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('status');
 const submitBtn = document.getElementById('submit-btn');
