@@ -1,9 +1,10 @@
-# hulln.github.io
-
+# nhull.eu (hulln.github.io)
 
 ## Overview
 This is my personal/portfolio website, 3rd version (or higher; I've stopped counting).
 It's a minimalist, content-focused site with no fancy visual effects or elaborate design.
+
+The site is hosted on GitHub Pages but uses a custom domain: https://nhull.eu
 
 ## Table of Contents
 1. [Overview](#overview)
