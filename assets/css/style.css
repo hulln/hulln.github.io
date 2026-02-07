@@ -67,7 +67,7 @@
   --accent: #f0f0f0;
 }
 body {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Lexend', system-ui, -apple-system, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--fg);
   max-width: 700px;
@@ -92,6 +92,9 @@ a:focus {
   outline-offset: 2px;
   border-radius: 2px;
 }
+strong, b {
+  font-weight: 600;
+}
 hr {
   margin: 2em 0;
   border: none;
@@ -115,7 +118,7 @@ hr {
 h1 {
   font-size: 2em;
   margin: 0.5em 0;
-  font-weight: bold;
+  font-weight: 600;
   clear: both;
 }
 .cursor {
@@ -134,7 +137,7 @@ h1 {
 h2 {
   font-size: 1.2em;
   margin: 1.5em 0 0.5em 0;
-  font-weight: bold;
+  font-weight: 600;
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.2em;
 }
