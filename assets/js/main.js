@@ -43,21 +43,67 @@ function typeIntro() {
 }
 
 // Expandable link descriptions in Random Links section
-document.querySelectorAll('.desc-toggle').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const descId = btn.getAttribute('aria-controls');
-    const desc = document.getElementById(descId);
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', !expanded);
-    if (expanded) {
-      desc.setAttribute('hidden', '');
-    } else {
-      desc.removeAttribute('hidden');
-    }
-    btn.textContent = expanded ? '[+]' : '[-]';
-  });
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.desc-toggle');
+  if (!btn) return;
+  const descId = btn.getAttribute('aria-controls');
+  const desc = document.getElementById(descId);
+  if (!desc) return;
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', String(!expanded));
+  if (expanded) {
+    desc.setAttribute('hidden', '');
+  } else {
+    desc.removeAttribute('hidden');
+  }
+  btn.textContent = expanded ? '[+]' : '[-]';
 });
+
+async function loadRandomLinks() {
+  const list = document.getElementById('random-links-list');
+  if (!list) return;
+  try {
+    let links = [];
+    if (Array.isArray(window.randomLinks)) {
+      links = window.randomLinks;
+    } else {
+      const res = await fetch('assets/data/random-links.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error('Failed to load random links');
+      links = await res.json();
+    }
+    list.innerHTML = '';
+    links.forEach((link, index) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = link.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = link.title;
+
+      const btn = document.createElement('button');
+      const descId = `desc-link-${index}`;
+      btn.className = 'desc-toggle';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-controls', descId);
+      btn.textContent = '[+]';
+
+      const desc = document.createElement('div');
+      desc.className = 'link-desc';
+      desc.id = descId;
+      desc.hidden = true;
+      desc.textContent = link.desc || '';
+
+      li.appendChild(a);
+      li.appendChild(btn);
+      li.appendChild(desc);
+      list.appendChild(li);
+    });
+  } catch (err) {
+    list.innerHTML = '<li>Links failed to load. Please refresh.</li>';
+  }
+}
 typeIntro();
+loadRandomLinks();
 
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('last-updated').textContent =
