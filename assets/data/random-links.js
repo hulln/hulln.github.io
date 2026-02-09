@@ -22,30 +22,45 @@ window.randomLinks = [
   {
     title: "brezavta.si: Public Transport Mobility Map",
     url: "https://brezavta.si/",
-    desc: "A comprehensive mobility map for Slovenia by Društvo za elektronsko in računalniško pismenost. Combines public transport schedules, bike-sharing systems, car-sharing services, and train information in one app."
+    desc: "A comprehensive mobility map for Slovenia. Combines public transport schedules, bike-sharing systems, car-sharing services, and train information in one app."
   },
   {
-    title: "Slomet - Bus Arrivals and Public Transport in Slovenia",
+    title: "Slomet: Bus Arrivals and Public Transport in Slovenia",
     url: "https://slo-promet.web.app/",
     desc: "A useful app showing real-time data for Slovenian public transport. Not an official government app."
   },
   {
-    title: "Bluesky Viewer - Show Posts Without Reposts and Likes",
-    url: "https://bluesky-viewer.vercel.app/",
-    desc: "Lets you explore public posts, likes, followers, and other info from any Bluesky account. Data comes from public Bluesky APIs and PDS (Personal Data Server) endpoints. Inspired by other great tools."
+    title: "Bluesky Followers Tracker and Manager",
+    url: "https://blueskytracker.app/",
+    desc: "A Bluesky analytics tool for tracking follower growth and helping manage follows and unfollows."
   },
   {
-    title: "Nobook - Ad-Free Facebook Lite (Android)",
+    title: "Monochrome: Minimal Music Streaming App",
+    url: "https://monochrome.samidy.com/",
+    desc: "A minimalist music streaming app focused on a clean interface and simple listening. Not affiliated with TIDAL."
+  },
+  {
+    title: "Metrolist: YouTube Music Client",
+    url: "https://metrolist.meowery.eu/",
+    desc: "A lightweight, open-source YouTube Music client. Not affiliated with YouTube."
+  },
+  {
+    title: "GlimpSky: Bluesky Profile Viewer",
+    url: "https://glimpsky.oblachek.eu/",
+    desc: "View posts and likes from any Bluesky profile. No login required."
+  },
+  {
+    title: "Nobook: Ad-Free Facebook Lite",
     url: "https://github.com/ycngmn/Nobook",
     desc: "A lightweight Android app to browse Facebook with sponsored ads and suggested posts blocked. It can also download media."
   },
   {
-    title: "MyInsta - Instagram Mod With Downloads and No Ads (Android)",
+    title: "MyInsta: Instagram Mod With Downloads and No Ads",
     url: "https://myinsta.app/",
-    desc: "An Android InstaMod that adds media downloads (Reels, videos, photos) and ad-blocking, with clone and replace variants. Unofficial and not affiliated with Instagram."
+    desc: "An Android InstaMod that adds media downloads and ad-blocking, with clone and replace variants. Unofficial and not affiliated with Instagram."
   },
   {
-    title: "Lexend - Accessible Reading Font",
+    title: "Lexend: Accessible Reading Font",
     url: "https://www.lexend.com/",
     desc: "A reading-focused font with adjustable settings for different readers. Used on this site."
   }

@@ -30,12 +30,27 @@
     "desc": "A useful app showing real-time data for Slovenian public transport. Not an official government app."
   },
   {
-    "title": "Bluesky Viewer - Show Posts Without Reposts and Likes",
-    "url": "https://bluesky-viewer.vercel.app/",
-    "desc": "Lets you explore public posts, likes, followers, and other info from any Bluesky account. Data comes from public Bluesky APIs and PDS (Personal Data Server) endpoints. Inspired by other great tools."
+    "title": "Bluesky Tracker - Followers Tracker and Manager",
+    "url": "https://blueskytracker.app/",
+    "desc": "A Bluesky analytics tool for tracking follower growth and helping manage follows and unfollows."
   },
   {
-    "title": "Nobook - Ad-Free Facebook Lite for Android",
+    "title": "Monochrome - Minimal Music Streaming App",
+    "url": "https://monochrome.samidy.com/",
+    "desc": "A minimalist music streaming app focused on a clean interface and simple listening."
+  },
+  {
+    "title": "Metrolist - Third-Party Web App",
+    "url": "https://metrolist.meowery.eu/",
+    "desc": "A third-party web app hosted on meowery.eu."
+  },
+  {
+    "title": "Glimpsky - Third-Party Web App",
+    "url": "https://glimpsky.oblachek.eu/",
+    "desc": "A third-party web app hosted on oblachek.eu."
+  },
+  {
+    "title": "Nobook - Ad-Free Facebook Lite (Android)",
     "url": "https://github.com/ycngmn/Nobook",
     "desc": "A lightweight Android app to browse Facebook with sponsored ads and suggested posts blocked. It can also download media."
   },
@@ -43,5 +58,10 @@
     "title": "MyInsta - Instagram Mod With Downloads and No Ads (Android)",
     "url": "https://myinsta.app/",
     "desc": "An Android InstaMod that adds media downloads (Reels, videos, photos) and ad-blocking, with clone and replace variants. Unofficial and not affiliated with Instagram."
+  },
+  {
+    "title": "Lexend - Accessible Reading Font",
+    "url": "https://www.lexend.com/",
+    "desc": "A reading-focused font with adjustable settings for different readers. Used on this site."
   }
 ]
