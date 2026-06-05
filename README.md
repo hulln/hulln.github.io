@@ -1,52 +1,68 @@
-# nhull.eu (hulln.github.io)
+# nhull.eu
 
-## Overview
-This is my personal/portfolio website, 3rd version (or higher; I've stopped counting).
-It's a minimalist, content-focused site with no fancy visual effects or elaborate design.
+My personal site: clean, minimal, with a bit of character. No build step and no
+framework: just HTML, CSS, and a little vanilla JavaScript. Every page shares one
+stylesheet and one masthead, so they all look the same.
 
-The site is hosted on GitHub Pages but uses a custom domain: https://nhull.eu
+Hosted on GitHub Pages (`hulln.github.io`) behind the custom domain
+[nhull.eu](https://nhull.eu).
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Getting Started](#getting-started)
-   - [Cloning the Repository](#cloning-the-repository)
-   - [Viewing the Site Locally](#viewing-the-site-locally)
-   - [Deploying the Site](#deploying-the-site)
-3. [Repository Structure](#repository-structure)
-4. [License](#license)
-5. [Credits](#credits)
+## Structure
 
-## Getting Started
-### Cloning the Repository
-To clone this repository, run the following command:
-
-```bash
-git clone https://github.com/hulln/hulln.github.io.git
+```
+index.html              Home (About, Work, Advocacy, Now, Skills)
+blog/index.html         Blog: lists posts from nhull.pckt.blog
+links/index.html        Random Links
+contact/index.html      Contact form + email
+privacy.html            Privacy notice
+sl/index.html           Slovenian page (placeholder for now)
+robots.txt              Crawler rules (site is intentionally not indexed)
+CNAME                   Custom domain for GitHub Pages
+assets/
+  css/style.css         All styles (design tokens + components)
+  js/main.js            Theme toggle, copy buttons, contact form, list rendering
+  data/random-links.js  "Random Links" content (window.randomLinks)
+  data/blog.js          Blog posts (window.blogPosts), auto-generated, don't edit
+  img/                  Favicons
+  other/                CV (PDF)
+scripts/sync_blog.py    Fetches the blog RSS feed → assets/data/blog.js
+.github/workflows/      sync-blog.yml runs the script on a daily schedule
 ```
 
-Before making any changes, make sure to remove my personal details and replace them with your own.
+Data is loaded as plain `<script>` globals (not `fetch`), so the site works the
+same whether opened from a local file (`file://`) or served over HTTP. All asset
+and page links are relative for the same reason.
 
-### Viewing the Site Locally
-You can view the site locally by opening the `index.html` file in your web browser. To make changes to the website, you can use any text editor or Integrated Development Environment (IDE) such as Visual Studio Code.
+## Editing
 
-### Deploying the Site
-#### Using GitHub Pages
-GitHub Pages is a convenient way to host your website directly from your GitHub repository. To deploy your site using GitHub Pages, follow these steps:
-1. Ensure your repository has a branch named `gh-pages`.
-2. Commit your changes to the `gh-pages` branch.
-3. Navigate to your repository's settings on GitHub.
-4. Scroll down to the "GitHub Pages" section.
-5. Choose the `gh-pages` branch as the source.
-6. Click "Save" or "Publish" to deploy your site.
+Open any `index.html` in a browser. There's nothing to compile. To change the
+**Random Links**, edit `assets/data/random-links.js`. The **blog list** updates
+itself (see below), so `assets/data/blog.js` should not be edited by hand.
 
-If not done earlier, remember to replace my personal details with yours before deploying.
+## Blog auto-sync
 
-## Repository Structure
-- `assets`: Contains CSS, JavaScript, image and other important files.
-- Other HTML files: Main HTML files for the website.
+The blog RSS feed (`https://nhull.pckt.blog/feed`) has no CORS headers, so the
+browser can't read it directly. Instead, a GitHub Action
+(`.github/workflows/sync-blog.yml`) runs `scripts/sync_blog.py` daily, which
+fetches the feed and rewrites `assets/data/blog.js`, committing only if it
+changed. New posts appear on `/blog` within a day, with no manual step.
+
+> **One-time setup:** in GitHub → Settings → Actions → General → *Workflow
+> permissions*, enable **Read and write permissions** so the Action can push.
+
+## Deploying
+
+Push to `main`. GitHub Pages serves the site automatically.
+
+## Notable bits
+
+- **Theme**: light/dark toggle, remembers the choice in `localStorage` and
+  falls back to the OS preference.
+- **Language**: an `SL` toggle links to the Slovenian page (work in progress).
+- **Contact form**: posts to [Formspree](https://formspree.io/) with a simple
+  honeypot field for spam.
 
 ## License
-All content and code in this repository are dedicated to the public domain under the [CC0 1.0 Universal License](LICENSE.md). You can copy, modify, distribute, and use this work, even for commercial purposes, without asking permission. For details, see the [full legal text](https://creativecommons.org/publicdomain/zero/1.0/).
 
-## Credits
-The website was created using HTML, CSS, Javascript and vibecoded with the help of ChatGPT.
+All content and code are dedicated to the public domain under
+[CC0 1.0 Universal](LICENSE.md).

@@ -1,51 +1,76 @@
 const root = document.documentElement;
 
 const btn = document.getElementById('theme-toggle');
-const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-let isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+const themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+function getSavedTheme() {
+  try {
+    const saved = localStorage.getItem('theme');
+    return saved === 'light' || saved === 'dark' ? saved : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function saveTheme(theme) {
+  try {
+    localStorage.setItem('theme', theme);
+  } catch (e) {}
+}
+
+function getPreferredTheme() {
+  return themeQuery.matches ? 'dark' : 'light';
+}
+
+let selectedTheme = getSavedTheme();
+let activeTheme = selectedTheme || getPreferredTheme();
+
+const themeIcons = {
+  light: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="theme-icon-stroke" d="M12 2.5v2M12 19.5v2M4.6 4.6l1.45 1.45M17.95 17.95l1.45 1.45M2.5 12h2M19.5 12h2M4.6 19.4l1.45-1.45M17.95 6.05l1.45-1.45"/><circle class="theme-icon-fill" cx="12" cy="12" r="4.25"/></svg>',
+  dark: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="theme-icon-fill" d="M19.35 15.05A7.85 7.85 0 0 1 8.95 4.65a.95.95 0 0 0-1.1-1.5A9.75 9.75 0 1 0 20.85 16.15a.95.95 0 0 0-1.5-1.1Z"/></svg>'
+};
 
 function updateTheme() {
   const isSl = document.documentElement.lang === 'sl';
-  if (isDark) {
-    root.classList.add('dark');
-    btn.textContent = isSl ? '[ SVETLO ]' : '[ LIGHT ]';
-  } else {
-    root.classList.remove('dark');
-    btn.textContent = isSl ? '[ TEMNO ]' : '[ DARK ]';
-  }
+  const isDark = activeTheme === 'dark';
+  root.classList.toggle('dark', isDark);
+  if (!btn) return;
+  btn.innerHTML = isDark ? themeIcons.light : themeIcons.dark;
+  btn.title = isDark ? (isSl ? 'Preklopi na svetlo temo' : 'Switch to light theme') : (isSl ? 'Preklopi na temno temo' : 'Switch to dark theme');
+  btn.setAttribute('aria-label', btn.title);
 }
 updateTheme();
 
-btn.addEventListener('click', () => {
-  isDark = !isDark;
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+if (btn) {
+  btn.addEventListener('click', () => {
+    activeTheme = activeTheme === 'dark' ? 'light' : 'dark';
+    selectedTheme = activeTheme;
+    saveTheme(selectedTheme);
+    updateTheme();
+  });
+}
+
+function syncSystemTheme() {
+  if (selectedTheme) return;
+  activeTheme = getPreferredTheme();
   updateTheme();
-});
+}
+
+if (themeQuery.addEventListener) {
+  themeQuery.addEventListener('change', syncSystemTheme);
+} else {
+  themeQuery.addListener(syncSystemTheme);
+}
 
 document.querySelectorAll('.copy-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     navigator.clipboard.writeText(btn.dataset.copy);
-    btn.textContent = '[copied!]';
-    setTimeout(() => btn.textContent = '[copy]', 2000);
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
   });
 });
 
-const introText = "Digital linguistics student at the University of Ljubljana.";
-const introEl = document.getElementById('animated-intro');
-let i = 0;
-function typeIntro() {
-  if (i < introText.length) {
-    introEl.textContent += introText.charAt(i);
-    i++;
-    setTimeout(typeIntro, 35);
-  }
-}
-
-// Expandable link descriptions in Random Links section
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.desc-toggle');
-  if (!btn) return;
+function toggleLinkDescription(btn) {
   const descId = btn.getAttribute('aria-controls');
   const desc = document.getElementById(descId);
   if (!desc) return;
@@ -56,23 +81,27 @@ document.addEventListener('click', (e) => {
   } else {
     desc.removeAttribute('hidden');
   }
-  btn.textContent = expanded ? '[+]' : '[-]';
+  btn.textContent = '+';
+  btn.setAttribute('aria-label', `${expanded ? 'Show' : 'Hide'} note for ${btn.dataset.linkTitle}`);
+}
+
+// Expandable link descriptions in Random Links section
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.desc-toggle');
+  if (!btn) return;
+  toggleLinkDescription(btn);
 });
 
-async function loadRandomLinks() {
+function loadRandomLinks() {
   const list = document.getElementById('random-links-list');
   if (!list) return;
-  try {
-    let links = [];
-    if (Array.isArray(window.randomLinks)) {
-      links = window.randomLinks;
-    } else {
-      const res = await fetch('assets/data/random-links.json', { cache: 'no-cache' });
-      if (!res.ok) throw new Error('Failed to load random links');
-      links = await res.json();
-    }
-    list.innerHTML = '';
-    links.forEach((link, index) => {
+  const links = Array.isArray(window.randomLinks) ? window.randomLinks : [];
+  if (!links.length) {
+    list.innerHTML = '<li>Links failed to load. Please refresh.</li>';
+    return;
+  }
+  list.innerHTML = '';
+  links.forEach((link, index) => {
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.href = link.url;
@@ -85,7 +114,9 @@ async function loadRandomLinks() {
       btn.className = 'desc-toggle';
       btn.setAttribute('aria-expanded', 'false');
       btn.setAttribute('aria-controls', descId);
-      btn.textContent = '[+]';
+      btn.setAttribute('aria-label', `Show note for ${link.title}`);
+      btn.dataset.linkTitle = link.title;
+      btn.textContent = '+';
 
       const desc = document.createElement('div');
       desc.className = 'link-desc';
@@ -93,67 +124,105 @@ async function loadRandomLinks() {
       desc.hidden = true;
       desc.textContent = link.desc || '';
 
-      li.appendChild(a);
       li.appendChild(btn);
+      li.appendChild(a);
       li.appendChild(desc);
       list.appendChild(li);
-    });
-  } catch (err) {
-    list.innerHTML = '<li>Links failed to load. Please refresh.</li>';
-  }
+  });
 }
-typeIntro();
 loadRandomLinks();
 
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('last-updated').textContent =
-  new Date(document.lastModified).toLocaleDateString('en-GB', {
+// Blog posts: data is injected as window.blogPosts via assets/data/blog.js
+// (generated from the pckt.blog feed by scripts/sync_blog.py). Using a script
+// global instead of fetch() means it also works when opened via file://.
+function loadBlogPosts() {
+  const list = document.getElementById('blog-list');
+  if (!list) return;
+  const posts = Array.isArray(window.blogPosts) ? window.blogPosts : [];
+  if (!posts.length) {
+    list.innerHTML = '<li>Posts failed to load. Visit <a href="https://nhull.pckt.blog/" target="_blank" rel="noopener">the blog</a> directly.</li>';
+    return;
+  }
+  list.innerHTML = '';
+  posts.forEach((post) => {
+      const li = document.createElement('li');
+
+      const a = document.createElement('a');
+      a.href = post.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.className = 'post-title';
+      a.textContent = post.title;
+
+      const meta = document.createElement('div');
+      meta.className = 'post-meta';
+      if (post.date) {
+        const d = new Date(post.date);
+        meta.textContent = isNaN(d) ? post.date : d.toLocaleDateString('en-GB', {
+          day: 'numeric', month: 'long', year: 'numeric'
+        });
+      }
+
+      li.appendChild(a);
+      li.appendChild(meta);
+      if (post.desc) {
+        const desc = document.createElement('p');
+        desc.className = 'post-desc';
+        desc.textContent = post.desc;
+        li.appendChild(desc);
+      }
+      list.appendChild(li);
+  });
+}
+loadBlogPosts();
+
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+const lastUpdatedEl = document.getElementById('last-updated');
+if (lastUpdatedEl) {
+  lastUpdatedEl.textContent = new Date(document.lastModified).toLocaleDateString('en-GB', {
     day: 'numeric', month: 'short', year: 'numeric'
   });
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('last-updated').textContent =
-    new Date(document.lastModified).toLocaleDateString('en-GB', {
-      day: 'numeric', month: 'short', year: 'numeric'
-    });
-});
+}
 
 const form = document.getElementById('contact-form');
-const statusEl = document.getElementById('status');
-const submitBtn = document.getElementById('submit-btn');
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const data = new FormData(form);
-  if (data.get('company')) return;
-  form.classList.add('submitting');
-  submitBtn.textContent = '[ SENDING... ]';
-  submitBtn.disabled = true;
-  statusEl.textContent = '';
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: data
-    });
-    if (res.ok) {
-      statusEl.textContent = 'Message sent!';
-      statusEl.className = 'status success';
-      form.reset();
-    } else {
-      statusEl.textContent = 'Error. Try email instead.';
+if (form) {
+  const statusEl = document.getElementById('status');
+  const submitBtn = document.getElementById('submit-btn');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    if (data.get('company')) return;
+    form.classList.add('submitting');
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+    statusEl.textContent = '';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: data
+      });
+      if (res.ok) {
+        statusEl.textContent = 'Message sent!';
+        statusEl.className = 'status success';
+        form.reset();
+      } else {
+        statusEl.textContent = 'Error. Try email instead.';
+        statusEl.className = 'status error';
+      }
+    } catch (err) {
+      statusEl.textContent = 'Network error. Try again.';
       statusEl.className = 'status error';
+    } finally {
+      form.classList.remove('submitting');
+      submitBtn.textContent = 'Send';
+      submitBtn.disabled = false;
+      setTimeout(() => {
+        statusEl.textContent = '';
+        statusEl.className = 'status';
+      }, 5000);
     }
-  } catch (err) {
-    statusEl.textContent = 'Network error. Try again.';
-    statusEl.className = 'status error';
-  } finally {
-    form.classList.remove('submitting');
-    submitBtn.textContent = '[ SEND ]';
-    submitBtn.disabled = false;
-    setTimeout(() => {
-      statusEl.textContent = '';
-      statusEl.className = 'status';
-    }, 5000);
-  }
-});
+  });
+}
