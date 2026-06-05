@@ -97,7 +97,7 @@ function loadRandomLinks() {
   if (!list) return;
   const links = Array.isArray(window.randomLinks) ? window.randomLinks : [];
   if (!links.length) {
-    list.innerHTML = '<li>Links failed to load. Please refresh.</li>';
+    list.innerHTML = '<li class="muted">Links failed to load. Please refresh.</li>';
     return;
   }
   list.innerHTML = '';
@@ -137,9 +137,13 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 const lastUpdatedEl = document.getElementById('last-updated');
 if (lastUpdatedEl) {
-  lastUpdatedEl.textContent = new Date(document.lastModified).toLocaleDateString('en-GB', {
-    day: 'numeric', month: 'short', year: 'numeric'
-  });
+  const parsed = new Date(document.lastModified);
+  if (!Number.isNaN(parsed.getTime())) {
+    lastUpdatedEl.textContent = parsed.toLocaleDateString('en-GB', {
+      day: 'numeric', month: 'short', year: 'numeric'
+    });
+    lastUpdatedEl.setAttribute('datetime', parsed.toISOString().slice(0, 10));
+  }
 }
 
 const form = document.getElementById('contact-form');

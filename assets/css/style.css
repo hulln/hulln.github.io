@@ -342,6 +342,15 @@ li { margin: var(--space-2) 0; }
   font-size: 0.86rem;
 }
 
+/* Small, light separators between skill items */
+.skill-separator {
+  color: var(--faint);
+  opacity: 0.5;
+  font-size: 0.7em;
+  margin: 0 0.3rem;
+  vertical-align: 0.08em;
+}
+
 /* ===========================================================================
    Random links — expandable descriptions
 =========================================================================== */
@@ -353,6 +362,10 @@ li { margin: var(--space-2) 0; }
 .links {
   margin-top: var(--space-4);
 }
+
+/* Fallback / loading message when JS is blocked or links fail to load */
+.links li.muted { display: block; color: var(--muted); }
+.small-note { color: var(--muted); font-size: 0.9rem; }
 
 .links li {
   display: grid;

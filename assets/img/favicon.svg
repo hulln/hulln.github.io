@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="nh_">
+  <defs>
+    <!-- soft diagonal blend: turquoise (upper-left/ascender) -> near-white (lower/right arch) -->
+    <linearGradient id="nhStroke" gradientUnits="userSpaceOnUse" x1="7" y1="7" x2="16.5" y2="24.5">
+      <stop offset="0" stop-color="#009FBA"/>
+      <stop offset="0.5" stop-color="#7FCAD5"/>
+      <stop offset="1" stop-color="#FCFCFB"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="1" fill="#131314"/>
+  <!-- one continuous letterform: tall stem (h ascender) + a crisp, slightly raised arch (n), one gradient -->
+  <g fill="none" stroke="url(#nhStroke)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.5 7 V24.5"/>
+    <path d="M7.5 17.5 C 7.5 12, 16 12, 16 17.5 V24.5"/>
+  </g>
+  <!-- cursor / underscore: muted grey, longer, lighter, clearly detached -->
+  <path d="M21 24.5 H26" fill="none" stroke="#8A8A91" stroke-width="1.85" stroke-linecap="round"/>
+</svg>
