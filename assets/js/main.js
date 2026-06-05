@@ -132,50 +132,6 @@ function loadRandomLinks() {
 }
 loadRandomLinks();
 
-// Blog posts: data is injected as window.blogPosts via assets/data/blog.js
-// (generated from the pckt.blog feed by scripts/sync_blog.py). Using a script
-// global instead of fetch() means it also works when opened via file://.
-function loadBlogPosts() {
-  const list = document.getElementById('blog-list');
-  if (!list) return;
-  const posts = Array.isArray(window.blogPosts) ? window.blogPosts : [];
-  if (!posts.length) {
-    list.innerHTML = '<li>Posts failed to load. Visit <a href="https://nhull.pckt.blog/" target="_blank" rel="noopener">the blog</a> directly.</li>';
-    return;
-  }
-  list.innerHTML = '';
-  posts.forEach((post) => {
-      const li = document.createElement('li');
-
-      const a = document.createElement('a');
-      a.href = post.url;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.className = 'post-title';
-      a.textContent = post.title;
-
-      const meta = document.createElement('div');
-      meta.className = 'post-meta';
-      if (post.date) {
-        const d = new Date(post.date);
-        meta.textContent = isNaN(d) ? post.date : d.toLocaleDateString('en-GB', {
-          day: 'numeric', month: 'long', year: 'numeric'
-        });
-      }
-
-      li.appendChild(a);
-      li.appendChild(meta);
-      if (post.desc) {
-        const desc = document.createElement('p');
-        desc.className = 'post-desc';
-        desc.textContent = post.desc;
-        li.appendChild(desc);
-      }
-      list.appendChild(li);
-  });
-}
-loadBlogPosts();
-
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
