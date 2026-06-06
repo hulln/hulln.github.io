@@ -108,6 +108,9 @@ function loadRandomLinks() {
       a.target = '_blank';
       a.rel = 'noopener';
       a.textContent = link.title;
+      if (link.inactive) {
+        a.classList.add('inactive-link');
+      }
 
       const btn = document.createElement('button');
       const descId = `desc-link-${index}`;
@@ -135,15 +138,15 @@ loadRandomLinks();
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+const siteLastUpdated = '2026-06-06';
 const lastUpdatedEl = document.getElementById('last-updated');
 if (lastUpdatedEl) {
-  const parsed = new Date(document.lastModified);
-  if (!Number.isNaN(parsed.getTime())) {
-    lastUpdatedEl.textContent = parsed.toLocaleDateString('en-GB', {
-      day: 'numeric', month: 'short', year: 'numeric'
-    });
-    lastUpdatedEl.setAttribute('datetime', parsed.toISOString().slice(0, 10));
-  }
+  const [year, month, day] = siteLastUpdated.split('-').map(Number);
+  const updatedAt = new Date(Date.UTC(year, month - 1, day));
+  lastUpdatedEl.textContent = updatedAt.toLocaleDateString('en-GB', {
+    day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC'
+  });
+  lastUpdatedEl.setAttribute('datetime', siteLastUpdated);
 }
 
 const form = document.getElementById('contact-form');
