@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Notice | nh</title>
+  <meta name="author" content="nh" />
+
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      const theme = saved === 'light' || saved === 'dark' ? saved : null;
+      if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png" />
+  <link rel="icon" href="assets/img/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="topbar">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="https://nhull.pckt.blog/">Blog</a>
+      <a href="links/index.html">Links</a>
+      <a href="contact/index.html">Contact</a>
+    </nav>
+    <div class="topbar-tools">
+      <button class="toggle" id="theme-toggle" title="Switch theme" aria-label="Switch theme"></button>
+    </div>
+  </div>
+
+  <h1 class="page-title">Privacy Notice</h1>
+
+  <p>This website does not collect, store, or share any personal data, except for information you voluntarily provide via the contact form. Messages sent through the contact form are delivered directly to the site owner and are not stored on this website or shared with third parties, except as required to process your message (e.g., via Formspree.io).</p>
+  <p>This website uses a privacy-conscious analytics tool to understand general site usage: <a href="https://www.simpleanalytics.com/" target="_blank" rel="noopener">Simple Analytics</a> (cookieless and respects Do Not Track). No personally identifiable information is collected by the site owner for analytics purposes.</p>
+  <p>If you have any questions about privacy or your data, please reach out via the <a href="contact/index.html">contact page</a>.</p>
+
+  <hr>
+  <p><a href="index.html">← Back to home</a></p>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

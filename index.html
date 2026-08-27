@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Basic metadata -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>nh</title>
+  <meta name="description" content="A small personal site. Language, data, research and a few things made for the web." />
+  <meta name="author" content="nh" />
+
+  <!-- Apply saved theme before paint, so it never flashes/resets between pages -->
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      const theme = saved === 'light' || saved === 'dark' ? saved : null;
+      if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png" />
+  <link rel="icon" href="assets/img/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:title" content="nh" />
+  <meta property="og:description" content="Language, data, research and small internet things." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nhull.eu/" />
+  <meta property="og:site_name" content="nh" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="nh" />
+  <meta name="twitter:description" content="Language, data, research and small internet things." />
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Barcode+128&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Google Search Console verification -->
+  <meta name="google-site-verification" content="TdmgNUE4pIm5ZWE1J5tWCYQL0WvkJHDKZiyFUpYtj1c" />
+</head>
+
+<body>
+  <div class="topbar">
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="https://nhull.pckt.blog/">Blog</a>
+      <a href="links/index.html">Links</a>
+      <a href="contact/index.html">Contact</a>
+    </nav>
+    <div class="topbar-tools">
+      <a href="sl/index.html" class="toggle" id="lang-toggle" title="Slovenščina">SL</a>
+      <button class="toggle" id="theme-toggle" title="Switch theme" aria-label="Switch theme"></button>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <h1 class="wordmark">nh<span class="cursor" aria-hidden="true">_</span></h1>
+    <p class="tagline">Digital linguistics student at the University of Ljubljana, Slovenia.</p>
+  </header>
+
+  <div class="site-intro">
+    <p class="muted"><em>This has to be my n-th attempt at making a personal site. I'm hoping this one sticks around for a while.</em></p>
+    <p>Digital linguistics is probably the closest thing I have to a label, but what I spend my time on has ended up somewhere between language, data, research and the internet.</p>
+    <p>I don't really have one good way of describing all of that. I don't always understand how something works, but I tend to keep looking into it until it makes a bit more sense. Sometimes it does, sometimes I get caught up in some obscure detail, and sometimes I eventually decide I've had enough.</p>
+    <p class="intro-note"><em>As you probably noticed, this isn't meant to be a formal website. If you're looking for that, <a href="assets/other/nh_cv_en.pdf">check out my CV (PDF)</a> (which I try to keep up-to-date) or visit my <a href="https://www.linkedin.com/in/nhull/" target="_blank" rel="noopener">LinkedIn page</a> (which I'm considering abandoning sooner or later because I don't really like the vibe there, or centralised networks and the way they handle data in general).</em></p>
+  </div>
+
+  <div id="main-content">
+    <details id="now">
+      <summary><h2>Now</h2></summary>
+      <p>At the moment I am mainly occupied with the master's degree, some language-related work and a few smaller side projects.</p>
+      <p>One thing I have spent quite a lot of time on recently is Slovene on Bluesky. I've been around social platforms for long enough that the internet feels a bit like a second hometown, so I find it interesting to watch online spaces change, disappear and reappear in different forms. With Bluesky, that has also meant exploring how the network works, looking at the language people use there, and thinking about how a relatively small online community can be studied through its public posts.</p>
+    </details>
+
+    <details id="research">
+      <summary><h2>Language, data, etc.</h2></summary>
+      <p>A fair amount of my academic and work-related experience has had something to do with language data: corpora, linguistic annotation, language technology and messy datasets.</p>
+      <p>Over the last few years, that has meant Universal Dependencies, spoken-language material, manual annotation, validation of automatically processed texts and various other tasks that are probably better explained through examples than through a long list of skills.</p>
+      <p>I am especially interested in language as people actually use it, including variation between different types of texts, communication online, and all the awkward cases that appear once fairly tidy linguistic categories meet real data.</p>
+    </details>
+
+    <details id="internet">
+      <summary><h2>Small internet things</h2></summary>
+      <p>I like making websites, tools and experiments, often just for myself.</p>
+      <p>Most start with some version of 'this would be useful' or 'I wonder if this could work', followed by accidentally spending far too much time on them. Some remain tiny experiments; others somehow acquire users, maintenance, servers and problems of their own.</p>
+      <p>I'm very much a <em>vibecoder</em> rather than a programmer, usually building these with help from generative AI coding tools and agents. I'm comfortable enough to test and modify the results, figure out why something has suddenly stopped working, and keep going from there.</p>
+      <p>Not everything I make is connected to my academic or professional work, and I quite like keeping it that way.</p>
+    </details>
+
+    <details id="other">
+      <summary><h2>Beyond that</h2></summary>
+      <p>Over the years, I've also been involved in student representation and various student and youth organisations.</p>
+      <p>Much of that has centred on practical questions around education, digitalisation, access to information and how institutions actually work. Helping other students find their way through things is an important part of it too: clear, accessible information matters, especially when you know how frustrating it is when what you need is difficult to find or simply not there.</p>
+    </details>
+
+  </div>
+
+  <hr>
+  <footer>
+    <div class="footer-links">
+      <!-- SIFA hidden for now, kept for later: https://sifa.id/p/nhull.eu -->
+      <a href="https://www.linkedin.com/in/nhull/" target="_blank" rel="noopener">LinkedIn</a><span class="skill-separator">•</span><a href="https://orcid.org/0009-0004-1878-0102" target="_blank" rel="noopener">ORCID</a><span class="skill-separator">•</span><a href="https://github.com/hulln" target="_blank" rel="noopener">GitHub</a><span class="skill-separator">•</span><a href="https://huggingface.co/nhull" target="_blank" rel="noopener">Hugging Face</a>
+    </div>
+    <small>© <span id="year"></span> nh<span class="skill-separator">•</span>Made with coffee and good vibes<span class="skill-separator">•</span><a href="privacy.html">Privacy Notice</a><span class="skill-separator">•</span>Last updated: <time id="last-updated" datetime="2026-08-27">27 Aug 2026</time></small>
+    <div class="barcode barcode-footer" aria-hidden="true">&#204;I&#194;KNEW&#194;SOMEONE&#194;WOULD&#194;CHECK4&#206;</div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- Analytics -->
+  <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <noscript>
+    <img
+      src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+      alt=""
+      referrerpolicy="no-referrer-when-downgrade"
+    />
+  </noscript>
+  <script async src="https://scripts.simpleanalyticscdn.com/auto-events.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | nh</title>
+  <meta name="description" content="Get in touch with nh." />
+  <meta name="author" content="nh" />
+
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      const theme = saved === 'light' || saved === 'dark' ? saved : null;
+      if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon.png" />
+  <link rel="icon" href="../assets/img/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Barcode+128&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+  <div class="topbar">
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="https://nhull.pckt.blog/">Blog</a>
+      <a href="../links/index.html">Links</a>
+      <a href="index.html" aria-current="page">Contact</a>
+    </nav>
+    <div class="topbar-tools">
+      <a href="../sl/index.html" class="toggle" id="lang-toggle" title="Slovenščina">SL</a>
+      <button class="toggle" id="theme-toggle" title="Switch theme" aria-label="Switch theme"></button>
+    </div>
+  </div>
+
+  <h1 class="page-title">Contact</h1>
+  <p class="intro">Have a question or suggestion? Want to grab a coffee, share your current favourite music, or just say hi? I'm happy to hear from anyone.</p>
+
+  <form id="contact-form" method="post" action="https://formspree.io/f/xgegnwaa" aria-label="Contact form">
+    <label for="name">Name</label>
+    <input id="name" name="name" autocomplete="name">
+    <label for="email">Email <span class="required-marker" aria-hidden="true">*</span></label>
+    <input id="email" type="email" name="email" required autocomplete="email" aria-required="true">
+    <label for="message">Message <span class="required-marker" aria-hidden="true">*</span></label>
+    <textarea id="message" name="message" rows="5" required aria-required="true" aria-describedby="message-note"></textarea>
+    <p id="message-note" class="form-note">Note: This form cannot send you a copy of your message. You can also <a href="mailto:hej@nhull.eu">email me</a>.</p>
+    <div class="hp">
+      <input name="company" tabindex="-1" autocomplete="off">
+    </div>
+    <div class="form-actions">
+      <button type="submit" id="submit-btn">Send</button>
+      <span id="status" class="status"></span>
+    </div>
+  </form>
+
+  <hr>
+  <footer>
+    <div class="footer-links">
+      <!-- SIFA hidden for now, kept for later: https://sifa.id/p/nhull.eu -->
+      <a href="https://www.linkedin.com/in/nhull/" target="_blank" rel="noopener">LinkedIn</a><span class="skill-separator">•</span><a href="https://orcid.org/0009-0004-1878-0102" target="_blank" rel="noopener">ORCID</a><span class="skill-separator">•</span><a href="https://github.com/hulln" target="_blank" rel="noopener">GitHub</a><span class="skill-separator">•</span><a href="https://huggingface.co/nhull" target="_blank" rel="noopener">Hugging Face</a>
+    </div>
+    <small>© <span id="year"></span> nh<span class="skill-separator">•</span>Made with coffee and good vibes<span class="skill-separator">•</span><a href="../privacy.html">Privacy Notice</a><span class="skill-separator">•</span>Last updated: <time id="last-updated" datetime="2026-08-27">27 Aug 2026</time></small>
+    <div class="barcode barcode-footer" aria-hidden="true">&#204;I&#194;KNEW&#194;SOMEONE&#194;WOULD&#194;CHECK4&#206;</div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+
+  <!-- Analytics -->
+  <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <noscript>
+    <img
+      src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+      alt=""
+      referrerpolicy="no-referrer-when-downgrade"
+    />
+  </noscript>
+</body>
+
+</html>

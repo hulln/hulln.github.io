@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Links | nh</title>
+  <meta name="description" content="A handful of links nh finds useful, interesting, or just fun." />
+  <meta name="author" content="nh" />
+
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      const theme = saved === 'light' || saved === 'dark' ? saved : null;
+      if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon.png" />
+  <link rel="icon" href="../assets/img/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Barcode+128&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="links-page">
+  <div class="topbar">
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="https://nhull.pckt.blog/">Blog</a>
+      <a href="index.html" aria-current="page">Links</a>
+      <a href="../contact/index.html">Contact</a>
+    </nav>
+    <div class="topbar-tools">
+      <a href="../sl/index.html" class="toggle" id="lang-toggle" title="Slovenščina">SL</a>
+      <button class="toggle" id="theme-toggle" title="Switch theme" aria-label="Switch theme"></button>
+    </div>
+  </div>
+
+  <h1 class="page-title">Random Links</h1>
+  <p class="intro">A small collection of websites and tools I find interesting or useful.</p>
+
+  <ul class="links" id="random-links-list">
+    <li class="muted">Loading links… If nothing appears, JavaScript may be blocked.</li>
+  </ul>
+  <noscript>
+    <p class="small-note">The links list needs JavaScript to load. Sorry.</p>
+  </noscript>
+
+  <hr>
+  <footer>
+    <div class="footer-links">
+      <!-- SIFA hidden for now, kept for later: https://sifa.id/p/nhull.eu -->
+      <a href="https://www.linkedin.com/in/nhull/" target="_blank" rel="noopener">LinkedIn</a><span class="skill-separator">•</span><a href="https://orcid.org/0009-0004-1878-0102" target="_blank" rel="noopener">ORCID</a><span class="skill-separator">•</span><a href="https://github.com/hulln" target="_blank" rel="noopener">GitHub</a><span class="skill-separator">•</span><a href="https://huggingface.co/nhull" target="_blank" rel="noopener">Hugging Face</a>
+    </div>
+    <small>© <span id="year"></span> nh<span class="skill-separator">•</span>Made with coffee and good vibes<span class="skill-separator">•</span><a href="../privacy.html">Privacy Notice</a><span class="skill-separator">•</span>Last updated: <time id="last-updated" datetime="2026-08-27">27 Aug 2026</time></small>
+    <div class="barcode barcode-footer barcode-long" aria-hidden="true">&#204;if&#194;you&#194;are&#194;actually&#194;reading&#194;this&#194;you&#194;have&#194;already&#194;spent&#194;more&#194;time&#194;on&#194;this&#194;website&#194;than&#194;expected&#196;&#206;</div>
+  </footer>
+
+  <script src="../assets/data/random-links.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+
+  <!-- Analytics -->
+  <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <noscript>
+    <img
+      src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+      alt=""
+      referrerpolicy="no-referrer-when-downgrade"
+    />
+  </noscript>
+</body>
+
+</html>

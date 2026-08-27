@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="sl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+    <title>nh</title>
+    <script>
+      try {
+        const saved = localStorage.getItem('theme');
+        const theme = saved === 'light' || saved === 'dark' ? saved : null;
+        if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon.png" />
+    <link rel="icon" href="../assets/img/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="topbar">
+        <nav class="nav"></nav>
+        <div class="topbar-tools">
+            <a href="../index.html" class="toggle" id="lang-toggle" title="English">EN</a>
+            <button class="toggle" id="theme-toggle" title="Preklopi temo" aria-label="Preklopi temo"></button>
+        </div>
+    </div>
+
+    <div class="placeholder">
+        <h1>¯\_(ツ)_/¯</h1>
+        <p class="lead">Slovenska stran bo kmalu na voljo.<br>
+            <span class="muted">Tu zaenkrat še ni ničesar. Žalibog.</span></p>
+        <div class="body">
+            <p>Kdor me pozna, ve, da vedno in povsod zagovarjam uporabo slovenskega jezika, zlasti na spletu, kjer že tako prednjači angleščina. Zato se posipam s pepelom zaradi te velemalomarnosti in se nadejam, da bo slovenska različica kaj kmalu ugledala luč sveta. Do takrat pa se spodobi, da se vsaj opravičim v materinščini!</p>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
