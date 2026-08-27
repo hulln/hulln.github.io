@@ -16,7 +16,7 @@
 
   --dot: rgba(0, 0, 0, 0.045);
 
-  --font: 'Lexend', system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font: 'Inter', Arial, Helvetica, sans-serif;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -53,10 +53,6 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg);
-  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
-  background-size: 22px 22px;
-  background-position: -1px -1px;
-  transition: background-color 0.25s ease;
 }
 
 body {
@@ -70,25 +66,21 @@ body {
   line-height: 1.72;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  transition: color 0.25s ease;
 }
 
 p { margin: var(--space-3) 0; }
 
-/* Links — accent colour, underline that animates on hover */
+/* Links — ordinary underlines with a turquoise accent */
 a {
   color: var(--accent-ink);
   text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--accent-ink) 32%, transparent);
+  text-decoration-color: currentColor;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease, text-decoration-thickness 0.2s ease;
 }
 a:visited { color: var(--accent-ink); }
 a:hover {
   color: var(--accent-ink-hover);
-  text-decoration-color: currentColor;
-  text-decoration-thickness: 2px;
 }
 a:active {
   color: var(--accent-ink-hover);
@@ -133,18 +125,20 @@ hr {
   font-size: 0.95rem;
   color: var(--muted);
   text-decoration: none;
-  padding-bottom: 2px;
-  background: linear-gradient(var(--accent-ink), var(--accent-ink)) no-repeat 0 100% / 0% 1.5px;
-  transition: background-size 0.25s ease, color 0.2s ease;
 }
 .nav a:visited { color: var(--muted); }
-.nav a:hover { color: var(--fg); background-size: 100% 1.5px; }
-.nav a:active { color: var(--fg); background-size: 100% 1.5px; }
+.nav a:hover,
+.nav a:active {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-ink);
+}
 .nav a[aria-current="page"],
 .nav a[aria-current="page"]:visited,
 .nav a[aria-current="page"]:active {
   color: var(--fg);
-  background-size: 100% 1.5px;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-ink);
 }
 
 .topbar-tools {
@@ -161,7 +155,6 @@ hr {
   padding: 0.1em 0.1em;
   cursor: pointer;
   text-decoration: none;
-  transition: color 0.18s ease;
 }
 .toggle:visited { color: var(--faint); }
 .toggle:hover { color: var(--fg); }
@@ -252,8 +245,12 @@ a.wordmark:hover { color: var(--fg); }
 }
 
 .site-intro {
-  color: var(--muted);
+  color: var(--fg);
   margin-bottom: var(--space-5);
+}
+.site-intro .intro-note {
+  color: var(--muted);
+  font-size: 0.95em;
 }
 
 h3 {
@@ -308,19 +305,11 @@ details summary::after {
   border-right: 1.5px solid var(--faint);
   border-bottom: 1.5px solid var(--faint);
   transform: rotate(45deg);
-  transition: transform 0.25s ease;
 }
 details[open] summary::after { transform: rotate(-135deg); }
 details summary:hover::after { border-color: var(--accent-ink); }
 
 details > *:not(summary):first-of-type { margin-top: var(--space-3); }
-
-/* gentle fade-in of revealed content */
-details[open] > *:not(summary) { animation: fadeSlide 0.3s ease both; }
-@keyframes fadeSlide {
-  from { opacity: 0; transform: translateY(-4px); }
-  to   { opacity: 1; transform: none; }
-}
 
 /* ===========================================================================
    Lists
@@ -437,7 +426,6 @@ li { margin: var(--space-2) 0; }
   color: var(--accent-ink);
   cursor: pointer;
   padding: 0;
-  transition: color 0.18s ease, transform 0.18s ease;
 }
 .desc-toggle:hover,
 .desc-toggle:focus-visible,
@@ -457,13 +445,8 @@ li { margin: var(--space-2) 0; }
   color: var(--muted);
   font-size: 0.84rem;
   line-height: 1.48;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin 0.25s ease;
 }
-.link-desc[hidden] { display: block !important; max-height: 0; opacity: 0; }
-.link-desc:not([hidden]) { max-height: 260px; opacity: 1; margin-top: var(--space-1); }
+.link-desc:not([hidden]) { margin-top: var(--space-1); }
 
 /* ===========================================================================
    Contact form
@@ -563,6 +546,7 @@ footer a { color: var(--muted); text-decoration: none; }
 footer a:visited { color: var(--muted); }
 footer a:hover,
 footer a:active { color: var(--accent-ink); text-decoration: underline; }
+footer small a { white-space: nowrap; }
 
 /* ===========================================================================
    Slovenian placeholder
@@ -581,7 +565,6 @@ footer a:active { color: var(--accent-ink); text-decoration: underline; }
    Motion-reduce & mobile
 =========================================================================== */
 @media (prefers-reduced-motion: reduce) {
-  details[open] > *:not(summary) { animation: none; }
   html { scroll-behavior: auto; }
 }
 
@@ -589,4 +572,34 @@ footer a:active { color: var(--accent-ink); text-decoration: underline; }
   body { padding: var(--space-5) var(--space-4) var(--space-4); font-size: 1rem; }
   .wordmark { font-size: 1.85rem; }
   .topbar { margin-bottom: var(--space-4); }
+}
+
+/* ===========================================================================
+   Barcode mark
+   Libre Barcode 128 is used ONLY here, never for the site's own type, and the
+   bars-only cut is deliberate: the "Text" cut prints the message underneath.
+   The string is Code 128 Set B, pre-encoded with the start symbol, the mod-103
+   check symbol and the stop symbol (the font does not add them). Spaces are
+   U+00C2, not ASCII spaces: the plain space glyph is blank and would punch a
+   hole in the barcode. Decorative — aria-hidden in the markup.
+=========================================================================== */
+.barcode {
+  font-family: 'Libre Barcode 128', var(--font);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  word-spacing: 0;
+  white-space: nowrap;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.barcode-footer {
+  font-size: min(2rem, 7vw);
+  color: var(--muted);
+  margin-top: var(--space-4);
+}
+
+.barcode-long {
+  font-size: min(1rem, 2vw);
 }

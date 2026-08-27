@@ -138,7 +138,7 @@ loadRandomLinks();
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-const siteLastUpdated = '2026-06-06';
+const siteLastUpdated = '2026-08-27';
 const lastUpdatedEl = document.getElementById('last-updated');
 if (lastUpdatedEl) {
   const [year, month, day] = siteLastUpdated.split('-').map(Number);
@@ -189,3 +189,31 @@ if (form) {
     }
   });
 }
+
+// The barcode marks hold Code 128 control characters: a start symbol, a check
+// symbol, a stop symbol, and U+00C2 wherever a space belongs, because the
+// font's plain space glyph is blank. A scanner strips all of that and reads the
+// message; copying should hand over the same thing, not the raw encoding.
+function decodeBarcode(encoded) {
+  const symbols = Array.from(encoded, (ch) => {
+    const cp = ch.codePointAt(0);
+    if (cp === 0x00c2) return 0;
+    if (cp >= 0x00c3 && cp <= 0x00ce) return cp - 100;
+    return cp - 32;
+  });
+  return symbols
+    .slice(1, -2)
+    .map((value) => String.fromCharCode(value + 32))
+    .join('');
+}
+
+document.addEventListener('copy', (e) => {
+  const selection = document.getSelection();
+  if (!selection || selection.isCollapsed || !e.clipboardData) return;
+  const node = selection.anchorNode;
+  const origin = node && (node.nodeType === 1 ? node : node.parentElement);
+  const barcode = origin && origin.closest('.barcode');
+  if (!barcode) return;
+  e.clipboardData.setData('text/plain', decodeBarcode(barcode.textContent));
+  e.preventDefault();
+});

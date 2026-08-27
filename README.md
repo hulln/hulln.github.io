@@ -7,7 +7,7 @@ This repository is public because GitHub Pages serves the site from here. The im
 ## Site Structure
 
 ```
-index.html              Home (About, Work, Advocacy, Now, Skills)
+index.html              Home + Subsections
 blog/index.html         Redirects to nhull.pckt.blog
 links/index.html        Random Links
 contact/index.html      Contact form + email
