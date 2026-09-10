@@ -1,64 +1,30 @@
-function toggleLinkDescription(btn) {
-  const descId = btn.getAttribute('aria-controls');
-  const desc = document.getElementById(descId);
-  if (!desc) return;
-  const expanded = btn.getAttribute('aria-expanded') === 'true';
-  btn.setAttribute('aria-expanded', String(!expanded));
-  if (expanded) {
-    desc.setAttribute('hidden', '');
-  } else {
-    desc.removeAttribute('hidden');
-  }
-  btn.textContent = '+';
-  btn.setAttribute('aria-label', `${expanded ? 'Show' : 'Hide'} note for ${btn.dataset.linkTitle}`);
-}
-
-// Expandable link descriptions in Random Links section
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.desc-toggle');
-  if (!btn) return;
-  toggleLinkDescription(btn);
-});
-
+// Random Links. A definition list is exactly the right element for
+// "term, then description", so no toggles and no styling are needed.
 function loadRandomLinks() {
   const list = document.getElementById('random-links-list');
   if (!list) return;
   const links = Array.isArray(window.randomLinks) ? window.randomLinks : [];
   if (!links.length) {
-    list.innerHTML = '<li class="muted">Links failed to load. Please refresh.</li>';
+    list.innerHTML = '<dt>Links failed to load.</dt><dd>Please refresh.</dd>';
     return;
   }
   list.innerHTML = '';
-  links.forEach((link, index) => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = link.url;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.textContent = link.title;
-      if (link.inactive) {
-        a.classList.add('inactive-link');
-      }
-
-      const btn = document.createElement('button');
-      const descId = `desc-link-${index}`;
-      btn.className = 'desc-toggle';
-      btn.setAttribute('aria-expanded', 'false');
-      btn.setAttribute('aria-controls', descId);
-      btn.setAttribute('aria-label', `Show note for ${link.title}`);
-      btn.dataset.linkTitle = link.title;
-      btn.textContent = '+';
-
-      const desc = document.createElement('div');
-      desc.className = 'link-desc';
-      desc.id = descId;
-      desc.hidden = true;
-      desc.textContent = link.desc || '';
-
-      li.appendChild(btn);
-      li.appendChild(a);
-      li.appendChild(desc);
-      list.appendChild(li);
+  links.forEach((link) => {
+    const dt = document.createElement('dt');
+    const a = document.createElement('a');
+    a.href = link.url;
+    a.textContent = link.title;
+    if (link.inactive) {
+      const s = document.createElement('s');   // struck through, no CSS needed
+      s.appendChild(a);
+      dt.appendChild(s);
+    } else {
+      dt.appendChild(a);
+    }
+    const dd = document.createElement('dd');
+    dd.textContent = link.desc || '';
+    list.appendChild(dt);
+    list.appendChild(dd);
   });
 }
 loadRandomLinks();
@@ -66,8 +32,8 @@ loadRandomLinks();
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Bump this when you change the site. Deliberately manual: showing
-// today's date automatically would claim an update that never happened.
+// Bump this when you change the site. Deliberately manual: showing today's
+// date automatically would claim an update that never happened.
 const siteLastUpdated = '2026-09-10';
 const lastUpdatedEl = document.getElementById('last-updated');
 if (lastUpdatedEl) {
@@ -88,7 +54,6 @@ if (form) {
     e.preventDefault();
     const data = new FormData(form);
     if (data.get('company')) return;
-    form.classList.add('submitting');
     submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
     statusEl.textContent = '';
@@ -98,25 +63,14 @@ if (form) {
         headers: { 'Accept': 'application/json' },
         body: data
       });
-      if (res.ok) {
-        statusEl.textContent = 'Message sent!';
-        statusEl.className = 'status success';
-        form.reset();
-      } else {
-        statusEl.textContent = 'Error. Try email instead.';
-        statusEl.className = 'status error';
-      }
+      statusEl.textContent = res.ok ? 'Message sent!' : 'Error. Try email instead.';
+      if (res.ok) form.reset();
     } catch (err) {
       statusEl.textContent = 'Network error. Try again.';
-      statusEl.className = 'status error';
     } finally {
-      form.classList.remove('submitting');
       submitBtn.textContent = 'Send';
       submitBtn.disabled = false;
-      setTimeout(() => {
-        statusEl.textContent = '';
-        statusEl.className = 'status';
-      }, 5000);
+      setTimeout(() => { statusEl.textContent = ''; }, 5000);
     }
   });
 }

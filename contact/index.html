@@ -2,82 +2,83 @@
 <html lang="en">
 
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="utf-8" />
-  <!-- The window is a fixed 614px, so tell phones that exactly: they then
-       scale 614 -> screen width instead of assuming 980 and shrinking it
-       to two thirds. No user-scalable=no, so pinch zoom still works. -->
-  <meta name="viewport" content="width=614" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Light only. Without this, some browsers force their own dark mode on
+       an unstyled page. Still not CSS. -->
+  <meta name="color-scheme" content="light" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+
   <title>Contact | nh</title>
   <meta name="description" content="Get in touch with nh." />
   <meta name="author" content="nh" />
 
   <link rel="icon" href="../img/favicon.png" type="image/png" />
 
-  <link rel="stylesheet" href="../style.css">
+  <!-- No stylesheet. The browser's defaults are the design. -->
 </head>
 
 <body>
-  <div id="page">
 
-    <div id="titlebar">
-      <h1>contact.txt - Notepad</h1>
-    </div>
+  <header>
+    <h1>nh &ndash; personal site</h1>
+    <p>
+      <a href="../index.html">Home</a> &middot;
+      <a href="https://nhull.pckt.blog/">Blog</a> &middot;
+      <a href="../links/index.html">Links</a> &middot;
+      <a href="../contact/index.html">Contact</a> &middot;
+      <a href="../sl/index.html">SL</a>
+    </p>
+  </header>
 
-    <div id="bar">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="https://nhull.pckt.blog/">Blog</a></li>
-        <li><a href="../links/index.html">Links</a></li>
-        <li><a href="index.html" aria-current="page">Contact</a></li>
-        <li><a href="../sl/index.html" title="Slovenščina">SL</a></li>
-      </ul>
-    </div>
+  <hr>
 
-    <div id="main">
+  <main>
+    <h2>Contact</h2>
+    <p>Have a question or suggestion? Want to grab a coffee, share your current favourite music, or just say hi? I'm happy to hear from anyone.</p>
 
-      <h1>Contact</h1>
-      <p>Have a question or suggestion? Want to grab a coffee, share your current favourite music, or just say hi? I'm happy to hear from anyone.</p>
+    <form id="contact-form" method="post" action="https://formspree.io/f/xgegnwaa">
+      <p>
+        <label for="name">Name</label><br>
+        <input id="name" name="name" autocomplete="name" size="40">
+      </p>
+      <p>
+        <label for="email">Email (required)</label><br>
+        <input id="email" type="email" name="email" required autocomplete="email" size="40">
+      </p>
+      <p>
+        <label for="message">Message (required)</label><br>
+        <textarea id="message" name="message" rows="6" cols="40" required></textarea>
+      </p>
+      <p><small>This form cannot send you a copy of your message. You can also <a href="mailto:hej@nhull.eu">email me</a>.</small></p>
+      <p hidden><input name="company" tabindex="-1" autocomplete="off"></p>
+      <p><button type="submit" id="submit-btn">Send</button> <span id="status"></span></p>
+    </form>
 
-      <form id="contact-form" method="post" action="https://formspree.io/f/xgegnwaa" aria-label="Contact form">
-        <label for="name">Name</label>
-        <input id="name" name="name" autocomplete="name">
-        <label for="email">Email <span class="required-marker" aria-hidden="true">*</span></label>
-        <input id="email" type="email" name="email" required autocomplete="email" aria-required="true">
-        <label for="message">Message <span class="required-marker" aria-hidden="true">*</span></label>
-        <textarea id="message" name="message" rows="5" required aria-required="true" aria-describedby="message-note"></textarea>
-        <p id="message-note" class="form-note">Note: This form cannot send you a copy of your message. You can also <a href="mailto:hej@nhull.eu">email me</a>.</p>
-        <div class="hp">
-          <input name="company" tabindex="-1" autocomplete="off">
-        </div>
-        <p>
-          <button type="submit" id="submit-btn">Send</button>
-          <span id="status" class="status"></span>
-        </p>
-      </form>
+    <h2>Elsewhere</h2>
+    <!-- SIFA hidden for now, kept for later: https://sifa.id/p/nhull.eu -->
+    <p>
+      <a href="https://www.linkedin.com/in/nhull/">LinkedIn</a> &middot;
+      <a href="https://orcid.org/0009-0004-1878-0102">ORCID</a> &middot;
+      <a href="https://github.com/hulln">GitHub</a> &middot;
+      <a href="https://huggingface.co/nhull">Hugging Face</a>
+    </p>
+  </main>
 
-      <h2 id="elsewhere">Elsewhere</h2>
-      <!-- SIFA hidden for now, kept for later: https://sifa.id/p/nhull.eu -->
-      <p><a href="https://www.linkedin.com/in/nhull/" target="_blank" rel="noopener">LinkedIn</a><span class="sep">|</span><a href="https://orcid.org/0009-0004-1878-0102" target="_blank" rel="noopener">ORCID</a><span class="sep">|</span><a href="https://github.com/hulln" target="_blank" rel="noopener">GitHub</a><span class="sep">|</span><a href="https://huggingface.co/nhull" target="_blank" rel="noopener">Hugging Face</a></p>
+  <hr>
 
-    </div>
-
-    <!-- Template and icon credits. Please leave these in place. -->
-    <div id="footer">&copy; <span id="year"></span> nh &middot; <a href="../privacy.html">Privacy Notice</a> &middot; Last updated: <time id="last-updated" datetime="2026-09-10">10 Sept 2026</time> &middot; <a href="https://www.html.am/templates/downloads/bryantsmith/notepad/">template</a> by <a href="http://www.bryantsmith.com">bryant smith</a> &middot; <a href="https://www.flaticon.com/free-icon/tree_12414749">tree icon by Magnific &ndash; Flaticon</a></div>
-
-  </div>
+  <footer>
+    <p><small>&copy; <span id="year">2026</span> nh &middot;
+    <a href="../privacy.html">Privacy Notice</a> &middot;
+    Last updated: <time id="last-updated" datetime="2026-09-10">10 Sept 2026</time> &middot;
+    <a href="https://www.flaticon.com/free-icon/tree_12414749">tree icon by Magnific &ndash; Flaticon</a></small></p>
+  </footer>
 
   <script src="../main.js" defer></script>
 
-  <!-- Analytics -->
   <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-  <noscript>
-    <img
-      src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
-      alt=""
-      referrerpolicy="no-referrer-when-downgrade"
-    />
-  </noscript>
+  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
 </body>
 
 </html>

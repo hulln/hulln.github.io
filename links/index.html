@@ -2,70 +2,61 @@
 <html lang="en">
 
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="utf-8" />
-  <!-- The window is a fixed 614px, so tell phones that exactly: they then
-       scale 614 -> screen width instead of assuming 980 and shrinking it
-       to two thirds. No user-scalable=no, so pinch zoom still works. -->
-  <meta name="viewport" content="width=614" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Light only. Without this, some browsers force their own dark mode on
+       an unstyled page. Still not CSS. -->
+  <meta name="color-scheme" content="light" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+
   <title>Links | nh</title>
   <meta name="description" content="A handful of links nh finds useful, interesting, or just fun." />
   <meta name="author" content="nh" />
 
   <link rel="icon" href="../img/favicon.png" type="image/png" />
 
-  <link rel="stylesheet" href="../style.css">
+  <!-- No stylesheet. The browser's defaults are the design. -->
 </head>
 
 <body>
-  <div id="page">
 
-    <div id="titlebar">
-      <h1>links.txt - Notepad</h1>
-    </div>
+  <header>
+    <h1>nh &ndash; personal site</h1>
+    <p>
+      <a href="../index.html">Home</a> &middot;
+      <a href="https://nhull.pckt.blog/">Blog</a> &middot;
+      <a href="../links/index.html">Links</a> &middot;
+      <a href="../contact/index.html">Contact</a> &middot;
+      <a href="../sl/index.html">SL</a>
+    </p>
+  </header>
 
-    <div id="bar">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="https://nhull.pckt.blog/">Blog</a></li>
-        <li><a href="index.html" aria-current="page">Links</a></li>
-        <li><a href="../contact/index.html">Contact</a></li>
-        <li><a href="../sl/index.html" title="Slovenščina">SL</a></li>
-      </ul>
-    </div>
+  <hr>
 
-    <div id="main">
+  <main>
+    <h2>Random Links</h2>
+    <p>A small collection of websites and tools I find interesting or useful.</p>
 
-      <h1>Random Links</h1>
-      <p>A small collection of websites and tools I find interesting or useful.</p>
+    <dl id="random-links-list">
+      <dt>Loading links&hellip;</dt>
+      <dd>If nothing appears, JavaScript may be blocked.</dd>
+    </dl>
+  </main>
 
-      <ul class="links" id="random-links-list">
-        <li class="muted">Loading links… If nothing appears, JavaScript may be blocked.</li>
-      </ul>
-      <noscript>
-        <p class="small-note">The links list needs JavaScript to load. Sorry.</p>
-      </noscript>
+  <hr>
 
+  <footer>
+    <p><small>&copy; <span id="year">2026</span> nh &middot;
+    <a href="../privacy.html">Privacy Notice</a> &middot;
+    Last updated: <time id="last-updated" datetime="2026-09-10">10 Sept 2026</time> &middot;
+    <a href="https://www.flaticon.com/free-icon/tree_12414749">tree icon by Magnific &ndash; Flaticon</a></small></p>
+  </footer>
 
-    </div>
-
-    <!-- Template and icon credits. Please leave these in place. -->
-    <div id="footer">&copy; <span id="year"></span> nh &middot; <a href="../privacy.html">Privacy Notice</a> &middot; Last updated: <time id="last-updated" datetime="2026-09-10">10 Sept 2026</time> &middot; <a href="https://www.html.am/templates/downloads/bryantsmith/notepad/">template</a> by <a href="http://www.bryantsmith.com">bryant smith</a> &middot; <a href="https://www.flaticon.com/free-icon/tree_12414749">tree icon by Magnific &ndash; Flaticon</a></div>
-
-  </div>
-
-  <script src="../links.js" defer></script>
   <script src="../main.js" defer></script>
-
-  <!-- Analytics -->
+  <script src="../links.js" defer></script>
   <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-  <noscript>
-    <img
-      src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
-      alt=""
-      referrerpolicy="no-referrer-when-downgrade"
-    />
-  </noscript>
+  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
 </body>
 
 </html>

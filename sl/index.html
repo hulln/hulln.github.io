@@ -3,49 +3,51 @@
 
 <head>
   <meta charset="utf-8" />
-  <!-- The window is a fixed 614px, so tell phones that exactly: they then
-       scale 614 -> screen width instead of assuming 980 and shrinking it
-       to two thirds. No user-scalable=no, so pinch zoom still works. -->
-  <meta name="viewport" content="width=614" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Light only. Without this, some browsers force their own dark mode on
+       an unstyled page. Still not CSS. -->
+  <meta name="color-scheme" content="light" />
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+
   <title>nh</title>
+  <meta name="author" content="nh" />
 
   <link rel="icon" href="../img/favicon.png" type="image/png" />
 
-  <link rel="stylesheet" href="../style.css">
+  <!-- No stylesheet. The browser's defaults are the design. -->
 </head>
 
 <body>
-  <div id="page">
 
-    <div id="titlebar">
-      <h1>nh_sl.txt - Notepad</h1>
-    </div>
+  <header>
+    <h1>nh &ndash; personal site</h1>
+    <p>
+      <a href="../index.html">Home</a> &middot;
+      <a href="https://nhull.pckt.blog/">Blog</a> &middot;
+      <a href="../links/index.html">Links</a> &middot;
+      <a href="../contact/index.html">Contact</a> &middot;
+      <a href="../sl/index.html">SL</a>
+    </p>
+  </header>
 
-    <div id="bar">
-      <ul>
-        <li><a href="../index.html" title="English">EN</a></li>
-      </ul>
-    </div>
+  <hr>
 
-    <div id="main">
+  <main>
+    <h2>&macr;\_(&#12484;)_/&macr;</h2>
+    <p>Slovenska stran bo kmalu na voljo. Tu zaenkrat &scaron;e ni ni&ccaron;esar. &Zcaron;alibog.</p>
+    <p>Kdor me pozna, ve, da vedno in povsod zagovarjam uporabo slovenskega jezika, zlasti na spletu, kjer &zcaron;e tako prednja&ccaron;i angle&scaron;&ccaron;ina. Zato se posipam s pepelom zaradi te velemalomarnosti in se nadejam, da bo slovenska razli&ccaron;ica kaj kmalu ugledala lu&ccaron; sveta. Do takrat pa se spodobi, da se vsaj opravi&ccaron;im v materin&scaron;&ccaron;ini!</p>
+  </main>
 
-      <div class="placeholder">
-        <h1>¯\_(ツ)_/¯</h1>
-        <p>Slovenska stran bo kmalu na voljo.<br>
-          <span class="muted">Tu zaenkrat še ni ničesar. Žalibog.</span></p>
-        <p>Kdor me pozna, ve, da vedno in povsod zagovarjam uporabo slovenskega jezika, zlasti na spletu, kjer že tako prednjači angleščina. Zato se posipam s pepelom zaradi te velemalomarnosti in se nadejam, da bo slovenska različica kaj kmalu ugledala luč sveta. Do takrat pa se spodobi, da se vsaj opravičim v materinščini!</p>
-      </div>
+  <hr>
 
-
-    </div>
-
-    <!-- Template and icon credits. Please leave these in place. -->
-    <div id="footer">&copy; <span id="year"></span> nh &middot; Zadnja sprememba: <time id="last-updated" datetime="2026-09-10">10 Sept 2026</time> &middot; <a href="https://www.html.am/templates/downloads/bryantsmith/notepad/">template</a> by <a href="http://www.bryantsmith.com">bryant smith</a> &middot; <a href="https://www.flaticon.com/free-icon/tree_12414749">tree icon by Magnific &ndash; Flaticon</a></div>
-
-  </div>
+  <footer>
+    <p><small>&copy; <span id="year">2026</span> nh &middot;
+    Zadnja sprememba: <time id="last-updated" datetime="2026-09-10">10 Sept 2026</time> &middot;
+    <a href="https://www.flaticon.com/free-icon/tree_12414749">tree icon by Magnific &ndash; Flaticon</a></small></p>
+  </footer>
 
   <script src="../main.js" defer></script>
+
 </body>
 
 </html>
