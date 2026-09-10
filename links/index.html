@@ -52,8 +52,10 @@
     <a href="https://www.flaticon.com/free-icon/tree_12414749">tree icon by Magnific &ndash; Flaticon</a></small></p>
   </footer>
 
-  <script src="../main.js" defer></script>
+  <!-- links.js first: main.js reads window.randomLinks, and defer preserves
+       document order. -->
   <script src="../links.js" defer></script>
+  <script src="../main.js" defer></script>
   <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
   <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 
