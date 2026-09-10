@@ -5,12 +5,14 @@
   <!-- Basic metadata -->
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="utf-8" />
+  <!-- The window is a fixed 614px, so tell phones that exactly: they then
+       scale 614 -> screen width instead of assuming 980 and shrinking it
+       to two thirds. No user-scalable=no, so pinch zoom still works. -->
+  <meta name="viewport" content="width=614" />
   <title>nh</title>
   <meta name="description" content="A small personal site. Language, data, research and a few things made for the web." />
   <meta name="author" content="nh" />
 
-  <!-- No viewport meta on purpose: the window is a fixed 614px, so phones
-       scale the whole page to fit instead of overflowing it. -->
 
   <!-- Favicon -->
   <link rel="icon" href="img/favicon.png" type="image/png" />
