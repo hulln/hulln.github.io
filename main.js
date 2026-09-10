@@ -1,75 +1,3 @@
-const root = document.documentElement;
-
-const btn = document.getElementById('theme-toggle');
-const themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-function getSavedTheme() {
-  try {
-    const saved = localStorage.getItem('theme');
-    return saved === 'light' || saved === 'dark' ? saved : null;
-  } catch (e) {
-    return null;
-  }
-}
-
-function saveTheme(theme) {
-  try {
-    localStorage.setItem('theme', theme);
-  } catch (e) {}
-}
-
-function getPreferredTheme() {
-  return themeQuery.matches ? 'dark' : 'light';
-}
-
-let selectedTheme = getSavedTheme();
-let activeTheme = selectedTheme || getPreferredTheme();
-
-const themeIcons = {
-  light: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="theme-icon-stroke" d="M12 2.5v2M12 19.5v2M4.6 4.6l1.45 1.45M17.95 17.95l1.45 1.45M2.5 12h2M19.5 12h2M4.6 19.4l1.45-1.45M17.95 6.05l1.45-1.45"/><circle class="theme-icon-fill" cx="12" cy="12" r="4.25"/></svg>',
-  dark: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="theme-icon-fill" d="M19.35 15.05A7.85 7.85 0 0 1 8.95 4.65a.95.95 0 0 0-1.1-1.5A9.75 9.75 0 1 0 20.85 16.15a.95.95 0 0 0-1.5-1.1Z"/></svg>'
-};
-
-function updateTheme() {
-  const isSl = document.documentElement.lang === 'sl';
-  const isDark = activeTheme === 'dark';
-  root.classList.toggle('dark', isDark);
-  if (!btn) return;
-  btn.innerHTML = isDark ? themeIcons.light : themeIcons.dark;
-  btn.title = isDark ? (isSl ? 'Preklopi na svetlo temo' : 'Switch to light theme') : (isSl ? 'Preklopi na temno temo' : 'Switch to dark theme');
-  btn.setAttribute('aria-label', btn.title);
-}
-updateTheme();
-
-if (btn) {
-  btn.addEventListener('click', () => {
-    activeTheme = activeTheme === 'dark' ? 'light' : 'dark';
-    selectedTheme = activeTheme;
-    saveTheme(selectedTheme);
-    updateTheme();
-  });
-}
-
-function syncSystemTheme() {
-  if (selectedTheme) return;
-  activeTheme = getPreferredTheme();
-  updateTheme();
-}
-
-if (themeQuery.addEventListener) {
-  themeQuery.addEventListener('change', syncSystemTheme);
-} else {
-  themeQuery.addListener(syncSystemTheme);
-}
-
-document.querySelectorAll('.copy-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    navigator.clipboard.writeText(btn.dataset.copy);
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy', 2000);
-  });
-});
-
 function toggleLinkDescription(btn) {
   const descId = btn.getAttribute('aria-controls');
   const desc = document.getElementById(descId);
@@ -138,12 +66,15 @@ loadRandomLinks();
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-const siteLastUpdated = '2026-08-27';
+// Bump this when you change the site. Deliberately manual: showing
+// today's date automatically would claim an update that never happened.
+const siteLastUpdated = '2026-09-10';
 const lastUpdatedEl = document.getElementById('last-updated');
 if (lastUpdatedEl) {
   const [year, month, day] = siteLastUpdated.split('-').map(Number);
   const updatedAt = new Date(Date.UTC(year, month - 1, day));
-  lastUpdatedEl.textContent = updatedAt.toLocaleDateString('en-GB', {
+  const locale = document.documentElement.lang === 'sl' ? 'sl-SI' : 'en-GB';
+  lastUpdatedEl.textContent = updatedAt.toLocaleDateString(locale, {
     day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC'
   });
   lastUpdatedEl.setAttribute('datetime', siteLastUpdated);
@@ -189,31 +120,3 @@ if (form) {
     }
   });
 }
-
-// The barcode marks hold Code 128 control characters: a start symbol, a check
-// symbol, a stop symbol, and U+00C2 wherever a space belongs, because the
-// font's plain space glyph is blank. A scanner strips all of that and reads the
-// message; copying should hand over the same thing, not the raw encoding.
-function decodeBarcode(encoded) {
-  const symbols = Array.from(encoded, (ch) => {
-    const cp = ch.codePointAt(0);
-    if (cp === 0x00c2) return 0;
-    if (cp >= 0x00c3 && cp <= 0x00ce) return cp - 100;
-    return cp - 32;
-  });
-  return symbols
-    .slice(1, -2)
-    .map((value) => String.fromCharCode(value + 32))
-    .join('');
-}
-
-document.addEventListener('copy', (e) => {
-  const selection = document.getSelection();
-  if (!selection || selection.isCollapsed || !e.clipboardData) return;
-  const node = selection.anchorNode;
-  const origin = node && (node.nodeType === 1 ? node : node.parentElement);
-  const barcode = origin && origin.closest('.barcode');
-  if (!barcode) return;
-  e.clipboardData.setData('text/plain', decodeBarcode(barcode.textContent));
-  e.preventDefault();
-});

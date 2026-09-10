@@ -1,54 +1,105 @@
 # nhull.eu
 
-Personal website source for nhull.eu, built with HTML, CSS, and JavaScript.
+Source for my personal website. Plain HTML, CSS and JavaScript. No build step.
 
-This repository is public because GitHub Pages serves the site from here. The implementation can be forked and reused, but the personal/site-specific content should be replaced before publishing a derivative site.
+## Template credit
 
-## Site Structure
+The site is styled as a Windows XP Notepad window using **"Notepad.exe"**, a free
+web template by **Bryant Smith** — <http://www.bryantsmith.com>.
+
+Downloaded from <https://www.html.am/templates/downloads/bryantsmith/notepad/>.
+
+The window chrome in `img/` (`titlebar.png`, `menu.png`, `notepad_back.png`,
+`footer.png`, `background.png`, `icon.png`) is his artwork, and the layout rules
+at the top of `style.css` are his. His only condition, in the template source, is
+"please leave my link somewhere in your page, that is all I ask".
+
+The footer of every page carries "template by bryant smith": *template* links to the
+html.am download page, *bryant smith* links to his own site. The second one is the
+link he actually asked for -- keep that one if you reuse this. The first is a
+courtesy, pointing at where the template came from.
+
+See [LICENSE.md](LICENSE.md) — the MIT grant covers my code, not his template.
+
+## Files
 
 ```
-index.html              Home + Subsections
-blog/index.html         Redirects to nhull.pckt.blog
-links/index.html        Random Links
-contact/index.html      Contact form + email
-privacy.html            Privacy notice
-sl/index.html           Slovenian page (placeholder for now)
-robots.txt              Crawler rules (site is intentionally not indexed)
-CNAME                   Custom domain for GitHub Pages
-assets/
-  css/style.css         Shared styles
-  js/main.js            Theme toggle, copy buttons, contact form, list rendering
-  data/random-links.js  Random Links content
-  img/                  Favicons
-  other/                CV (PDF)
+index.html      Home
+privacy.html    Privacy notice
+blog/           Redirects to nhull.pckt.blog
+links/          Random Links
+contact/        Contact form
+sl/             Slovenian page (placeholder)
+
+style.css       All styling
+main.js         Contact form, links list, dates
+links.js        Random Links content
+cv.pdf          CV
+img/            Window chrome + favicon
+
+CNAME           Custom domain
+robots.txt      Crawler rules (the site is intentionally not indexed)
 ```
 
-The Blog menu item points to pckt.blog, and `/blog` redirects there too. Other links stay relative so the site works the same from a local file or over HTTP.
+That is the whole repository.
 
-## Maintenance Notes
+## How it works
 
-There is no build step. Most pages can be edited directly as HTML. To change the Random Links page, edit `assets/data/random-links.js`.
+Every page has the same four parts, which come from the template:
 
-Deployments happen through GitHub Pages from `main`.
+```html
+<div id="page">
+  <div id="titlebar">   the filename, e.g. nh.txt - Notepad
+  <div id="bar">        the menu strip, used for navigation
+  <div id="main">       the text area
+  <div id="footer">     small print + the two credits, all on one 9px line
+</div>
+```
 
-## Site Notes
+The window is a fixed **614px** wide, because the chrome images are exactly that
+wide. Pages carry **no `viewport` meta tag on purpose**, so phones scale the whole
+window down to fit instead of overflowing it.
 
-- **Theme**: light/dark toggle, remembers the choice in `localStorage` and falls back to the OS preference.
-- **Language**: an `SL` toggle links to the Slovenian page (work in progress).
-- **Contact form**: posts to [Formspree](https://formspree.io/) with a simple honeypot field for spam.
+The footer strip holds everything meta on a single line: copyright, Privacy Notice,
+last-updated date, and the template and icon credits. It has to stay one line —
+`footer.png` is only white above y=17, and below that is the scrollbar artwork.
 
-## Personal Content
+Profile links (LinkedIn, ORCID, GitHub, Hugging Face) live on the Contact page under
+"Elsewhere", not in the footer.
 
-This site contains personal text, profile links, contact details, form endpoints, metadata, and a CV. Treat those as site content, not sample data.
+`img/icon.png` is the title-bar icon, from the template.
 
-## Forking This Site
+`img/favicon.png` is the browser-tab icon: a pixel-art tree by
+[Magnific](https://www.flaticon.com/authors/magnific), from
+[Flaticon](https://www.flaticon.com/free-icon/tree_12414749), used under their free
+licence, which requires crediting its author. That credit is in the footer of every
+page alongside Bryant Smith's. It is stored at 34x34 — exactly 2x its native 17x17
+pixel grid — because resampling pixel art to 16 or 32 turns it to mush.
 
-You are welcome to fork this repository as a starting point for your own personal website.
+## Editing
 
-Before publishing your fork, replace all personal/site-specific content, including names, text, CV files, contact links, metadata, favicons, images, form endpoints, analytics IDs, and profile links.
+- Text: edit the HTML directly.
+- Random Links: edit `links.js`.
+- "Last updated" date: edit `siteLastUpdated` at the top of the block in `main.js`.
+- Title-bar icon: replace `img/icon.png` (16x16 PNG).
+- Favicon: replace `img/favicon.png`, and update the credit in every footer.
 
-The reusable code is MIT licensed. The personal content is not licensed for reuse.
+Deploys via GitHub Pages from `main`.
 
-## License
+## Previous design
 
-Reusable code and styling are available under the MIT License. Personal/site-specific content is not licensed for reuse. See [LICENSE.md](LICENSE.md).
+The earlier site (Inter, responsive layout, light/dark toggle) is kept in git:
+
+```
+git checkout v1-original    # tag
+git checkout style/v1       # branch at the same commit
+```
+
+## Reuse
+
+You are welcome to fork this as a starting point. Before publishing, replace all
+personal content: names, text, `cv.pdf`, contact links, form endpoint, analytics
+IDs, verification tags and profile links. Keep Bryant Smith's footer credit.
+
+My code is MIT licensed. My personal content is not licensed for reuse. The
+template is his. See [LICENSE.md](LICENSE.md).

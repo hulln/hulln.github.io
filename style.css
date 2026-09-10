@@ -1,0 +1,307 @@
+/* ---------------------------------------------------------------------------
+   nhull.eu
+
+   Layout and window chrome adapted from "Notepad.exe", a free XHTML template
+   by Bryant Smith (bryantsmith.com). His credit link stays in the footer.
+   Everything below the divider in each block is site-specific.
+   ------------------------------------------------------------------------ */
+
+
+/* --- Bryant Smith's original rules ------------------------------------- */
+
+html, body {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #F1F5F8;
+  background: #26476E url(img/background.png) repeat-x;
+}
+
+#page {
+  margin: 25px auto 25px auto;
+  display: block;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  width: 614px;
+  text-align: left;
+}
+
+#titlebar {
+  background-image: url(img/titlebar.png);
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 614px;
+  overflow: hidden;
+}
+
+/* To change the icon, swap this background image (16x16, PNG alpha). */
+#titlebar h1 {
+  padding-left: 21px;
+  margin: 8px 0 0 5px;
+  width: 510px;
+  position: relative;
+  color: #FFFFFF;
+  text-align: left;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  background-image: url(img/icon.png);
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#bar {
+  background-image: url(img/menu.png);
+  background-repeat: no-repeat;
+  height: 39px;
+  width: 610px;
+  padding-left: 4px;
+  text-align: left;
+  font-family: Tahoma, "Trebuchet MS", Arial, sans-serif;
+  font-size: 11px;
+}
+
+#bar ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  height: 21px;
+  text-align: left;
+}
+
+#bar ul li,
+#bar ul li a,
+#bar ul li a:visited {
+  margin: 0;
+  padding: 5px 2px 5px 2px;
+  height: 21px;
+  overflow: hidden;
+  display: inline;
+  text-align: center;
+  line-height: 18px;
+  color: #000000;
+  text-decoration: none;
+}
+
+#bar ul li a:hover {
+  color: #FFFFFF;
+}
+
+#bar ul li:hover {
+  height: 21px;
+  background: #316AC5;
+}
+
+#main {
+  width: 579px;
+  padding: 0 28px 0 7px;
+  font-family: "Lucida Console", "DejaVu Sans Mono", Monaco, monospace;
+  background-image: url(img/notepad_back.png);
+  background-repeat: repeat-y;
+  color: #000000;
+  text-align: left;
+}
+
+#main p {
+  margin: 0;
+  padding: 0 0 15px 0;
+  text-align: justify;
+}
+
+#main a {
+  text-decoration: underline;
+  color: #373737;
+}
+
+#main a:hover {
+  text-decoration: none;
+  color: #999999;
+}
+
+/* No gap under a heading: the template's `*{margin:0}` put headings flush
+   against the text below, and the blank line above comes from the previous
+   paragraph's bottom padding. */
+#main h1,
+#main h2 {
+  font-family: "Lucida Console", "DejaVu Sans Mono", Monaco, monospace;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+}
+
+#footer {
+  padding-top: 6px;
+  background-image: url(img/footer.png);
+  background-repeat: no-repeat;
+  height: 39px;
+  width: 614px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 9px;
+  /* Bryant's #E2E2E0 scores 1.3:1 on this white strip -- invisible. Both
+     credits here are required, so they get the lightest grey that still
+     reads (3:1). */
+  color: #969694;
+}
+
+#footer a,
+#footer a:visited {
+  font-size: 9px;
+  color: #969694;
+}
+
+#footer a:hover {
+  font-size: 9px;
+  color: #000000;
+}
+
+
+/* --- Additions for this site ------------------------------------------- */
+
+/* Emphasis, kept quiet: Lucida Console has no real italic on most systems. */
+#main em {
+  font-style: italic;
+  color: #333333;
+}
+
+#main .muted {
+  color: #555555;
+}
+
+/* Link list on the Links page. */
+#main ul.links {
+  margin: 0;
+  padding: 0 0 15px 0;
+  list-style-type: none;
+}
+
+#main ul.links li {
+  padding-bottom: 4px;
+}
+
+#main .desc-toggle {
+  font-family: inherit;
+  font-size: 13px;
+  background: none;
+  border: 0;
+  padding: 0 4px 0 0;
+  cursor: pointer;
+  color: #373737;
+}
+
+#main .desc-toggle:hover {
+  color: #999999;
+}
+
+#main .link-desc {
+  padding: 2px 0 4px 16px;
+  color: #555555;
+}
+
+#main a.inactive-link {
+  color: #999999;
+  text-decoration: line-through;
+}
+
+/* Contact form, dressed as XP input fields. */
+#main label {
+  display: block;
+  padding-bottom: 3px;
+}
+
+#main input,
+#main textarea {
+  font-family: inherit;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  padding: 3px;
+  border: 2px inset #D4D0C8;
+  background: #FFFFFF;
+  color: #000000;
+}
+
+#main textarea {
+  resize: vertical;
+}
+
+#main button[type="submit"] {
+  font-family: Tahoma, "Trebuchet MS", Arial, sans-serif;
+  font-size: 11px;
+  padding: 3px 18px;
+  border: 2px outset #D4D0C8;
+  background: #ECE9D8;
+  color: #000000;
+  cursor: pointer;
+}
+
+#main button[type="submit"]:active {
+  border-style: inset;
+}
+
+#main .form-note,
+#main .small-note {
+  color: #555555;
+}
+
+#main .status {
+  padding-left: 8px;
+}
+
+#main .status.success {
+  color: #1A7A1A;
+}
+
+#main .status.error {
+  color: #A81414;
+}
+
+/* Honeypot: present for bots, gone for everyone else. */
+#main .hp {
+  position: absolute;
+  left: -9999px;
+}
+
+#main .required-marker {
+  color: #A81414;
+}
+
+/* The end of the document: separator rule, then the small print. */
+#main .doc-end {
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+#main .doc-end hr {
+  border: 0;
+  border-top: 1px solid #C8C8C8;
+  margin: 0 0 12px 0;
+}
+
+#main .doc-end p {
+  text-align: left;
+  padding-bottom: 4px;
+  color: #555555;
+}
+
+#main .doc-end a {
+  color: #555555;
+}
+
+#main .sep {
+  padding: 0 6px;
+  color: #AAAAAA;
+}
+
+/* Slovenian placeholder page. */
+#main .placeholder h1 {
+  font-size: 13px;
+  font-weight: bold;
+}
