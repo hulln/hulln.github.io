@@ -66,18 +66,22 @@ loadRandomLinks();
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Bump this when you change the site. Deliberately manual: showing
-// today's date automatically would claim an update that never happened.
-const siteLastUpdated = '2026-09-10';
+// Show the page's actual Last-Modified date. On GitHub Pages this is
+// refreshed when the deployed page changes; the HTML value remains a fallback.
 const lastUpdatedEl = document.getElementById('last-updated');
 if (lastUpdatedEl) {
-  const [year, month, day] = siteLastUpdated.split('-').map(Number);
-  const updatedAt = new Date(Date.UTC(year, month - 1, day));
-  const locale = document.documentElement.lang === 'sl' ? 'sl-SI' : 'en-GB';
-  lastUpdatedEl.textContent = updatedAt.toLocaleDateString(locale, {
-    day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC'
-  });
-  lastUpdatedEl.setAttribute('datetime', siteLastUpdated);
+  const updatedAt = new Date(document.lastModified);
+  if (!Number.isNaN(updatedAt.getTime())) {
+    const locale = document.documentElement.lang === 'sl' ? 'sl-SI' : 'en-GB';
+    lastUpdatedEl.textContent = updatedAt.toLocaleDateString(locale, {
+      day: 'numeric', month: 'short', year: 'numeric'
+    });
+    lastUpdatedEl.setAttribute('datetime', [
+      updatedAt.getFullYear(),
+      String(updatedAt.getMonth() + 1).padStart(2, '0'),
+      String(updatedAt.getDate()).padStart(2, '0')
+    ].join('-'));
+  }
 }
 
 const form = document.getElementById('contact-form');
