@@ -164,6 +164,12 @@ body {
 
 /* --- Additions for this site ------------------------------------------- */
 
+/* Keep phone text in proportion with the window chrome and menu. */
+#page {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
 /* Emphasis, kept quiet: Lucida Console has no real italic on most systems. */
 #main em {
   font-style: italic;
