@@ -305,3 +305,118 @@ body {
   font-size: 13px;
   font-weight: bold;
 }
+
+/* --- Mobile ------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 12px;
+  }
+
+  #page {
+    width: calc(100% - 8px);
+    max-width: 614px;
+    margin: 4px auto;
+  }
+
+  #titlebar,
+  #bar,
+  #footer {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #titlebar,
+  #bar,
+  #footer {
+    background-size: 100% 100%;
+  }
+
+  #titlebar h1 {
+    width: auto;
+  }
+
+  #bar {
+    height: 38px;
+    padding-left: 4px;
+    font-size: 13px;
+  }
+
+  #bar ul {
+    display: flex;
+    align-items: flex-start;
+    height: 38px;
+    white-space: nowrap;
+  }
+
+  #bar ul li {
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  #bar ul li a,
+  #bar ul li a:visited {
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 8px 8px 7px;
+    line-height: 18px;
+    overflow: visible;
+  }
+
+  #bar ul li:hover {
+    height: auto;
+  }
+
+  #main {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 12px 0 8px;
+    background-size: 100% auto;
+    font-size: 12px;
+    line-height: 1.32;
+    overflow-wrap: break-word;
+  }
+
+  #main p {
+    text-align: left;
+    padding-bottom: 12px;
+  }
+
+  #main h1,
+  #main h2 {
+    font-size: 12px;
+    line-height: 1.32;
+  }
+
+  #main .desc-toggle,
+  #main input,
+  #main textarea {
+    font-size: 12px;
+  }
+
+  #footer {
+    height: auto;
+    min-height: 39px;
+    padding: 6px 6px 8px;
+    font-size: 9px;
+    line-height: 1.25;
+  }
+
+  #footer a,
+  #footer a:visited,
+  #footer a:hover {
+    font-size: 9px;
+  }
+}
+
