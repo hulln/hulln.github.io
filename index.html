@@ -5,8 +5,10 @@
   <!-- Basic metadata -->
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="utf-8" />
-  <!-- Keep the classic 614px desktop window, but let narrow screens reflow it. -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- The window is a fixed 614px, so tell phones that exactly: they then
+       scale 614 -> screen width instead of assuming 980 and shrinking it
+       to two thirds. No user-scalable=no, so pinch zoom still works. -->
+  <meta name="viewport" content="width=614" />
   <title>nh</title>
   <meta name="description" content="A small personal site. Language, data, research and a few things made for the web." />
   <meta name="author" content="nh" />
