@@ -57,8 +57,8 @@ Every page has the same four parts, which come from the template:
 ```
 
 The window is a fixed **614px** wide, because the chrome images are exactly that
-wide. Pages carry **no `viewport` meta tag on purpose**, so phones scale the whole
-window down to fit instead of overflowing it.
+wide. Pages declare `width=614` in the viewport meta tag, so phones scale the
+whole window to fit the screen.
 
 The footer strip holds everything meta on a single line: copyright, Privacy Notice,
 last-updated date, and the template and icon credits. It has to stay one line —
