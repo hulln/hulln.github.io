@@ -134,6 +134,9 @@ async function loadBlueskyFeed() {
   const did = 'did:plc:qpzcef5ittvv3bw45fmfjlkc';
   const endpoint = `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${encodeURIComponent(did)}&limit=12&filter=posts_no_replies`;
 
+  container.setAttribute('aria-busy', 'true');
+  container.innerHTML = '<p class="small-note">Loading latest posts...</p>';
+
   try {
     const res = await fetch(endpoint, { cache: 'no-store' });
     if (!res.ok) throw new Error(`Bluesky returned ${res.status}`);
@@ -176,11 +179,29 @@ async function loadBlueskyFeed() {
 
       const createdAt = new Date(record.createdAt || post.indexedAt);
       if (!Number.isNaN(createdAt.getTime())) {
-        meta.appendChild(document.createTextNode(createdAt.toLocaleDateString('en-GB', {
+        const dateFormatter = new Intl.DateTimeFormat('en-GB', {
           day: 'numeric',
           month: 'short',
-          year: 'numeric'
-        }) + ' · '));
+          year: 'numeric',
+          timeZone: 'Europe/Ljubljana'
+        });
+        const dateParts = new Intl.DateTimeFormat('en-GB', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric',
+          timeZone: 'Europe/Ljubljana'
+        }).formatToParts(createdAt);
+        const dateValues = Object.fromEntries(
+          dateParts
+            .filter((part) => ['day', 'month', 'year'].includes(part.type))
+            .map((part) => [part.type, part.value])
+        );
+
+        const timeEl = document.createElement('time');
+        timeEl.dateTime = `${dateValues.year}-${dateValues.month}-${dateValues.day}`;
+        timeEl.textContent = dateFormatter.format(createdAt);
+        meta.appendChild(timeEl);
+        meta.appendChild(document.createTextNode(' · '));
       }
 
       const link = document.createElement('a');
