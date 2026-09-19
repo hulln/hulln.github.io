@@ -124,3 +124,85 @@ if (form) {
     }
   });
 }
+
+// Latest public posts from the nhull.eu Bluesky account.
+// The DID is stable even if the account handle changes.
+async function loadBlueskyFeed() {
+  const container = document.getElementById('bluesky-feed');
+  if (!container) return;
+
+  const did = 'did:plc:qpzcef5ittvv3bw45fmfjlkc';
+  const endpoint = `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${encodeURIComponent(did)}&limit=12&filter=posts_no_replies`;
+
+  try {
+    const res = await fetch(endpoint, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`Bluesky returned ${res.status}`);
+
+    const data = await res.json();
+    const posts = (Array.isArray(data.feed) ? data.feed : [])
+      .filter((entry) => entry?.post && !entry.reply && !entry.reason)
+      .slice(0, 3);
+
+    container.innerHTML = '';
+
+    if (!posts.length) {
+      const note = document.createElement('p');
+      note.className = 'small-note';
+      note.textContent = 'No recent posts to show.';
+      container.appendChild(note);
+      return;
+    }
+
+    posts.forEach((entry) => {
+      const post = entry.post;
+      const record = post.record || {};
+      const rkey = typeof post.uri === 'string' ? post.uri.split('/').pop() : '';
+      const handle = post.author?.handle || 'nhull.eu';
+      const postUrl = rkey
+        ? `https://bsky.app/profile/${encodeURIComponent(handle)}/post/${encodeURIComponent(rkey)}`
+        : `https://bsky.app/profile/${encodeURIComponent(handle)}`;
+
+      const article = document.createElement('article');
+      article.className = 'bluesky-post';
+
+      const textEl = document.createElement('p');
+      textEl.className = 'bluesky-text';
+      textEl.textContent = typeof record.text === 'string' && record.text.trim()
+        ? record.text
+        : 'Post on Bluesky';
+
+      const meta = document.createElement('p');
+      meta.className = 'bluesky-meta';
+
+      const createdAt = new Date(record.createdAt || post.indexedAt);
+      if (!Number.isNaN(createdAt.getTime())) {
+        meta.appendChild(document.createTextNode(createdAt.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'short'
+        }) + ' · '));
+      }
+
+      const link = document.createElement('a');
+      link.href = postUrl;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = 'View on Bluesky';
+      meta.appendChild(link);
+
+      article.appendChild(textEl);
+      article.appendChild(meta);
+      container.appendChild(article);
+    });
+  } catch (err) {
+    container.innerHTML = '';
+    const note = document.createElement('p');
+    note.className = 'small-note';
+    note.textContent = 'Latest posts could not be loaded right now.';
+    container.appendChild(note);
+  } finally {
+    container.setAttribute('aria-busy', 'false');
+  }
+}
+
+loadBlueskyFeed();
+
