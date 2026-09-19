@@ -178,7 +178,8 @@ async function loadBlueskyFeed() {
       if (!Number.isNaN(createdAt.getTime())) {
         meta.appendChild(document.createTextNode(createdAt.toLocaleDateString('en-GB', {
           day: 'numeric',
-          month: 'short'
+          month: 'short',
+          year: 'numeric'
         }) + ' · '));
       }
 
