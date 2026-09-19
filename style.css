@@ -313,6 +313,12 @@ body {
 }
 
 /* Compact live Bluesky feed on the home page. */
+#main h2#bluesky {
+  border-top: 1px solid #C8C8C8;
+  margin-top: 3px;
+  padding-top: 12px;
+}
+
 #main .bluesky-feed {
   padding: 0 0 3px 0;
 }
