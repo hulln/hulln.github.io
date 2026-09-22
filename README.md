@@ -126,10 +126,10 @@ git checkout style/v1       # branch at the same commit
 ```
 
 The Windows XP Notepad version after that (Bryant Smith's "Notepad.exe" template,
-<http://www.bryantsmith.com>) is the last commit before the redesign:
+<http://www.bryantsmith.com>), up to the September 2026 redesign:
 
 ```
-git checkout 23a437c
+git checkout v2-notepad     # tag
 ```
 
 ## Reuse
