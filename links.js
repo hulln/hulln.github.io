@@ -65,5 +65,10 @@ window.randomLinks = [
     "title": "Morphe Manager: Android App Patcher",
     "url": "https://github.com/MorpheApp/morphe-manager",
     "desc": "Android patcher used with bundles like Piko. It patches supported apps locally on-device and can add compatible patch sources by GitHub URL or deep link."
+  },
+  {
+    "title": "Preplet: Daily Slovenian Word Game",
+    "url": "https://preplet.pages.dev/",
+    "desc": "A daily Slovenian word game."
   }
 ];

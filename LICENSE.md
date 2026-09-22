@@ -55,7 +55,7 @@ Third-party names, trademarks, links, fonts, scripts, libraries, services, and o
 
 ### Fonts
 
-The fonts in `fonts/` are **Fraunces** (Copyright 2018 The Fraunces Project Authors) and
+The fonts in `fonts/` are **Bricolage Grotesque** (Copyright 2022 The Bricolage Grotesque Project Authors) and
 **Source Serif 4** (Copyright 2014 The Source Serif 4 Project Authors), licensed under the
 [SIL Open Font License 1.1](https://openfontlicense.org). The licence and copyright notices
 are in `fonts/OFL.txt`. The fonts have been subset to Latin and Latin Extended and
