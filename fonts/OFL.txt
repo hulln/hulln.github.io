@@ -1,4 +1,4 @@
-Bricolage Grotesque: Copyright 2022 The Bricolage Grotesque Project Authors (https://github.com/ateliertriay/bricolage)
+Schibsted Grotesk: Copyright 2023 The Schibsted-Grotesk Project Authors (https://github.com/schibsted/schibsted-grotesk)
 Source Serif 4: Copyright 2014 The Source Serif 4 Project Authors (https://github.com/adobe-fonts/source-serif)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.

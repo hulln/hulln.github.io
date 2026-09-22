@@ -13,7 +13,7 @@ handwritten half of the Slovene page. Each word is an inline `<svg>` drawn with
 `currentColor`, so it takes its colour from the CSS. Each handwritten link has an
 `aria-label` with the real word, so screen readers still get the text.
 
-Fonts are Bricolage Grotesque (headings, site name, footer, form) and Source Serif 4 (text).
+Fonts are Schibsted Grotesk (headings, site name, footer, form) and Source Serif 4 (text).
 They are self-hosted in `fonts/`, so no request goes to Google: subset to Latin and
 Latin Extended (enough for Slovene), converted to WOFF2, and used under the SIL Open
 Font License (`fonts/OFL.txt`).
@@ -34,7 +34,7 @@ main.js         Contact form, links list, dates
 links.js        Random Links content
 cv.pdf          CV
 img/            Favicon + Nextcloud artwork
-fonts/          Bricolage Grotesque + Source Serif 4 (WOFF2) and their licence
+fonts/          Schibsted Grotesk + Source Serif 4 (WOFF2) and their licence
 
 CNAME           Custom domain
 robots.txt      Crawler rules (the site is intentionally not indexed)

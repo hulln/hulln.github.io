@@ -8,7 +8,7 @@
   --muted: #46524c;         /* secondary text */
   --error: #a81414;         /* form errors, required-field star */
   --font-body: "Source Serif 4", Georgia, serif;
-  --font-ui: "Bricolage Grotesque", system-ui, sans-serif;  /* headings, site name, footer, form */
+  --font-ui: "Schibsted Grotesk", system-ui, sans-serif;  /* headings, site name, footer, form */
   --strip-width: 280px;
   --text-size: 1.25rem;     /* 20px */
   --measure: 44rem;         /* max line length of the main text */
@@ -27,8 +27,8 @@
   font-weight: 400 700; font-style: italic; font-display: swap;
 }
 @font-face {
-  font-family: "Bricolage Grotesque";
-  src: url(fonts/bricolage-grotesque.woff2) format("woff2");
+  font-family: "Schibsted Grotesk";
+  src: url(fonts/schibsted-grotesk.woff2) format("woff2");
   font-weight: 400 700; font-style: normal; font-display: swap;
 }
 
