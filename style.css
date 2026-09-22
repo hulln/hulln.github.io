@@ -78,12 +78,13 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .doodles { display: flex; align-items: center; gap: 1rem; }
 .footer {
   margin-top: auto;
+  margin-right: -1.5rem;    /* may run into the strip's right padding, so the first line fits */
   font-family: var(--font-ui);
-  font-size: .75rem;
+  font-size: .6875rem;      /* 11px */
   line-height: 1.6;
 }
 .footer p { margin: 0; }
-.footer time { white-space: nowrap; }
+.footer .updated { white-space: nowrap; }  /* keep "Last updated" and its date together */
 
 /* ---- main text ---- */
 main {
@@ -134,14 +135,14 @@ h2 { font-size: 1.625rem; }
 .elsewhere p { font-size: 1rem; }
 
 /* Links page: list built by main.js from links.js */
-.links { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+.links { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: .5rem; font-size: 1.125rem; }
 .links li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); column-gap: .5rem; align-items: start; }
 .links .muted { display: block; }
 /* The "+" is drawn with two bars (main.js's "+" text is hidden); when the note
    opens, the upright bar swings flat and the plus becomes a minus. */
 .desc-toggle {
   position: relative;
-  width: 2rem; height: 2rem; padding: 0;   /* one line of text high */
+  width: 2rem; height: 1.8rem; padding: 0;   /* one line of link text high (1.125rem x 1.6) */
   font-size: 0; color: var(--accent); background: none; border: 0;
   cursor: pointer;
 }
