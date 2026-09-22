@@ -11,12 +11,12 @@ window.randomLinks = [
     "desc": "Shows how accurately commonly used tools for automatic grammatical annotation of Slovene texts (base forms, parts of speech, sentence structure) perform on manually annotated test sets, and which mistakes they make most often."
   },
   {
-    "title": "DigiLing Subjects at FRI: Feedback Form",
+    "title": "Student Council Feedback Form: DigiLing Courses",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLScA3XvkSjgopO72f5Ac8SatQ-SIblVfvrg6nC2HnvFis_mzgA/viewform",
-    "desc": "Short, always-open survey by the FRI Student Council for collecting feedback on Digital Linguistics courses. Responses welcome anytime."
+    "desc": "Short, always-open form by the FRI Student Council for feedback on Digital Linguistics courses."
   },
   {
-    "title": "FRI Improvement Suggestions: Student Council Form",
+    "title": "Student Council Feedback Form: FRI Improvements",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLScZRWUOlGXg4BSylv0Ni2m6r1FEzwK99y3LCqXBjdCLeoiqxQ/viewform",
     "desc": "Always-open form by the FRI Student Council for suggestions and ideas for improving the faculty."
   },
@@ -79,6 +79,11 @@ window.randomLinks = [
     "title": "userinput.app: Feedback and Feature Requests",
     "url": "https://userinput.app/",
     "desc": "Lightweight public feedback and feature-request platform built around ATProto identities."
+  },
+  {
+    "title": "Sifa: Portable Professional Identity",
+    "url": "https://sifa.id/",
+    "desc": "ATProto-based professional identity that brings work and activity from across the open web into one portable profile."
   },
   {
     "title": "pckt: Blogging on ATProto",
