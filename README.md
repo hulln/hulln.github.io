@@ -78,6 +78,9 @@ resampling pixel art to 16 or 32 turns it to mush.
 ## Editing
 
 - Text: edit the HTML directly.
+- After changing `style.css`, raise the number in `style.css?v=2` in all eight pages'
+  stylesheet links. GitHub Pages lets browsers keep files for 10 minutes, and a new
+  number makes phones fetch the new styles on the next reload.
 - Colours, fonts, sizes: edit the variables at the top of `style.css`. A different
   font also needs its WOFF2 file in `fonts/` and an `@font-face` rule, which sit
   right below the variables.
