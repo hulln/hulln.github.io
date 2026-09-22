@@ -43,6 +43,7 @@ This includes, but is not limited to:
 - CV files, documents, certificates, and other personal materials
 - contact details, form endpoints, email-related configuration, and profile links
 - photos, favicons, logos, visual identity, and site-specific assets
+- handwriting and drawings, including the inline SVG handwriting and doodles in the HTML pages
 - analytics identifiers, verification tags, metadata, and deployment-specific settings
 - Random Links descriptions and other curated site content
 
@@ -51,10 +52,6 @@ You may not reproduce this content, present it as your own, or use it in a way t
 ## Third-Party Materials
 
 Third-party names, trademarks, links, fonts, scripts, libraries, services, and other materials referenced by this site remain the property of their respective owners and may be subject to their own licences or terms.
-
-### Site Template
-
-The window layout, chrome images (`img/`) and the base stylesheet rules are adapted from **"Notepad.exe"**, a free web template by [Bryant Smith](http://www.bryantsmith.com). Those portions are his work, not the repository owner's, and the MIT grant above does not extend to them. He asks only that his credit link stay on the page; it appears in the footer of every page here, on his name in "template by bryant smith" (the word "template" links separately to the html.am download page, which is a courtesy rather than part of his request). If you reuse this site, keep the link to bryantsmith.com or obtain his permission to remove it.
 
 ### Favicon
 

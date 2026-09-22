@@ -2,24 +2,19 @@
 
 Source for my personal website. Plain HTML, CSS and JavaScript. No build step.
 
-## Template credit
+## Design
 
-The site is styled as a Windows XP Notepad window using **"Notepad.exe"**, a free
-web template by **Bryant Smith** — <http://www.bryantsmith.com>.
+A green strip on the left holds a handwritten menu, the EN/SL switch, two doodles
+and the footer; the text sits on the right. Below 760px wide the strip becomes a
+bar across the top.
 
-Downloaded from <https://www.html.am/templates/downloads/bryantsmith/notepad/>.
+The handwriting is mine: the menu words, EN/SL, the flower and cloud, and the
+handwritten half of the Slovene page. Each word is an inline `<svg>` drawn with
+`currentColor`, so it takes its colour from the CSS. Each handwritten link has an
+`aria-label` with the real word, so screen readers still get the text.
 
-The window chrome in `img/` (`titlebar.png`, `menu.png`, `notepad_back.png`,
-`footer.png`, `background.png`, `icon.png`) is his artwork, and the layout rules
-at the top of `style.css` are his. His only condition, in the template source, is
-"please leave my link somewhere in your page, that is all I ask".
-
-The footer of every page carries "template by bryant smith": *template* links to the
-html.am download page, *bryant smith* links to his own site. The second one is the
-link he actually asked for -- keep that one if you reuse this. The first is a
-courtesy, pointing at where the template came from.
-
-See [LICENSE.md](LICENSE.md) — the MIT grant covers my code, not his template.
+Fonts are Bricolage Grotesque (headings, menu, footer) and Source Serif 4 (text),
+loaded from Google Fonts.
 
 ## Files
 
@@ -32,11 +27,11 @@ contact/        Contact form
 sl/             Slovenian page (placeholder)
 nextcloud/      Notes about the personal Nextcloud setup
 
-style.css       All styling
+style.css       All styling; colours, fonts and sizes are variables at the top
 main.js         Contact form, links list, dates
 links.js        Random Links content
 cv.pdf          CV
-img/            Window chrome, favicon + Nextcloud artwork
+img/            Favicon + Nextcloud artwork
 
 CNAME           Custom domain
 robots.txt      Crawler rules (the site is intentionally not indexed)
@@ -46,43 +41,40 @@ That is the whole repository.
 
 ## How it works
 
-Every page has the same four parts, which come from the template:
+Every page has the same two parts:
 
 ```html
-<div id="page">
-  <div id="titlebar">   the filename, e.g. nh.txt - Notepad
-  <div id="bar">        the menu strip, used for navigation
-  <div id="main">       the text area
-  <div id="footer">     small print + the two credits, all on one 9px line
+<div class="layout">
+  <div class="strip">   site name, handwritten menu, EN/SL, doodles, footer
+  <main>                the text
 </div>
 ```
 
-The window is a fixed **614px** wide, because the chrome images are exactly that
-wide. Pages declare `width=614` in the viewport meta tag, so phones scale the
-whole window to fit the screen.
+There is no build step, so the strip is copied into each page. A change to the
+menu or the footer has to be made in all six: `index.html`, `privacy.html`,
+`blog/`, `links/`, `contact/` and `sl/`. Links are relative (`../contact/index.html`)
+so the pages also work when opened straight from disk.
 
-The footer strip holds everything meta on a single line: copyright, Privacy Notice,
-last-updated date, and the template and icon credits. It has to stay one line —
-`footer.png` is only white above y=17, and below that is the scrollbar artwork.
+The footer holds everything meta: copyright, last-updated date, Privacy Notice,
+Cloud and the favicon credit. The Slovene page has a Slovene footer.
 
 Profile links (LinkedIn, ORCID, GitHub, Hugging Face) live on the Contact page under
 "Elsewhere", not in the footer.
-
-`img/icon.png` is the title-bar icon, from the template.
 
 `img/favicon.png` is the browser-tab icon: a pixel-art tree by
 [Magnific](https://www.flaticon.com/authors/magnific), from
 [Flaticon](https://www.flaticon.com/free-icon/tree_12414749), used under their free
 licence, which requires crediting its author. That credit is in the footer of every
-page alongside Bryant Smith's. It is stored at 34x34 — exactly 2x its native 17x17
-pixel grid — because resampling pixel art to 16 or 32 turns it to mush.
+page. It is stored at 34x34 — exactly 2x its native 17x17 pixel grid — because
+resampling pixel art to 16 or 32 turns it to mush.
 
 ## Editing
 
 - Text: edit the HTML directly.
+- Colours, fonts, sizes: edit the variables at the top of `style.css`.
 - Random Links: edit `links.js`.
-- "Last updated" date: edit `siteLastUpdated` at the top of the block in `main.js`.
-- Title-bar icon: replace `img/icon.png` (16x16 PNG).
+- "Last updated" date: set automatically by `main.js` from the page's
+  last-modified date; the date written in each footer is only the fallback.
 - Favicon: replace `img/favicon.png`, and update the credit in every footer.
 
 Deploys via GitHub Pages from `main`.
@@ -124,13 +116,18 @@ git checkout v1-original    # tag
 git checkout style/v1       # branch at the same commit
 ```
 
+The Windows XP Notepad version after that (Bryant Smith's "Notepad.exe" template,
+<http://www.bryantsmith.com>) is the last commit before the redesign:
+
+```
+git checkout 23a437c
+```
+
 ## Reuse
 
 This repository may be forked as a starting point. Before publishing a fork,
 replace all personal content: names, text, `cv.pdf`, contact links, the form
-endpoint, analytics IDs, verification tags and profile links. Keep Bryant
-Smith's footer credit.
+endpoint, analytics IDs, verification tags, profile links and the handwriting.
 
 The site-specific code is available under the MIT License. Personal content is
-not licensed for reuse, and Bryant Smith's template remains separate from that
-license. See [LICENSE.md](LICENSE.md).
+not licensed for reuse. See [LICENSE.md](LICENSE.md).
