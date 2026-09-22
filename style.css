@@ -176,6 +176,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
   /* Everything a step smaller than on desktop. */
   :root { --text-size: 1.125rem; }   /* 18px body text on phones (20px on desktop) */
   h1 { font-size: 2rem; }
+  .shrug + h1 { font-size: 1.5rem; }   /* the Slovene page's heading is a whole sentence */
   h2 { font-size: 1.375rem; }
   .lead { font-size: 1.25rem; }
   .links { font-size: 1.0625rem; }
