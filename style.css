@@ -3,7 +3,6 @@
 :root {
   --accent: #2f5d50;        /* green strip, "HEJ!" */
   --on-accent: #f4f1e8;     /* text + handwriting on the strip */
-  --current: #e8cf86;       /* menu word of the page you are on */
   --paper: #eef0ea;         /* page background */
   --ink: #1b2420;           /* body text */
   --muted: #46524c;         /* secondary text */
@@ -75,7 +74,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .lang a { opacity: .7; }
 .lang a:hover { opacity: 1; }
 .lang [aria-current] { display: flex; align-items: center; min-height: 44px; border-bottom: 2px solid var(--on-accent); }
-.strip .nav a[aria-current="page"] { color: var(--current); }
+.nav a[aria-current="page"] .hand { stroke-width: 3; }  /* the current page's word, traced over with a thicker pen */
 .doodles { display: flex; align-items: center; gap: 1rem; }
 .footer {
   margin-top: auto;
