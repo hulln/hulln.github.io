@@ -30,12 +30,13 @@ blog/           Redirects to nhull.pckt.blog
 links/          Random Links
 contact/        Contact form
 sl/             Slovenian page (placeholder)
+nextcloud/      Notes about the personal Nextcloud setup
 
 style.css       All styling
 main.js         Contact form, links list, dates
 links.js        Random Links content
 cv.pdf          CV
-img/            Window chrome + favicon
+img/            Window chrome, favicon + Nextcloud artwork
 
 CNAME           Custom domain
 robots.txt      Crawler rules (the site is intentionally not indexed)
@@ -85,6 +86,32 @@ pixel grid — because resampling pixel art to 16 or 32 turns it to mush.
 - Favicon: replace `img/favicon.png`, and update the credit in every footer.
 
 Deploys via GitHub Pages from `main`.
+
+## Nextcloud
+
+The **Cloud** link in the site footer opens the personal Nextcloud instance at
+<https://cloud.nhull.eu>. A separate page in `nextcloud/` documents the setup.
+
+The test instance was set up in September 2026 using Nextcloud All-in-One on an
+Oracle Cloud Always Free ARM server in Frankfurt:
+
+- Ubuntu 24.04 LTS Minimal
+- `VM.Standard.A1.Flex`, 2 OCPUs and 12 GB RAM
+- Docker and Nextcloud All-in-One
+- a separate 150 GB ext4 block volume mounted at `/mnt/nextcloud-data`
+- Nextcloud data stored in `/mnt/nextcloud-data/nextcloud`
+- PostgreSQL, Redis, Apache/Caddy, Client Push, EuroOffice, Imaginary and
+  Nextcloud Whiteboard
+
+The server is intended for private file storage, sharing, browser-based document
+editing and testing Nextcloud administration. Files are private unless they are
+explicitly shared.
+
+Nextcloud artwork lives in `img/nextcloud/`: `cloud-coffee.png` is the full logo
+and favicon, while `cloud.png` is the simplified mark.
+
+Never commit SSH private keys, Nextcloud/AIO credentials, backup encryption
+passwords, or other secrets to this repository.
 
 ## Previous design
 

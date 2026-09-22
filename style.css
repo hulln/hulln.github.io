@@ -98,24 +98,6 @@ body {
   background: #316AC5;
 }
 
-#bar ul li.cloud-link {
-  float: right;
-  padding-right: 8px;
-}
-
-#bar ul li.cloud-link a {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  padding-top: 2px;
-}
-
-#bar .cloud-link img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
 #main {
   width: 579px;
   padding: 0 28px 0 7px;
