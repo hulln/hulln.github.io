@@ -13,7 +13,7 @@ handwritten half of the Slovene page. Each word is an inline `<svg>` drawn with
 `currentColor`, so it takes its colour from the CSS. Each handwritten link has an
 `aria-label` with the real word, so screen readers still get the text.
 
-Fonts are Schibsted Grotesk (headings, site name, footer, form) and Source Serif 4 (text).
+Fonts are Schibsted Grotesk (headings, footer, form) and Source Serif 4 (text).
 They are self-hosted in `fonts/`, so no request goes to Google: subset to Latin and
 Latin Extended (enough for Slovene), converted to WOFF2, and used under the SIL Open
 Font License (`fonts/OFL.txt`).
@@ -48,7 +48,7 @@ Every page has the same two parts:
 
 ```html
 <div class="layout">
-  <div class="strip">   site name, handwritten menu, EN/SL, doodles, footer
+  <div class="strip">   handwritten menu, EN/SL, doodles, footer
   <main>                the text
 </div>
 ```

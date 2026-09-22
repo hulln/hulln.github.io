@@ -8,7 +8,7 @@
   --muted: #46524c;         /* secondary text */
   --error: #a81414;         /* form errors, required-field star */
   --font-body: "Source Serif 4", Georgia, serif;
-  --font-ui: "Schibsted Grotesk", system-ui, sans-serif;  /* headings, site name, footer, form */
+  --font-ui: "Schibsted Grotesk", system-ui, sans-serif;  /* headings, footer, form */
   --strip-width: 280px;
   --text-size: 1.25rem;     /* 20px */
   --measure: 44rem;         /* max line length of the main text */
@@ -66,12 +66,6 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 }
 .strip a { color: var(--on-accent); }
 .strip a:focus-visible { outline-color: var(--on-accent); }
-.site-name {
-  font-family: var(--font-ui);
-  font-weight: 700;
-  font-size: 1.25rem;
-  text-decoration: none;
-}
 .nav { display: flex; flex-direction: column; gap: .25rem; }
 .nav a { display: flex; align-items: center; min-height: 44px; text-decoration: none; }
 .nav a:hover .hand { transform: translateX(3px); }
@@ -134,7 +128,7 @@ h2 { font-size: 1.625rem; }
 .form-note, .small-note { font-size: 1rem; }
 .sep { padding: 0 .125rem; color: var(--muted); }
 /* Contact page: the "Elsewhere" profile links, one step quieter than the rest */
-.elsewhere h2 { font-size: 1.25rem; }  /* same size as the site name */
+.elsewhere h2 { font-size: 1.25rem; }  /* body-text size */
 .elsewhere p { font-size: 1rem; }
 
 /* Links page: list built by main.js from links.js */
