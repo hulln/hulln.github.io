@@ -59,7 +59,8 @@ menu or the footer has to be made in all eight: `index.html`, `privacy.html`,
 `404.html`, `blog/`, `links/`, `contact/`, `sl/` and `nextcloud/`. Links are relative
 (`../contact/index.html`) so the pages also work when opened straight from disk. The
 exception is `404.html`: GitHub Pages serves it at any missing address, however deep, so
-its links start at the site root (`/contact/`).
+a small script in its head resolves its links from the site root when it is served from
+the web (and leaves them alone when it is opened from disk).
 
 The footer holds everything meta: copyright, last-updated date, Privacy Notice,
 Cloud and the favicon credit. The Slovene page has a Slovene footer.
