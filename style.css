@@ -133,6 +133,9 @@ h2 { font-size: 1.625rem; }
 .muted, .form-note, .small-note { color: var(--muted); }
 .form-note, .small-note { font-size: 1rem; }
 .sep { padding: 0 .125rem; color: var(--muted); }
+/* Contact page: the "Elsewhere" profile links, one step quieter than the rest */
+.elsewhere h2 { font-size: 1.25rem; }  /* same size as the site name */
+.elsewhere p { font-size: 1rem; }
 
 /* Links page: list built by main.js from links.js */
 .links { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: .5rem; }
