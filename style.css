@@ -74,6 +74,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .lang a { opacity: .7; }
 .lang a:hover { opacity: 1; }
 .lang [aria-current] { display: flex; align-items: center; min-height: 44px; border-bottom: 2px solid var(--on-accent); }
+.nav a[aria-current="page"] { width: max-content; border-bottom: 2px solid var(--on-accent); }  /* same mark as the current language */
 .doodles { display: flex; align-items: center; gap: 1rem; }
 .footer {
   margin-top: auto;
@@ -127,6 +128,7 @@ h2 { font-size: 1.625rem; }
 .muted, .form-note, .small-note { color: var(--muted); }
 .form-note, .small-note { font-size: 1rem; }
 .sep { padding: 0 .125rem; color: var(--muted); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 /* Contact page: the "Elsewhere" profile links, one step quieter than the rest */
 .elsewhere h2 { font-size: 1.25rem; }  /* body-text size */
 .elsewhere p { font-size: 1rem; }
@@ -179,3 +181,9 @@ button[type="submit"]:disabled { opacity: .6; cursor: progress; }
 .status.success { color: var(--accent); }
 .status.error, .required-marker { color: var(--error); }
 .hp { position: absolute; left: -9999px; }  /* honeypot: hidden from people, visible to bots */
+
+/* Nextcloud notes page */
+.project-logo { width: 120px; height: auto; }
+.details-list { margin: 0; padding-left: 1.5rem; display: flex; flex-direction: column; gap: .25rem; }
+.details-list li::marker { color: var(--accent); }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85em; }

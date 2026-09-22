@@ -23,6 +23,7 @@ Font License (`fonts/OFL.txt`).
 ```
 index.html      Home
 privacy.html    Privacy notice
+404.html        Shown by GitHub Pages for missing addresses
 blog/           Redirects to nhull.pckt.blog
 links/          Random Links
 contact/        Contact form
@@ -54,9 +55,11 @@ Every page has the same two parts:
 ```
 
 There is no build step, so the strip is copied into each page. A change to the
-menu or the footer has to be made in all six: `index.html`, `privacy.html`,
-`blog/`, `links/`, `contact/` and `sl/`. Links are relative (`../contact/index.html`)
-so the pages also work when opened straight from disk.
+menu or the footer has to be made in all eight: `index.html`, `privacy.html`,
+`404.html`, `blog/`, `links/`, `contact/`, `sl/` and `nextcloud/`. Links are relative
+(`../contact/index.html`) so the pages also work when opened straight from disk. The
+exception is `404.html`: GitHub Pages serves it at any missing address, however deep, so
+its links start at the site root (`/contact/`).
 
 The footer holds everything meta: copyright, last-updated date, Privacy Notice,
 Cloud and the favicon credit. The Slovene page has a Slovene footer.

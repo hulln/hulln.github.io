@@ -23,7 +23,7 @@ window.randomLinks = [
   {
     "title": "Lexend: Accessible Reading Font",
     "url": "https://www.lexend.com/",
-    "desc": "Reading-focused font with adjustable settings for different readers. Used on this site."
+    "desc": "Reading-focused font with adjustable settings for different readers."
   },
   {
     "title": "brezavta.si: Public Transport Mobility Map",
