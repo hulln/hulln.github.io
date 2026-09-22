@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="utf-8" />
+  <!-- Scale the fixed-width window to the phone screen. -->
+  <meta name="viewport" content="width=614" />
+  <title>Nextcloud | nh</title>
+  <meta name="description" content="Notes on nh's self-hosted personal Nextcloud setup." />
+  <meta name="author" content="nh" />
+
+  <meta property="og:title" content="Personal Nextcloud setup | nh" />
+  <meta property="og:description" content="A self-hosted personal cloud running Nextcloud All-in-One on Oracle Cloud." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nhull.eu/nextcloud/" />
+  <meta property="og:image" content="https://nhull.eu/img/nextcloud/cloud-coffee.png" />
+  <meta property="og:image:alt" content="A smiling cloud holding a cup of coffee" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Personal Nextcloud setup | nh" />
+  <meta name="twitter:description" content="A self-hosted personal cloud running Nextcloud All-in-One on Oracle Cloud." />
+  <meta name="twitter:image" content="https://nhull.eu/img/nextcloud/cloud-coffee.png" />
+
+  <link rel="icon" href="../img/nextcloud/cloud-coffee.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../img/nextcloud/cloud-coffee.png" />
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="nextcloud-page">
+  <div id="page">
+
+    <div id="titlebar">
+      <h1>nextcloud.txt - Notepad</h1>
+    </div>
+
+    <div id="bar">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="https://nhull.pckt.blog/">Blog</a></li>
+        <li><a href="../links/index.html">Links</a></li>
+        <li><a href="../contact/index.html">Contact</a></li>
+        <li><a href="../sl/index.html" title="Slovenščina">SL</a></li>
+        <li class="cloud-link"><a href="https://cloud.nhull.eu" title="Open Nextcloud"><img src="../img/nextcloud/cloud.png" alt="" />Cloud</a></li>
+      </ul>
+    </div>
+
+    <div id="main">
+
+      <img class="project-logo" src="../img/nextcloud/cloud-coffee.png" alt="A smiling cloud holding a cup of coffee" />
+
+      <h1>Personal Nextcloud setup</h1>
+      <p>In September 2026 I set up a self-hosted Nextcloud instance at <a href="https://cloud.nhull.eu">cloud.nhull.eu</a>.</p>
+      <p>The aim was to have a small personal cloud for files, document sharing, browser-based editing and experimenting with Nextcloud administration.</p>
+
+      <h2>Infrastructure</h2>
+      <p>The server runs on Oracle Cloud's Always Free infrastructure in the Frankfurt region.</p>
+      <ul class="details-list">
+        <li>Ubuntu 24.04 LTS Minimal, ARM64</li>
+        <li>Oracle <code>VM.Standard.A1.Flex</code></li>
+        <li>2 OCPUs</li>
+        <li>12 GB RAM</li>
+        <li>reserved public IPv4 address</li>
+        <li>Docker + Nextcloud All-in-One (AIO)</li>
+      </ul>
+      <p>A separate 150 GB Oracle block volume is used for Nextcloud data. It is formatted as ext4 and mounted at <code>/mnt/nextcloud-data</code>.</p>
+      <p>Nextcloud's data directory is <code>/mnt/nextcloud-data/nextcloud</code>. The Ubuntu boot disk uses roughly another 50 GB, keeping the setup within Oracle's 200 GB Always Free block-storage allowance.</p>
+
+      <h2>Networking</h2>
+      <p><code>cloud.nhull.eu</code> has an A record pointing to the server's reserved public IP.</p>
+      <p>The Oracle network consists of:</p>
+      <ul class="details-list">
+        <li>a dedicated VCN (<code>nextcloud-vcn</code>)</li>
+        <li>a public subnet (<code>nextcloud-public-subnet</code>)</li>
+        <li>a Network Security Group allowing TCP 80 for HTTP and certificate validation, TCP 443 for normal HTTPS access, and TCP 8443 for Nextcloud AIO administration</li>
+      </ul>
+      <p>The server itself is administered over SSH using a private SSH key.</p>
+
+      <h2>Nextcloud</h2>
+      <p>Nextcloud is deployed using the official <strong>Nextcloud All-in-One</strong> Docker image.</p>
+      <p>The current setup includes:</p>
+      <ul class="details-list">
+        <li>Nextcloud Hub 26 Summer</li>
+        <li>PostgreSQL</li>
+        <li>Redis</li>
+        <li>Apache/Caddy</li>
+        <li>Client Push</li>
+        <li>EuroOffice</li>
+        <li>Imaginary</li>
+        <li>Nextcloud Whiteboard</li>
+      </ul>
+      <p>The timezone is configured as <code>Europe/Ljubljana</code>.</p>
+      <p>The public Nextcloud instance is available at <a href="https://cloud.nhull.eu">cloud.nhull.eu</a>. The AIO administration interface is available separately on port <code>8443</code>.</p>
+
+      <h2>What it is used for</h2>
+      <p>The instance can be used as a normal personal cloud:</p>
+      <ul class="details-list">
+        <li>private file storage</li>
+        <li>browser and mobile access</li>
+        <li>public or password-protected file sharing</li>
+        <li>separate user accounts</li>
+        <li>browser-based document editing</li>
+        <li>Nextcloud apps such as Calendar, Contacts, Tasks, Notes, Deck and Forms</li>
+      </ul>
+      <p>Files are private by default and only become publicly accessible when an explicit share link is created.</p>
+
+      <h2>Still to configure</h2>
+      <ul class="details-list">
+        <li>automatic backups</li>
+        <li>Oracle instance/lifecycle notifications</li>
+        <li>additional Nextcloud apps</li>
+        <li>mail integration</li>
+        <li>stronger account/security configuration</li>
+        <li>monitoring the Oracle Always Free idle-resource policy</li>
+        <li>possibly migrating to managed Nextcloud hosting later if the instance becomes important</li>
+      </ul>
+
+      <h2>Important</h2>
+      <p>SSH private keys, Nextcloud/AIO passwords or passphrases, backup encryption passwords and other credentials or secrets are never committed to this repository.</p>
+
+    </div>
+
+    <!-- Template and icon credits. Please leave these in place. -->
+    <div id="footer">&copy; <span id="year"></span> nh &middot; <a href="../privacy.html">Privacy Notice</a> &middot; Last updated: <time id="last-updated" datetime="2026-09-22">22 Sept 2026</time> &middot; <a href="https://www.html.am/templates/downloads/bryantsmith/notepad/">template</a> by <a href="http://www.bryantsmith.com">bryant smith</a> &middot; <a href="https://www.flaticon.com/free-icon/tree_12414749">tree icon by Magnific &ndash; Flaticon</a></div>
+
+  </div>
+
+  <script src="../main.js" defer></script>
+
+  <!-- Analytics -->
+  <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <noscript>
+    <img
+      src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+      alt=""
+      referrerpolicy="no-referrer-when-downgrade"
+    />
+  </noscript>
+  <script async src="https://scripts.simpleanalyticscdn.com/auto-events.js"></script>
+</body>
+
+</html>

@@ -98,6 +98,24 @@ body {
   background: #316AC5;
 }
 
+#bar ul li.cloud-link {
+  float: right;
+  padding-right: 8px;
+}
+
+#bar ul li.cloud-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding-top: 2px;
+}
+
+#bar .cloud-link img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 #main {
   width: 579px;
   padding: 0 28px 0 7px;
@@ -304,6 +322,30 @@ body {
 #main .sep {
   padding: 0 6px;
   color: #AAAAAA;
+}
+
+/* Project pages. */
+#main .project-logo {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto 15px auto;
+}
+
+#main ul.details-list {
+  margin: 0;
+  padding: 0 0 15px 28px;
+}
+
+#main ul.details-list li {
+  padding-bottom: 4px;
+}
+
+/* Use the full coffee mark for the Nextcloud document/window identity. */
+.nextcloud-page #titlebar h1 {
+  background-image: url(img/nextcloud/cloud-coffee.png);
+  background-size: 16px 16px;
 }
 
 /* Slovenian placeholder page. */
