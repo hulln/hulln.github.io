@@ -36,6 +36,11 @@ window.randomLinks = [
     "desc": "Useful app showing real-time data for Slovenian public transport. Not an official government app."
   },
   {
+    "title": "Z vlakom v Planico?: Bringing the Railway Back",
+    "url": "https://www.dnevnik.si/objektiv/z-vlakom-v-planico-2723552-2723552/",
+    "desc": "Dnevnik opinion piece (in Slovene) that takes the Jesenice–Rateče railway, closed since 1966, as a starting point for rethinking public transport and cross-border rail links in the Upper Sava Valley."
+  },
+  {
     "title": "Intervals.icu: Training Analysis for Endurance Sports",
     "url": "https://www.intervals.icu/",
     "desc": "Powerful training-analysis platform for running, cycling, and other endurance sports, with detailed activity, fitness, and best-effort data."
