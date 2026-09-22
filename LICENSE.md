@@ -53,6 +53,14 @@ You may not reproduce this content, present it as your own, or use it in a way t
 
 Third-party names, trademarks, links, fonts, scripts, libraries, services, and other materials referenced by this site remain the property of their respective owners and may be subject to their own licences or terms.
 
+### Fonts
+
+The fonts in `fonts/` are **Fraunces** (Copyright 2018 The Fraunces Project Authors) and
+**Source Serif 4** (Copyright 2014 The Source Serif 4 Project Authors), licensed under the
+[SIL Open Font License 1.1](https://openfontlicense.org). The licence and copyright notices
+are in `fonts/OFL.txt`. The fonts have been subset to Latin and Latin Extended and
+converted to WOFF2; they are not covered by the MIT grant above.
+
 ### Favicon
 
 The favicon (`img/favicon.png`) is a pixel-art tree icon by

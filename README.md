@@ -13,8 +13,10 @@ handwritten half of the Slovene page. Each word is an inline `<svg>` drawn with
 `currentColor`, so it takes its colour from the CSS. Each handwritten link has an
 `aria-label` with the real word, so screen readers still get the text.
 
-Fonts are Bricolage Grotesque (headings, menu, footer) and Source Serif 4 (text),
-loaded from Google Fonts.
+Fonts are Fraunces (headings, site name, footer, form) and Source Serif 4 (text).
+They are self-hosted in `fonts/`, so no request goes to Google: subset to Latin and
+Latin Extended (enough for Slovene), converted to WOFF2, and used under the SIL Open
+Font License (`fonts/OFL.txt`).
 
 ## Files
 
@@ -32,6 +34,7 @@ main.js         Contact form, links list, dates
 links.js        Random Links content
 cv.pdf          CV
 img/            Favicon + Nextcloud artwork
+fonts/          Fraunces + Source Serif 4 (WOFF2) and their licence
 
 CNAME           Custom domain
 robots.txt      Crawler rules (the site is intentionally not indexed)
@@ -71,7 +74,9 @@ resampling pixel art to 16 or 32 turns it to mush.
 ## Editing
 
 - Text: edit the HTML directly.
-- Colours, fonts, sizes: edit the variables at the top of `style.css`.
+- Colours, fonts, sizes: edit the variables at the top of `style.css`. A different
+  font also needs its WOFF2 file in `fonts/` and an `@font-face` rule, which sit
+  right below the variables.
 - Random Links: edit `links.js`.
 - "Last updated" date: set automatically by `main.js` from the page's
   last-modified date; the date written in each footer is only the fallback.
