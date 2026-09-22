@@ -110,8 +110,10 @@ explicitly shared.
 Nextcloud artwork lives in `img/nextcloud/`: `cloud-coffee.png` is the full logo
 and favicon, while `cloud.png` is the simplified mark.
 
-Never commit SSH private keys, Nextcloud/AIO credentials, backup encryption
-passwords, or other secrets to this repository.
+Artwork credits:
+
+- [Cloud icon](https://www.flaticon.com/free-icon/cloud_8928656) from Flaticon
+- [Cloud with coffee icon](https://www.flaticon.com/free-icon/cloud_8928665) from Flaticon
 
 ## Previous design
 
@@ -124,9 +126,11 @@ git checkout style/v1       # branch at the same commit
 
 ## Reuse
 
-You are welcome to fork this as a starting point. Before publishing, replace all
-personal content: names, text, `cv.pdf`, contact links, form endpoint, analytics
-IDs, verification tags and profile links. Keep Bryant Smith's footer credit.
+This repository may be forked as a starting point. Before publishing a fork,
+replace all personal content: names, text, `cv.pdf`, contact links, the form
+endpoint, analytics IDs, verification tags and profile links. Keep Bryant
+Smith's footer credit.
 
-My code is MIT licensed. My personal content is not licensed for reuse. The
-template is his. See [LICENSE.md](LICENSE.md).
+The site-specific code is available under the MIT License. Personal content is
+not licensed for reuse, and Bryant Smith's template remains separate from that
+license. See [LICENSE.md](LICENSE.md).
