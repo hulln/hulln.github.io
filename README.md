@@ -134,9 +134,7 @@ git checkout 23a437c
 
 ## Reuse
 
-This repository may be forked as a starting point. Before publishing a fork,
-replace all personal content: names, text, `cv.pdf`, contact links, the form
-endpoint, analytics IDs, verification tags, profile links and the handwriting.
-
-The site-specific code is available under the MIT License. Personal content is
-not licensed for reuse. See [LICENSE.md](LICENSE.md).
+The JavaScript (`main.js` and the short inline scripts in `404.html` and `blog/`) is
+available under the MIT License. Everything else is not licensed for reuse: the design
+(layout, stylesheet, colours), the handwriting, the text, `cv.pdf` and the other
+personal content. See [LICENSE.md](LICENSE.md).

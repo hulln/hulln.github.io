@@ -2,20 +2,22 @@
 
 This repository contains the source code for a personal website. It uses a mixed licensing model.
 
-## Code
+## JavaScript
 
-Reusable implementation code in this repository is licensed under the MIT License, to the extent that these rights are held by the repository owner.
+The JavaScript in this repository is licensed under the MIT License below, to the extent that these rights are held by the repository owner. That is `main.js` (sending the contact form, building the Random Links list, the footer dates) and the short inline scripts in `404.html` and `blog/index.html`.
 
-This includes general HTML structure, CSS, JavaScript, layout patterns, and other reusable implementation details.
+It does not include `links.js`, which holds the curated Random Links content listed below.
 
-It does not include personal, biographical, identity-related, or site-specific content embedded in the files.
+## Design
+
+The design of the site is not licensed for reuse; all rights reserved. This covers the HTML structure and page layout, the stylesheet (`style.css`), the colour palette, and the overall look of the site, in addition to the handwriting and other personal content listed below.
 
 ## MIT License
 
 Copyright (c) 2026 nh
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of the reusable code portions of this repository and associated documentation
+of the JavaScript code described above and associated documentation
 files (the "Software"), to deal in the Software without restriction, including
 without limitation the rights to use, copy, modify, merge, publish, distribute,
 sublicense, and/or sell copies of the Software, and to permit persons to whom
@@ -34,7 +36,7 @@ SOFTWARE.
 
 ## Personal and Site-Specific Content
 
-Personal and site-specific content is not licensed for reuse. If you fork, copy, modify, or publish this repository, you must replace this content before publishing your version.
+Personal and site-specific content is not licensed for reuse.
 
 This includes, but is not limited to:
 
