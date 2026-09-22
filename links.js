@@ -6,9 +6,19 @@ window.randomLinks = [
     "desc": "A University of Ljubljana project for live lecture transcription, translation, and accessible study materials. Available in production for UL faculties since June 2025."
   },
   {
+    "title": "Evaluation of Grammatical Annotation Tools for Slovenian",
+    "url": "https://orodja.cjvt.si/oznacevalnik/eval/",
+    "desc": "Shows how accurately commonly used tools for automatic grammatical annotation of Slovene texts (base forms, parts of speech, sentence structure) perform on manually annotated test sets, and which mistakes they make most often."
+  },
+  {
     "title": "DigiLing Subjects at FRI: Feedback Form",
-    "url": "https://docs.google.com/forms/d/191lu2zpT2iPRXq8nx1JhQMuOVTgriLwNgwf0vRbCePQ/viewform?edit_requested=true",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLScA3XvkSjgopO72f5Ac8SatQ-SIblVfvrg6nC2HnvFis_mzgA/viewform",
     "desc": "A short, always-open survey by the FRI Student Council for collecting feedback on Digital Linguistics courses. Responses welcome anytime."
+  },
+  {
+    "title": "FRI Improvement Suggestions",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLScZRWUOlGXg4BSylv0Ni2m6r1FEzwK99y3LCqXBjdCLeoiqxQ/viewform",
+    "desc": "An always-open form by the FRI Student Council for suggestions and ideas for improving the faculty."
   },
   {
     "title": "Lexend: Accessible Reading Font",
@@ -26,6 +36,11 @@ window.randomLinks = [
     "desc": "A useful app showing real-time data for Slovenian public transport. Not an official government app."
   },
   {
+    "title": "Intervals.icu",
+    "url": "https://www.intervals.icu/",
+    "desc": "A powerful training-analysis platform for running, cycling, and other endurance sports, with detailed activity, fitness, and best-effort data."
+  },
+  {
     "title": "Bluesky Tracker: Follower Analytics and Manager",
     "url": "https://blueskytracker.app/",
     "desc": "A Bluesky analytics tool for tracking followers, unfollowers, blocks, posts, and account activity, with filters for managing your network."
@@ -34,6 +49,41 @@ window.randomLinks = [
     "title": "Grain: ATProto Photo Sharing",
     "url": "https://grain.social/",
     "desc": "A photography-first app built on AT Protocol for sharing photos, creating galleries, and discovering public photography across the network."
+  },
+  {
+    "title": "mu",
+    "url": "https://hello.mu.social/",
+    "desc": "An alternative social client for Bluesky/ATProto with a strong focus on exploring different ways of interacting with the network."
+  },
+  {
+    "title": "Impro",
+    "url": "https://impro.social/",
+    "desc": "An alternative Bluesky/ATProto client with its own approach to feeds, profiles, and social-network interactions."
+  },
+  {
+    "title": "Witchsky",
+    "url": "https://witchsky.app/",
+    "desc": "Another alternative Bluesky client, with a different interface and features from the official app."
+  },
+  {
+    "title": "userinput.app",
+    "url": "https://userinput.app/",
+    "desc": "A lightweight public feedback and feature-request platform built around ATProto identities."
+  },
+  {
+    "title": "pckt",
+    "url": "https://pckt.blog/",
+    "desc": "A simple blogging platform built on ATProto for publishing longer-form posts outside the normal social feed."
+  },
+  {
+    "title": "Bear Blog",
+    "url": "https://www.bearblog.dev/",
+    "desc": "A very lightweight blogging platform focused on simple, fast, uncluttered websites."
+  },
+  {
+    "title": "Filen",
+    "url": "https://filen.io/",
+    "desc": "A privacy-focused cloud-storage service with end-to-end encryption and open-source clients."
   },
   {
     "title": "Monochrome: Minimal Music Streaming App",
@@ -69,6 +119,6 @@ window.randomLinks = [
   {
     "title": "Preplet: Daily Slovenian Word Game",
     "url": "https://preplet.pages.dev/",
-    "desc": "A daily Slovenian word game."
+    "desc": "A daily Slovene word-association puzzle about finding connections between seemingly unrelated words."
   }
 ];
