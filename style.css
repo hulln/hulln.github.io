@@ -193,7 +193,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
   .lang a { opacity: 1; }
   .doodles { display: none; }
   main { flex: 1; padding: 2.5rem 1.25rem 3rem; }
-  .footer { order: 1; margin: 0; }
+  .footer { order: 1; margin: 0; text-align: center; }
   .handwritten .hand { width: 100%; height: auto; }
   .signoff .hand { width: auto; }               /* the sign-off keeps its desktop size... */
   .signoff .hand:first-child { min-width: 0; }  /* ...except "Lep pozdrav" may shrink at 320px */
