@@ -62,23 +62,21 @@ exception is `404.html`: GitHub Pages serves it at any missing address, however 
 a small script in its head resolves its links from the site root when it is served from
 the web (and leaves them alone when it is opened from disk).
 
-The footer holds everything meta: copyright, last-updated date, Privacy Notice,
-Cloud and the favicon credit. The Slovene page has a Slovene footer.
+The footer holds everything meta: copyright, last-updated date, Privacy Notice
+and Cloud. The Slovene page has a Slovene footer.
 
 Profile links (LinkedIn, ORCID, GitHub, Hugging Face) live on the Contact page under
 "Elsewhere", not in the footer.
 
-`img/favicon.png` is the browser-tab icon: a pixel-art tree by
-[Magnific](https://www.flaticon.com/authors/magnific), from
-[Flaticon](https://www.flaticon.com/free-icon/tree_12414749), used under their free
-licence, which requires crediting its author. That credit is in the footer of every
-page. It is stored at 34x34 — exactly 2x its native 17x17 pixel grid — because
-resampling pixel art to 16 or 32 turns it to mush.
+`img/favicon.png` is the browser-tab icon: the hand-drawn flower doodle from the
+strip, drawn in the site's green on a paper-coloured rounded square and rendered
+to a 64x64 PNG. It replaced the earlier pixel-art tree from Flaticon — and with
+it, the credit line the tree's licence required in every footer.
 
 ## Editing
 
 - Text: edit the HTML directly.
-- After changing `style.css`, raise the number in `style.css?v=2` in all eight pages'
+- After changing `style.css`, raise the number in `style.css?v=3` in all eight pages'
   stylesheet links. GitHub Pages lets browsers keep files for 10 minutes, and a new
   number makes phones fetch the new styles on the next reload.
 - Colours, fonts, sizes: edit the variables at the top of `style.css`. A different
@@ -87,7 +85,7 @@ resampling pixel art to 16 or 32 turns it to mush.
 - Random Links: edit `links.js`.
 - "Last updated" date: set automatically by `main.js` from the page's
   last-modified date; the date written in each footer is only the fallback.
-- Favicon: replace `img/favicon.png`, and update the credit in every footer.
+- Favicon: replace `img/favicon.png`.
 
 Deploys via GitHub Pages from `main`.
 

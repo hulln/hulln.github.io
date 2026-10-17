@@ -101,11 +101,6 @@ window.randomLinks = [
     "desc": "Privacy-focused cloud-storage service with end-to-end encryption and open-source clients."
   },
   {
-    "title": "Monochrome: Minimal Music Streaming App",
-    "url": "https://monochrome.samidy.com/",
-    "desc": "Minimalist music streaming app focused on a clean interface and simple listening."
-  },
-  {
     "title": "Metrolist: YouTube Music Client for Android",
     "url": "https://metrolist.meowery.eu/",
     "desc": "Open-source Android client for YouTube Music with background playback, offline caching, lyrics, playlist tools, and Material 3 styling. Unofficial and not affiliated with YouTube or Google."
