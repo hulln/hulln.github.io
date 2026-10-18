@@ -33,7 +33,7 @@ nextcloud/      Notes about the personal Nextcloud setup
 style.css       All styling; colours, fonts and sizes are variables at the top
 main.js         Contact form, links list, dates
 links.js        Random Links content
-cv.pdf          CV
+nhull-cv.pdf    CV
 img/            Favicon + Nextcloud artwork
 fonts/          Schibsted Grotesk + Source Serif 4 (WOFF2) and their licence
 
@@ -137,5 +137,5 @@ git checkout v2-notepad     # tag
 
 The JavaScript (`main.js` and the short inline scripts in `404.html` and `blog/`) is
 available under the MIT License. Everything else is not licensed for reuse: the design
-(layout, stylesheet, colours), the handwriting, the text, `cv.pdf` and the other
+(layout, stylesheet, colours), the handwriting, the text, `nhull-cv.pdf` and the other
 personal content. See [LICENSE.md](LICENSE.md).
